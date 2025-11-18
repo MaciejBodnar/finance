@@ -1,3 +1,9 @@
-@import "tailwindcss" theme(static);
+@import "tailwindcss";
 @source "../views/";
 @source "../../app/";
+
+/* Fix: remove default underlines from links and show underline on hover */
+a {
+	text-decoration: none;
+}
+

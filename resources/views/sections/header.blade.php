@@ -7,7 +7,7 @@
                 <img src="<?php echo get_template_directory_uri(); ?>/resources/images/logo-desktop.png" alt="Optimum Tax"
                     class="w-10 h-12 object-contain" />
                 <span class="text-lg font-semibold tracking-wide">
-                    Optimum <span class="font-normal">Tax</span>
+                    Optimum Tax
                 </span>
             </a>
 
@@ -36,8 +36,7 @@
 
                 <ul class="hidden md:flex items-center gap-8 text-sm">
                     <li>
-                        <a href="<?php echo esc_url(home_url('/')); ?>"
-                            class="pb-1 border-b-2 border-[#ffba6a] text-[#ffba6a] font-semibold">
+                        <a href="<?php echo esc_url(home_url('/')); ?>" class="hover:text-[#ffba6a] transition">
                             Strona Główna
                         </a>
                     </li>
@@ -63,7 +62,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#kontakt" class="text-[#ffba6a] hover:text-[#ffd6a0] transition">
+                        <a href="#kontakt" class="hover:text-[#ffba6a] transition">
                             Kontakt
                         </a>
                     </li>
