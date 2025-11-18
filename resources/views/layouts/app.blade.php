@@ -13,9 +13,13 @@
 <body @php(body_class())>
     @php(wp_body_open())
 
-    <div id="app" class="bg-red-500">
+    <div id="app">
 
         @include('sections.header')
+
+        <main id="main" class="main">
+            @yield('content')
+        </main>
 
         @include('sections.footer')
     </div>
