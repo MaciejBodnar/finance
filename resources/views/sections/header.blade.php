@@ -4,10 +4,8 @@
         <div class="max-w-6xl mx-auto flex items-center justify-between py-3 px-4 lg:px-0 text-sm">
 
             <a href="<?php echo esc_url(home_url('/')); ?>" class="flex items-center gap-3">
-                <div class="flex items-center justify-center w-10 h-10 rounded-full border border-white">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo-mark.svg" alt="Optimum Tax"
-                        class="w-7 h-7 object-contain" />
-                </div>
+                <img src="<?php echo get_template_directory_uri(); ?>/resources/images/logo-desktop.png" alt="Optimum Tax"
+                    class="w-10 h-12 object-contain" />
                 <span class="text-lg font-semibold tracking-wide">
                     Optimum <span class="font-normal">Tax</span>
                 </span>
@@ -16,24 +14,14 @@
             <div class="flex items-center gap-8">
 
                 <div class="hidden md:flex items-center gap-2">
-                    <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-white/10">
-                        <span class="text-xs">📞</span>
-                    </span>
                     <span class="opacity-80">Zadzwoń do nas:</span>
-                    <a href="tel:+442088400422" class="font-semibold hover:underline whitespace-nowrap">
-                        +0208 840 0422
-                    </a>
+                    +0208 840 0422
                 </div>
 
                 <div class="flex items-center gap-3 text-xs">
                     <button class="flex items-center gap-2">
-                        <span
-                            class="w-4 h-4 rounded-full bg-linear-to-b from-white to-red-600 border border-white"></span>
                         <span class="font-semibold">PL</span>
                     </button>
-
-                    <span class="text-white/40 text-lg leading-none">✢</span>
-
                     <button class="flex items-center gap-1 text-white/60 hover:text-white transition">
                         <span class="font-semibold">EN</span>
                     </button>
