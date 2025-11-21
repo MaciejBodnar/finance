@@ -164,12 +164,9 @@ add_action('widgets_init', function () {
  */
 add_action('init', function () {
     // Add rewrite rule for pages
-    add_rewrite_rule('^training/?$', 'index.php?custom_page=training', 'top');
-    add_rewrite_rule('^gallery/?$', 'index.php?custom_page=gallery', 'top');
-    add_rewrite_rule('^gallery/([^/]+)/?$', 'index.php?custom_page=gallery_post&post_slug=$matches[1]', 'top');
     add_rewrite_rule('^contact/?$', 'index.php?custom_page=contact', 'top');
+    add_rewrite_rule('^accountancy/?$', 'index.php?custom_page=accountancy', 'top');
     add_rewrite_rule('^about/?$', 'index.php?custom_page=about', 'top');
-    add_rewrite_rule('^rent/?$', 'index.php?custom_page=rent', 'top');
     add_rewrite_rule('^blog/?$', 'index.php?custom_page=blog', 'top');
     // Handle paged blog URLs like /blog/page/2/
     add_rewrite_rule('^blog/page/([0-9]{1,})/?$', 'index.php?custom_page=blog&paged=$matches[1]', 'top');
@@ -214,37 +211,6 @@ add_action('template_redirect', function () {
 
     if ($custom_page) {
         switch ($custom_page) {
-            case 'training':
-                // Set up proper WordPress context for Training page
-                global $wp_query, $post;
-
-                $training_page = get_page_by_path('training');
-                if ($training_page) {
-                    $wp_query->queried_object = $training_page;
-                    $wp_query->queried_object_id = $training_page->ID;
-                    $post = $training_page;
-                    setup_postdata($post);
-                }
-
-                echo view('template-training')->render();
-                exit;
-            case 'gallery':
-                // Set up proper WordPress context for Gallery page
-                global $wp_query, $post;
-
-                $gallery_page = get_page_by_path('gallery');
-                if ($gallery_page) {
-                    $wp_query->queried_object = $gallery_page;
-                    $wp_query->queried_object_id = $gallery_page->ID;
-                    $post = $gallery_page;
-                    setup_postdata($post);
-                }
-
-                echo view('template-gallery')->render();
-                exit;
-            case 'gallery_post':
-                echo view('single-album')->render();
-                exit;
             case 'contact':
                 // Set up proper WordPress context for Contact page
                 global $wp_query, $post;
@@ -286,19 +252,19 @@ add_action('template_redirect', function () {
 
                 echo view('template-blog')->render();
                 exit;
-            case 'rent':
-                // Set up proper WordPress context for Rent page
+            case 'accountancy':
+                // Set up proper WordPress context for Accountancy page
                 global $wp_query, $post;
 
-                $rent_page = get_page_by_path('rent');
-                if ($rent_page) {
-                    $wp_query->queried_object = $rent_page;
-                    $wp_query->queried_object_id = $rent_page->ID;
-                    $post = $rent_page;
+                $accountancy_page = get_page_by_path('accountancy');
+                if ($accountancy_page) {
+                    $wp_query->queried_object = $accountancy_page;
+                    $wp_query->queried_object_id = $accountancy_page->ID;
+                    $post = $accountancy_page;
                     setup_postdata($post);
                 }
 
-                echo view('template-rent')->render();
+                echo view('template-accountancy')->render();
                 exit;
         }
     }

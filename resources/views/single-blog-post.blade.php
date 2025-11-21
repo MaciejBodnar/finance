@@ -31,7 +31,7 @@
             </article>
 
             <aside class="space-y-8">
-                <div class="w-full h-72 md:h-[24rem] rounded-md overflow-hidden">
+                <div class="w-full h-72 md:h-96 rounded-md overflow-hidden">
                     <img src="{{ $post['thumbnail'] ?? get_template_directory_uri() . '/assets/img/default.jpg' }}"
                         alt="" class="w-full h-full object-cover">
                 </div>
