@@ -170,11 +170,16 @@ add_action('init', function () {
     add_rewrite_rule('^contact/?$', 'index.php?custom_page=contact', 'top');
     add_rewrite_rule('^about/?$', 'index.php?custom_page=about', 'top');
     add_rewrite_rule('^rent/?$', 'index.php?custom_page=rent', 'top');
+    add_rewrite_rule('^blog/?$', 'index.php?custom_page=blog', 'top');
+    // Handle paged blog URLs like /blog/page/2/
+    add_rewrite_rule('^blog/page/([0-9]{1,})/?$', 'index.php?custom_page=blog&paged=$matches[1]', 'top');
 
-    // Flush rewrite rules on theme activation (only once)
-    if (get_option('sage_custom_routes_flushed') !== 'gallery_posts_added') {
+    // Flush rewrite rules on theme activation (only once).
+    // Bump the sentinel value when adding new custom routes so the flush runs one time.
+    // Bump sentinel to force a one-time rewrite flush when new rules are added.
+    if (get_option('sage_custom_routes_flushed') !== 'routes_v3') {
         flush_rewrite_rules();
-        update_option('sage_custom_routes_flushed', 'gallery_posts_added');
+        update_option('sage_custom_routes_flushed', 'routes_v3');
     }
 });
 
@@ -192,6 +197,20 @@ add_filter('query_vars', function ($vars) {
  */
 add_action('template_redirect', function () {
     $custom_page = get_query_var('custom_page');
+
+    if (is_singular('post')) {
+        // Render single post Blade view for posts (no root single.php required).
+        global $wp_query, $post;
+
+        if (! $post) {
+            $post = get_post();
+        }
+
+        setup_postdata($post);
+
+        echo view('single-blog-post')->render();
+        exit;
+    }
 
     if ($custom_page) {
         switch ($custom_page) {
@@ -252,6 +271,20 @@ add_action('template_redirect', function () {
                 }
 
                 echo view('template-about')->render();
+                exit;
+            case 'blog':
+                // Set up proper WordPress context for Blog page
+                global $wp_query, $post;
+
+                $blog_page = get_page_by_path('blog');
+                if ($blog_page) {
+                    $wp_query->queried_object = $blog_page;
+                    $wp_query->queried_object_id = $blog_page->ID;
+                    $post = $blog_page;
+                    setup_postdata($post);
+                }
+
+                echo view('template-blog')->render();
                 exit;
             case 'rent':
                 // Set up proper WordPress context for Rent page

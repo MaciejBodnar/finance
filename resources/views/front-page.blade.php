@@ -192,71 +192,35 @@
             </div>
 
             <div class="mt-12 grid gap-8 md:grid-cols-3">
-                <a href="/post/uproczona-ksiegowosc"
-                    class="group relative bg-white text-[#0b285f] rounded-md shadow-xl hover:shadow-2xl transition">
-                    <div class="h-48 px-10 pt-8 pb-3 w-full overflow-hidden">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/blog-1.jpg" alt=""
-                            class="w-full h-full object-cover" />
-                    </div>
-                    <div class="px-10 pb-8">
-                        <div class="flex items-center gap-2 text-xs text-slate-500 mb-3">
-                            <svg class="w-4 h-4 text-[#0b285f]" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="1.6">
-                                <rect x="3" y="4" width="18" height="18" rx="2"></rect>
-                                <path d="M16 2v4M8 2v4M3 10h18"></path>
-                            </svg>
-                            <span>wrzesień 15, 2025</span>
-                        </div>
-                        <h3 class="text-lg font-semibold leading-snug text-[#2d7e3b] group-hover:underline mb-3">Uproszczona
-                            księgowość: praktyczne wskazówki dla właścicieli firm</h3>
-                        <p class="text-sm text-slate-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam
-                            nonumy eirmod.</p>
-                    </div>
-                </a>
+                @php
+                    $data = \App\View\Blog::recentPosts(3);
+                    $posts = $data['posts'] ?? [];
+                @endphp
 
-                <a href="/post/od-chaosu-do-porzadku"
-                    class="group relative bg-white text-[#0b285f] rounded-md shadow-xl hover:shadow-2xl transition">
-                    <div class="h-48 px-10 pt-8 pb-3 w-full overflow-hidden">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/blog-2.jpg" alt=""
-                            class="w-full h-full object-cover" />
-                    </div>
-                    <div class="px-10 pb-8">
-                        <div class="flex items-center gap-2 text-xs text-slate-500 mb-3">
-                            <svg class="w-4 h-4 text-[#0b285f]" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="1.6">
-                                <rect x="3" y="4" width="18" height="18" rx="2"></rect>
-                                <path d="M16 2v4M8 2v4M3 10h18"></path>
-                            </svg>
-                            <span>wrzesień 15, 2025</span>
+                @foreach ($posts as $p)
+                    @php
+                        $img = $p['thumbnail'] ?: get_template_directory_uri() . '/assets/img/default.jpg';
+                    @endphp
+                    <a href="{{ $p['link'] }}"
+                        class="group relative bg-white text-[#0b285f] rounded-md shadow-xl hover:shadow-2xl transition">
+                        <div class="h-48 px-10 pt-8 pb-3 w-full overflow-hidden">
+                            <img src="{{ $img }}" alt="{{ $p['title'] }}" class="w-full h-full object-cover" />
                         </div>
-                        <h3 class="text-lg font-semibold leading-snug text-[#2d7e3b] group-hover:underline mb-3">Od chaosu
-                            do porządku: jak dobra księgowość wspiera rozwój biznesu</h3>
-                        <p class="text-sm text-slate-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam
-                            nonumy eirmod.</p>
-                    </div>
-                </a>
-
-                <a href="/post/wskazowki-dla-wlascicieli"
-                    class="group relative bg-white text-[#0b285f] rounded-md shadow-xl hover:shadow-2xl transition">
-                    <div class="h-48 px-10 pt-8 pb-3 w-full overflow-hidden">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/blog-3.jpg" alt=""
-                            class="w-full h-full object-cover" />
-                    </div>
-                    <div class="px-10 pb-8">
-                        <div class="flex items-center gap-2 text-xs text-slate-500 mb-3">
-                            <svg class="w-4 h-4 text-[#0b285f]" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="1.6">
-                                <rect x="3" y="4" width="18" height="18" rx="2"></rect>
-                                <path d="M16 2v4M8 2v4M3 10h18"></path>
-                            </svg>
-                            <span>wrzesień 15, 2025</span>
+                        <div class="px-10 pb-8">
+                            <div class="flex items-center gap-2 text-xs text-slate-500 mb-3">
+                                <svg class="w-4 h-4 text-[#0b285f]" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.6">
+                                    <rect x="3" y="4" width="18" height="18" rx="2"></rect>
+                                    <path d="M16 2v4M8 2v4M3 10h18"></path>
+                                </svg>
+                                <span>{{ $p['date'] }}</span>
+                            </div>
+                            <h3 class="text-lg font-semibold leading-snug text-[#2d7e3b] group-hover:underline mb-3">
+                                {{ $p['title'] }}</h3>
+                            <p class="text-sm text-slate-600">{{ $p['excerpt'] }}</p>
                         </div>
-                        <h3 class="text-lg font-semibold leading-snug text-[#2d7e3b] group-hover:underline mb-3">
-                            Uproszczona księgowość: praktyczne wskazówki dla właścicieli firm</h3>
-                        <p class="text-sm text-slate-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam
-                            nonumy eirmod.</p>
-                    </div>
-                </a>
+                    </a>
+                @endforeach
             </div>
 
             <div class="mt-10 text-center">
@@ -268,7 +232,7 @@
     </section>
     <section class="bg-[#2d7e3b] text-white py-16 md:py-24">
         <div class="max-w-6xl mx-auto px-4 lg:px-0">
-            <div class="max-w-[58rem]">
+            <div class="max-w-232">
                 <h2 class="text-3xl md:text-6xl lg:text-7xl leading-tight font-light">
                     Nie musisz nam wierzyć na słowo –
                     <span class="font-extrabold">zobacz, co mówią inni.</span>
@@ -326,7 +290,7 @@
     <section id="kontakt" class="relative py-16 md:py-24 overflow-hidden">
         <div class="absolute inset-x-0 top-0 h-1/2">
             <img src="<?php echo get_template_directory_uri(); ?>/resources/images/businessman-working.png" alt=""
-                class="w-full h-full object-cover opacity-70 [mask-image:linear-gradient(to_bottom,rgba(0,0,0,0.9),rgba(0,0,0,0.2)_60%,transparent_100%)]">
+                class="w-full h-full object-cover opacity-70">
         </div>
 
         <div class="relative max-w-4xl mx-auto px-4">
