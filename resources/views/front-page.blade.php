@@ -70,27 +70,33 @@
                                 <path d="M5 8l7 8 7-8z" />
                             </svg>
                         </div>
-                        <p>
-                            Wspieramy klientów prywatnych, a także przedsiębiorstwa oraz instytucje. Z naszych usług
-                            księgowych w Ealing mogą skorzystać zarówno małe firmy (Self–Employed i Partnership), jak i
-                            średnie oraz duże spółki (Limited Companies). Dzięki zatrudnianiu wykwalifikowanych i
-                            doświadczonych pracowników o różnych specjalizacjach możemy pomagać kompleksowo — również w
-                            kwestiach związanych z podatkami, sprawami formalnymi, kredytami czy też zakładaniem lub
-                            zamykaniem działalności.
-                        </p>
+                        <div class="flex flex-col gap-5">
+                            <p>
+                                Wspieramy klientów prywatnych, a także przedsiębiorstwa oraz instytucje. Z naszych usług
+                                księgowych w Ealing mogą skorzystać zarówno małe firmy (Self–Employed i Partnership), jak i
+                                średnie oraz duże spółki (Limited Companies). Dzięki zatrudnianiu wykwalifikowanych i
+                                doświadczonych pracowników o różnych specjalizacjach możemy pomagać kompleksowo — również w
+                                kwestiach związanych z podatkami, sprawami formalnymi, kredytami czy też zakładaniem lub
+                                zamykaniem działalności.
+                            </p>
+                            <p>
+                                Świadczymy usługi księgowe w całej Wielkiej Brytanii, zapewniając indywidualne podejście
+                                oraz
+                                profesjonalizm. Nasze biuro księgowe realizując zlecenia dla naszych klientów, działa z
+                                pełnym
+                                zaangażowaniem i sumiennie wykonujemy wszelkie zadania — tak, abyś osiągał swoje cele i mógł
+                                skupić
+                                się na rozwoju własnej działalności.
+                            </p>
+
+                            <p>
+                                Sprawdź, czym zajmuje się nasze biuro księgowe i skorzystaj z usług, świadczonych na
+                                najwyższym
+                                poziomie!
+                            </p>
+                        </div>
                     </div>
 
-                    <p>
-                        Świadczymy usługi księgowe w całej Wielkiej Brytanii, zapewniając indywidualne podejście oraz
-                        profesjonalizm. Nasze biuro księgowe realizując zlecenia dla naszych klientów, działa z pełnym
-                        zaangażowaniem i sumiennie wykonujemy wszelkie zadania — tak, abyś osiągał swoje cele i mógł skupić
-                        się na rozwoju własnej działalności.
-                    </p>
-
-                    <p>
-                        Sprawdź, czym zajmuje się nasze biuro księgowe i skorzystaj z usług, świadczonych na najwyższym
-                        poziomie!
-                    </p>
                 </div>
             </div>
 
@@ -188,12 +194,11 @@
             <div class="mt-12 grid gap-8 md:grid-cols-3">
                 <a href="/post/uproczona-ksiegowosc"
                     class="group relative bg-white text-[#0b285f] rounded-md shadow-xl hover:shadow-2xl transition">
-                    <div class="absolute inset-y-0 left-0 w-3.5 bg-[#0b285f]"></div>
-                    <div class="h-48 w-full overflow-hidden">
+                    <div class="h-48 px-10 pt-8 pb-3 w-full overflow-hidden">
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/img/blog-1.jpg" alt=""
                             class="w-full h-full object-cover" />
                     </div>
-                    <div class="p-6">
+                    <div class="px-10 pb-8">
                         <div class="flex items-center gap-2 text-xs text-slate-500 mb-3">
                             <svg class="w-4 h-4 text-[#0b285f]" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="1.6">
@@ -207,17 +212,15 @@
                         <p class="text-sm text-slate-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam
                             nonumy eirmod.</p>
                     </div>
-                    <span class="absolute inset-0" aria-hidden="true"></span>
                 </a>
 
                 <a href="/post/od-chaosu-do-porzadku"
                     class="group relative bg-white text-[#0b285f] rounded-md shadow-xl hover:shadow-2xl transition">
-                    <div class="absolute inset-y-0 left-0 w-3.5 bg-[#0b285f]"></div>
-                    <div class="h-48 w-full overflow-hidden">
+                    <div class="h-48 px-10 pt-8 pb-3 w-full overflow-hidden">
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/img/blog-2.jpg" alt=""
                             class="w-full h-full object-cover" />
                     </div>
-                    <div class="p-6">
+                    <div class="px-10 pb-8">
                         <div class="flex items-center gap-2 text-xs text-slate-500 mb-3">
                             <svg class="w-4 h-4 text-[#0b285f]" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="1.6">
@@ -231,17 +234,15 @@
                         <p class="text-sm text-slate-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam
                             nonumy eirmod.</p>
                     </div>
-                    <span class="absolute inset-0" aria-hidden="true"></span>
                 </a>
 
                 <a href="/post/wskazowki-dla-wlascicieli"
                     class="group relative bg-white text-[#0b285f] rounded-md shadow-xl hover:shadow-2xl transition">
-                    <div class="absolute inset-y-0 left-0 w-3.5 bg-[#0b285f]"></div>
-                    <div class="h-48 w-full overflow-hidden">
+                    <div class="h-48 px-10 pt-8 pb-3 w-full overflow-hidden">
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/img/blog-3.jpg" alt=""
                             class="w-full h-full object-cover" />
                     </div>
-                    <div class="p-6">
+                    <div class="px-10 pb-8">
                         <div class="flex items-center gap-2 text-xs text-slate-500 mb-3">
                             <svg class="w-4 h-4 text-[#0b285f]" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="1.6">
@@ -255,7 +256,6 @@
                         <p class="text-sm text-slate-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam
                             nonumy eirmod.</p>
                     </div>
-                    <span class="absolute inset-0" aria-hidden="true"></span>
                 </a>
             </div>
 
@@ -264,6 +264,133 @@
                     class="inline-flex items-center justify-center px-8 py-3 bg-[#0b285f] text-white font-semibold rounded-md hover:bg-[#0a214f] transition">CZYTAJ
                     WIĘCEJ</a>
             </div>
+        </div>
+    </section>
+    <section class="bg-[#2d7e3b] text-white py-16 md:py-24">
+        <div class="max-w-6xl mx-auto px-4 lg:px-0">
+            <div class="max-w-[58rem]">
+                <h2 class="text-3xl md:text-6xl lg:text-7xl leading-tight font-light">
+                    Nie musisz nam wierzyć na słowo –
+                    <span class="font-extrabold">zobacz, co mówią inni.</span>
+                </h2>
+                <div class="mt-6 flex flex-wrap items-center gap-4">
+                    <div class="flex items-center gap-1">
+                        <svg class="w-4 h-4 text-[#0b285f]" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M5 8l7 8 7-8z" />
+                        </svg>
+                        <svg class="w-4 h-4 text-[#0b285f]" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M5 8l7 8 7-8z" />
+                        </svg>
+                    </div>
+                    <p class="text-white/90 text-sm md:text-base">Zobacz pełne recenzje na naszym Facebooku.</p>
+                    <a href="https://facebook.com"
+                        class="inline-flex items-center gap-2 px-4 py-2 bg-[#0b285f] rounded-sm text-sm font-bold tracking-wide hover:bg-[#0a234f] transition">
+                        ZOBACZ
+                        <svg class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M7 17L17 7" />
+                            <path d="M8 7h9v9" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="mt-12 grid gap-10 md:gap-12 md:grid-cols-2 lg:grid-cols-4">
+                <div class="pt-8 border-t border-white/70">
+                    <p class="font-semibold">Ewa Foryszewska–Jarzyńska</p>
+                    <p class="mt-4 leading-relaxed">Bardzo polecam! Profesjonalnie i miło.</p>
+                </div>
+
+                <div class="pt-8 border-t border-white/70">
+                    <p class="font-semibold">Tomasz Ostapiuk</p>
+                    <p class="mt-4 leading-relaxed">Highly Recommended, I been using Optimum Tax for many years and I’m
+                        highly recommend them to everyone that want them accounts in place &amp; order. Thank you Optimum
+                        Tax team for keeping up good work</p>
+                </div>
+
+                <div class="pt-8 border-t border-white/70">
+                    <p class="font-semibold">Jagoda Katarzyna</p>
+                    <p class="mt-4 leading-relaxed">Kompetentna i miła obsługa, indywidualne podejście do klienta, wszystko
+                        zrealizowane w terminie 🙂</p>
+                </div>
+
+                <div class="pt-8 border-t border-white/70">
+                    <p class="font-semibold">Aleksandra Prokop</p>
+                    <p class="mt-4 leading-relaxed">Usługi na wysokim poziomie – rzetelnie, terminowo i profesjonalnie.
+                        Dzięki takiemu wsparciu można mieć pewność, że wszystko będzie dopięte na ostatni guzik. Polecam!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="kontakt" class="relative py-16 md:py-24 overflow-hidden">
+        <div class="absolute inset-x-0 top-0 h-1/2">
+            <img src="<?php echo get_template_directory_uri(); ?>/resources/images/businessman-working.png" alt=""
+                class="w-full h-full object-cover opacity-70 [mask-image:linear-gradient(to_bottom,rgba(0,0,0,0.9),rgba(0,0,0,0.2)_60%,transparent_100%)]">
+        </div>
+
+        <div class="relative max-w-4xl mx-auto px-4">
+            <div class="text-center mb-10 md:mb-12">
+                <h2 class="text-3xl md:text-5xl font-extrabold leading-tight text-[#0b285f]">Postaw na pewność i spokój,
+                </h2>
+                <p class="text-2xl md:text-4xl leading-tight text-[#6f7ea6] -mt-1">powierz księgowość ekspertom</p>
+            </div>
+
+            <form action="#" method="post" class="space-y-5 text-sm">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    <div>
+                        <label class="block mb-1 text-[#0b285f]">Imię</label>
+                        <input type="text"
+                            class="w-full border-2 border-[#0b285f] rounded-none px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#0b285f]">
+                    </div>
+                    <div>
+                        <label class="block mb-1 text-[#0b285f]">Nazwisko</label>
+                        <input type="text"
+                            class="w-full border-2 border-[#0b285f] rounded-none px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#0b285f]">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    <div>
+                        <label class="block mb-1 text-[#0b285f]">Email</label>
+                        <input type="email"
+                            class="w-full border-2 border-[#0b285f] rounded-none px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#0b285f]">
+                    </div>
+                    <div>
+                        <label class="block mb-1 text-[#0b285f]">Numer Kontaktowy</label>
+                        <input type="text"
+                            class="w-full border-2 border-[#0b285f] rounded-none px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#0b285f]">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block mb-1 text-[#0b285f]">Temat</label>
+                    <input type="text"
+                        class="w-full border-2 border-[#0b285f] rounded-none px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#0b285f]">
+                </div>
+
+                <div>
+                    <label class="block mb-1 text-[#0b285f]">Wiadomość</label>
+                    <textarea rows="6"
+                        class="w-full border-2 border-[#0b285f] rounded-none px-3 py-2 resize-y focus:outline-none focus:ring-2 focus:ring-[#0b285f]"></textarea>
+                </div>
+
+                <div class="flex items-start gap-3">
+                    <input type="checkbox"
+                        class="mt-1 w-4 h-4 border-2 border-[#0b285f] rounded-none focus:outline-none focus:ring-2 focus:ring-[#0b285f]">
+                    <p class="text-[12px] leading-relaxed text-[#3b445b]">Niniejszym oświadczam, że zapoznałem się z
+                        polityką prywatności i wyrażam zgodę na przetwarzanie przez Optimum Tax LTD z siedzibą przy 86
+                        Boston Road, London W7 3TR moich danych osobowych w zakresie niezbędnym do realizacji świadczonych
+                        usług na moją rzecz. Jednocześnie potwierdzam, że mam ukończone 16 lat i jestem świadomy, że
+                        przysługuje mi prawo do wglądu w moje dane osobowe oraz prawo do udzielenia zgody i żądania
+                        usunięcia moich danych osobowych.</p>
+                </div>
+
+                <div class="pt-2 text-center">
+                    <button type="submit"
+                        class="inline-flex items-center justify-center px-8 py-3 bg-[#0b285f] text-white font-semibold tracking-wide rounded-none hover:bg-[#0a234f] transition">KONTAKT</button>
+                </div>
+            </form>
         </div>
     </section>
 @endsection
