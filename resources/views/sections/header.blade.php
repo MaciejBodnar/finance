@@ -53,11 +53,6 @@
                         </button>
                     </li>
                     <li>
-                        <a href="#partnerzy" class="hover:text-[#ffba6a] transition">
-                            Partnerzy
-                        </a>
-                    </li>
-                    <li>
                         <a href="#blog" class="hover:text-[#ffba6a] transition">
                             Blog
                         </a>

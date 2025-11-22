@@ -57,9 +57,9 @@
                                 <span>{{ $p['date'] }}</span>
                             </div>
                             <h2
-                                class="text-base md:text-lg font-semibold leading-snug text-[#2d7e3b] group-hover:underline">
+                                class="text-base md:text-lg font-semibold leading-snug text-[#2d7e3b] group-hover:underline line-clamp-3">
                                 {{ $p['title'] }}</h2>
-                            <p class="mt-3 text-sm text-slate-600">{{ $p['excerpt'] }}</p>
+                            <p class="mt-3 text-sm text-slate-600 line-clamp-2">{{ $p['excerpt'] }}</p>
                         </div>
                     </a>
                 @endforeach

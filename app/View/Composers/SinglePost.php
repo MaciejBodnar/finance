@@ -74,6 +74,8 @@ class SinglePost extends Composer
 
         return [
             'title' => get_the_title($prev),
+            'excerpt' => get_the_excerpt($prev),
+            'date' => get_the_date('', $prev),
             'link' => get_permalink($prev),
             'thumbnail' => $this->getImageFromField($hero, get_the_post_thumbnail_url($prev, 'medium'), 'medium'),
         ];

@@ -181,11 +181,11 @@
         <div class="relative max-w-6xl mx-auto px-4 lg:px-0">
             <div class="text-center">
                 <h2 class="text-3xl md:text-5xl font-bold">Blog</h2>
-                <div class="mt-3 flex items-center justify-center gap-1">
-                    <svg class="w-4 h-4 text-[#2d7e3b]" viewBox="0 0 24 24" fill="currentColor">
+                <div class="mt-3 flex items-center justify-center">
+                    <svg class="w-8 h-8 text-[#2d7e3b]" viewBox="0 0 10 10" fill="currentColor">
                         <path d="M5 8l7 8 7-8z" />
                     </svg>
-                    <svg class="w-4 h-4 text-[#2d7e3b]" viewBox="0 0 24 24" fill="currentColor">
+                    <svg class="w-8 h-8 text-[#2d7e3b]" viewBox="0 0 10 10" fill="currentColor">
                         <path d="M5 8l7 8 7-8z" />
                     </svg>
                 </div>
@@ -215,9 +215,10 @@
                                 </svg>
                                 <span>{{ $p['date'] }}</span>
                             </div>
-                            <h3 class="text-lg font-semibold leading-snug text-[#2d7e3b] group-hover:underline mb-3">
+                            <h3
+                                class="text-lg font-semibold leading-snug text-[#2d7e3b] group-hover:underline mb-3 line-clamp-3">
                                 {{ $p['title'] }}</h3>
-                            <p class="text-sm text-slate-600">{{ $p['excerpt'] }}</p>
+                            <p class="text-sm text-slate-600 line-clamp-2">{{ $p['excerpt'] }}</p>
                         </div>
                     </a>
                 @endforeach
