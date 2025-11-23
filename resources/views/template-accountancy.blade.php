@@ -6,31 +6,37 @@
 
 @section('content')
     <section>
-        <div class="max-w-6xl px-4 lg:px-0 flex flex-row min-w-full justify-between gap-8 lg:gap-14">
-            <div class="pl-100">
-                <h1 class="text-[#0b285f] mt-25 text-3xl md:text-5xl font-extrabold leading-tight">
-                    Wirtualne <span class="font-light">biuro</span>
+        <div class="max-w-6xl px-4 lg:px-0 flex min-w-full gap-8 lg:gap-64 justify-end">
+            <div class="justify-self-end">
+                <h1 class="text-[#0b285f] text-3xl md:text-5xl font-light leading-tight mt-24 max-w-[732px]">
+                    Wirtualne biuro i księgowość w UK
                 </h1>
-                <div class="mt-6 flex items-center gap-1">
-                    <svg class="w-4 h-4 text-[#2d7e3b]" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M5 8l7 8 7-8z" />
-                    </svg>
-                    <svg class="w-4 h-4 text-[#2d7e3b]" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M5 8l7 8 7-8z" />
-                    </svg>
-                </div>
-                <div class="mt-6 space-y-5 text-[#233] leading-7">
-                    <p>Naszą dodatkową usługą jest wirtualne biuro, które pozwoli Ci legalnie założyć firmę w Wielkiej
-                        Brytanii, nawet bez konieczności posiadania własnego adresu. Jak to możliwe?</p>
-                    <p>Nasza księgowa i biuro księgowe w Londynie udostępnia Ci firmowy adres, dzięki któremu możliwe jest
-                        zarejestrowanie działalności i prowadzenie korespondencji z klientami. Adres ten będziesz mógł
-                        zgłosić zarówno w rejestrze firm, jak i w urzędzie skarbowym – jest to rozwiązanie w pełni legalne,
-                        z którego korzysta wielu Polaków, pragnących prowadzić działalność w Wielkiej Brytanii. Oprócz tego,
-                        na korespondencję z adresu naszego polskiego biura rachunkowego, będziesz również otrzymywał firmową
-                        korespondencję, którą wyślemy na wskazany przez Ciebie adres.</p>
+                <div class="flex gap-10 mt-24">
+                    <div class="flex items-start gap-1">
+                        <svg class="w-4 h-4 text-[#2d7e3b]" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M5 8l7 8 7-8z" />
+                        </svg>
+                        <svg class="w-4 h-4 text-[#2d7e3b]" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M5 8l7 8 7-8z" />
+                        </svg>
+                    </div>
+                    <div class="space-y-5 text-[#233] leading-7 max-w-prose">
+                        <p>Naszą dodatkową usługą jest wirtualne biuro, które pozwoli Ci legalnie założyć firmę w Wielkiej
+                            Brytanii, nawet bez konieczności posiadania własnego adresu. Jak to możliwe?</p>
+                        <p>Nasza księgowa i biuro księgowe w Londynie udostępnia Ci firmowy adres, dzięki któremu możliwe
+                            jest
+                            zarejestrowanie działalności i prowadzenie korespondencji z klientami. Adres ten będziesz mógł
+                            zgłosić zarówno w rejestrze firm, jak i w urzędzie skarbowym – jest to rozwiązanie w pełni
+                            legalne,
+                            z którego korzysta wielu Polaków, pragnących prowadzić działalność w Wielkiej Brytanii. Oprócz
+                            tego,
+                            na korespondencję z adresu naszego polskiego biura rachunkowego, będziesz również otrzymywał
+                            firmową
+                            korespondencję, którą wyślemy na wskazany przez Ciebie adres.</p>
+                    </div>
                 </div>
             </div>
-            <div class="min-w-[690px] h-[914px] rounded-md overflow-hidden">
+            <div class="justify-self-end min-w-[690px] h-[914px] rounded-md overflow-hidden">
                 <img src="{{ get_template_directory_uri() }}/resources/images/asian-business-woman.png" alt=""
                     class="w-full h-full object-cover">
             </div>
@@ -38,30 +44,33 @@
     </section>
 
     <section class="bg-[#f3f5f7] relative min-h-[718px]">
-        <div class="max-w-6xl px-4 lg:px-0 flex justify-between min-w-full gap-8 lg:gap-14 items-center pb-40">
+        <div class="max-w-6xl px-4 lg:px-0 flex min-w-full gap-8 lg:gap-24 items-center pb-40">
             <div class="min-w-[690px] min-h-[718px] rounded-md overflow-hidden">
                 <img src="{{ get_template_directory_uri() }}/resources/images/modern.png" alt=""
                     class="w-full h-full object-cover">
             </div>
-            <div class="pr-100">
+            <div class="justify-self-start">
                 <h2 class="text-[#0b285f] text-3xl md:text-5xl font-light leading-tight">
-                    Wirtualne biuro i
-                    <span class="font-extrabold block">księgowość w UK</span>
+                    Wirtualne biuro i księgowość w UK
                 </h2>
-                <div class="mt-6 flex items-center gap-1">
-                    <svg class="w-4 h-4 text-[#2d7e3b]" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M5 8l7 8 7-8z" />
-                    </svg>
-                    <svg class="w-4 h-4 text-[#2d7e3b]" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M5 8l7 8 7-8z" />
-                    </svg>
-                </div>
-                <div class="mt-6 space-y-5 text-[#233] leading-7 max-w-prose">
-                    <p>Z oferowanego przez nas wirtualnego biura skorzystało już wielu przedsiębiorców. W pakiecie otrzymali
-                        oni także fachowe doradztwo księgowe w Londynie oraz całej Wielkiej Brytanii. Dzięki temu mogą oni w
-                        spokoju zajmować się swoją firmą i jej rozwojem, a my prowadzimy ich księgowość w UK.</p>
-                    <p>Jeśli jesteś zainteresowany tą usługą, zapraszamy do kontaktu. Nasz księgowy w Ealing chętnie
-                        przedstawi Ci w pełni spersonalizowaną ofertę, która z pewnością spełni Twoje oczekiwania.</p>
+                <div class="flex gap-10">
+                    <div class="mt-6 flex items-start gap-1">
+                        <svg class="w-8 h-8 text-[#2d7e3b]" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M5 8l7 8 7-8z" />
+                        </svg>
+                        <svg class="w-8 h-8 text-[#2d7e3b]" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M5 8l7 8 7-8z" />
+                        </svg>
+                    </div>
+                    <div class="mt-6 space-y-5 text-[#233] leading-7 max-w-prose">
+                        <p>Z oferowanego przez nas wirtualnego biura skorzystało już wielu przedsiębiorców. W pakiecie
+                            otrzymali
+                            oni także fachowe doradztwo księgowe w Londynie oraz całej Wielkiej Brytanii. Dzięki temu mogą
+                            oni w
+                            spokoju zajmować się swoją firmą i jej rozwojem, a my prowadzimy ich księgowość w UK.</p>
+                        <p>Jeśli jesteś zainteresowany tą usługą, zapraszamy do kontaktu. Nasz księgowy w Ealing chętnie
+                            przedstawi Ci w pełni spersonalizowaną ofertę, która z pewnością spełni Twoje oczekiwania.</p>
+                    </div>
                 </div>
             </div>
         </div>

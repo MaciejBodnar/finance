@@ -31,8 +31,8 @@
     </div>
 
     <nav class="bg-[#122457] text-white">
-        <div class="max-w-6xl mx-auto px-4 lg:px-0">
-            <div class="flex items-center justify-between h-12">
+        <div class="max-w-6xl mx-auto px-4 lg:px-0 py-6">
+            <div class="flex items-center justify-between">
 
                 <ul class="hidden md:flex items-center gap-8 text-sm">
                     <li>
