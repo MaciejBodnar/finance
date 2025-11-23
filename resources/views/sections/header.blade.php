@@ -75,7 +75,6 @@
         </div>
     </nav>
 
-    <!-- Full-width Księgowość dialog panel -->
     <div id="ksiegowosc-panel" class="hidden absolute left-0 right-0 top-full z-50">
         <div class="bg-white text-[#0b285f] shadow-lg">
             <div class="max-w-6xl mx-auto px-4 lg:px-0 py-8">
@@ -108,42 +107,4 @@
             </div>
         </div>
     </div>
-
-    <script>
-        (function() {
-            const btn = document.getElementById('ksiegowosc-link');
-            const panel = document.getElementById('ksiegowosc-panel');
-
-            if (!btn || !panel) return;
-
-            const closePanel = () => {
-                panel.classList.add('hidden');
-                btn.setAttribute('aria-expanded', 'false');
-            };
-
-            const openPanel = () => {
-                panel.classList.remove('hidden');
-                btn.setAttribute('aria-expanded', 'true');
-            };
-
-            btn.addEventListener('click', (e) => {
-                e.preventDefault();
-                if (panel.classList.contains('hidden')) openPanel();
-                else closePanel();
-            });
-
-            // Close on outside click
-            document.addEventListener('click', (e) => {
-                if (panel.classList.contains('hidden')) return;
-                if (e.target === btn || btn.contains(e.target)) return;
-                if (panel.contains(e.target)) return;
-                closePanel();
-            });
-
-            // Close on Escape
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape') closePanel();
-            });
-        })();
-    </script>
 </header>

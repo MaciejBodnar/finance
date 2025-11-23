@@ -5,9 +5,9 @@
 @extends('layouts.app')
 
 @section('content')
-    <section>
-        <div class="max-w-6xl px-4 lg:px-0 flex min-w-full gap-8 lg:gap-64 justify-end">
-            <div class="justify-self-end">
+    <section class="relative">
+        <div class="max-w-6xl px-4 lg:px-0 pb-40 flex min-w-full gap-8 lg:gap-64 justify-end">
+            <div class="ml-10 justify-self-end">
                 <h1 class="text-[#0b285f] text-3xl md:text-5xl font-light leading-tight mt-24 max-w-[732px]">
                     Wirtualne biuro i księgowość w UK
                 </h1>
@@ -41,6 +41,39 @@
                     class="w-full h-full object-cover">
             </div>
         </div>
+        <div class="absolute bottom-0 w-full min-h-[322px] flex items-center"
+            style="background-image: url('{{ get_template_directory_uri() }}/resources/images/Subtraction.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+            <div class="grid grid-cols-3 min-h-full justify-center max-w-6xl mx-auto gap-10 items-center">
+                <img src="{{ get_template_directory_uri() }}/resources/images/telefon.png" alt="Księgowa na fotelu"
+                    class="absolute bottom-0 left-40 object-cover" />
+                <div>
+
+                </div>
+                <div class="flex flex-col">
+                    <h2 class="text-4xl text-white">Umów się na spotkanie</h2>
+                    <div class="mt-6">
+                        <a href="#kontakt" class="inline-flex items-center justify-center text-white/90 hover:text-white"
+                            aria-label="Przejdź do sekcji kontakt">
+                            <span class="sr-only">Przejdź do sekcji kontakt</span>
+                            <svg class="w-12 h-12 mt-2 animate-bounce" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M12 5v14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M19 12l-7 7-7-7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <p class="text-white">Nasi księgowi w Hanwell są cały czas do Twojej dyspozycji – zadzwoń albo
+                        napisz,
+                        by umówić się na spotkanie.<br />
+                        <strong>Zajmiemy się Twoją sprawą w sposób rzetelny i kompleksowy! </strong>
+                    </p>
+                </div>
+            </div>
+        </div>
     </section>
 
     <section class="bg-[#f3f5f7] relative min-h-[718px]">
@@ -49,7 +82,7 @@
                 <img src="{{ get_template_directory_uri() }}/resources/images/modern.png" alt=""
                     class="w-full h-full object-cover">
             </div>
-            <div class="justify-self-start">
+            <div class="mr-10 justify-self-start">
                 <h2 class="text-[#0b285f] text-3xl md:text-5xl font-light leading-tight">
                     Wirtualne biuro i księgowość w UK
                 </h2>
@@ -76,17 +109,27 @@
         </div>
         <div class="absolute bottom-0 w-full min-h-[322px] flex items-center"
             style="background-image: url('{{ get_template_directory_uri() }}/resources/images/Subtraction.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
-            <div class="grid grid-cols-3 min-h-full justify-center max-w-6xl mx-auto gap-10">
+            <div class="grid grid-cols-3 min-h-full justify-center max-w-6xl mx-auto gap-10 items-center">
                 <img src="{{ get_template_directory_uri() }}/resources/images/telefon.png" alt="Księgowa na fotelu"
                     class="absolute bottom-0 left-40 object-cover" />
                 <div>
 
                 </div>
-                <div class="flex flex-col gap-12">
+                <div class="flex flex-col">
                     <h2 class="text-4xl text-white">Umów się na spotkanie</h2>
-                    <a
-                        class="w-fit hover:cursor-pointer border-2 border-black py-2 px-12 bg-[#122457] text-white uppercase">Umów
-                        się</a>
+                    <div class="mt-6">
+                        <a href="#kontakt" class="inline-flex items-center justify-center text-white/90 hover:text-white"
+                            aria-label="Przejdź do sekcji kontakt">
+                            <span class="sr-only">Przejdź do sekcji kontakt</span>
+                            <svg class="w-12 h-12 mt-2 animate-bounce" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M12 5v14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M19 12l-7 7-7-7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </a>
+                    </div>
                 </div>
                 <div>
                     <p class="text-white">Nasi księgowi w Hanwell są cały czas do Twojej dyspozycji – zadzwoń albo
