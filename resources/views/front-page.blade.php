@@ -7,7 +7,7 @@
 @section('content')
     <section class="bg-[#122457]">
         <div class="relative">
-            <div class="relative min-h-[830px] max-w-6xl mx-auto px-4 lg:px-0 grid lg:grid-cols-2">
+            <div class="relative min-h-[830px] max-w-6xl mx-auto px-4 lg:px-0 grid lg:grid-cols-2 pb-[640px] md:pb-0">
                 <div class="space-y-8 pt-20">
                     <h1 class="text-3xl md:text-4xl lg:text-6xl text-[#ffc23a] max-w-[370px]">
                         Twój partner
@@ -27,9 +27,35 @@
 
 
             </div>
-            <div class="static md:absolute bottom-0 w-full min-h-[322px] flex items-center"
+            <!-- Desktop / md+ background -->
+            <div class="absolute bottom-0 w-full min-h-[322px] hidden md:flex items-center"
                 style="background-image: url('{{ get_template_directory_uri() }}/resources/images/Subtraction.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
                 <div class="grid md:grid-cols-3 min-h-full items-center justify-center max-w-6xl mx-auto gap-10">
+                    <img src="{{ get_template_directory_uri() }}/resources/images/telefon.png" alt="Księgowa na fotelu"
+                        class="static max-md:order-last md:absolute bottom-0 left-40 object-cover" />
+                    <div>
+
+                    </div>
+                    <div class="flex flex-col gap-12">
+                        <h2 class="text-4xl text-white max-w-[236px]">Umów się na spotkanie</h2>
+                        <a
+                            class="w-fit hover:cursor-pointer border-2 border-black py-2 px-12 bg-[#122457] text-white uppercase">Umów
+                            się</a>
+                    </div>
+                    <div>
+                        <p class="text-white">Nasi księgowi w Hanwell są cały czas do Twojej dyspozycji – zadzwoń albo
+                            napisz,
+                            by umówić się na spotkanie. Zajmiemy się Twoją sprawą w sposób rzetelny i kompleksowy!
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile background (visible on small screens) -->
+            <div class="absolute bottom-0 max-w-screen min-h-[322px] flex md:hidden items-center"
+                style="background-image: url('{{ get_template_directory_uri() }}/resources/images/Subtraction-6.png'); background-size: cover; background-repeat: no-repeat;">
+                <div
+                    class="grid md:grid-cols-3 min-h-full items-center justify-center max-w-6xl mt-10 mx-10 md:mx-auto gap-10">
                     <img src="{{ get_template_directory_uri() }}/resources/images/telefon.png" alt="Księgowa na fotelu"
                         class="static max-md:order-last md:absolute bottom-0 left-40 object-cover" />
                     <div>
@@ -69,25 +95,34 @@
                                 <path d="M5 8l7 8 7-8z" />
                             </svg>
                         </div>
-                        <p>
-                            Wspieramy klientów prywatnych, a także przedsiębiorstwa oraz instytucje. Z naszych usług
-                            księgowych w Ealing mogą skorzystać zarówno małe firmy (Self–Employed i Partnership), jak i
-                            średnie oraz duże spółki (Limited Companies). Dzięki zatrudnianiu wykwalifikowanych i
-                            doświadczonych pracowników o różnych specjalizacjach możemy pomagać kompleksowo — również w
-                            kwestiach związanych z podatkami, sprawami formalnymi, kredytami czy też zakładaniem lub
-                            zamykaniem działalności.
+                        <div class="relative">
+                            <p data-clamp-id="intro-1"
+                                class="text-[#233] text-sm md:text-base leading-relaxed line-clamp-8 md:line-clamp-none">
+                                Wspieramy klientów prywatnych, a także przedsiębiorstwa oraz instytucje. Z naszych usług
+                                księgowych w Ealing mogą skorzystać zarówno małe firmy (Self–Employed i Partnership), jak i
+                                średnie oraz duże spółki (Limited Companies). Dzięki zatrudnianiu wykwalifikowanych i
+                                doświadczonych pracowników o różnych specjalizacjach możemy pomagać kompleksowo — również w
+                                kwestiach związanych z podatkami, sprawami formalnymi, kredytami czy też zakładaniem lub
+                                zamykaniem działalności.
 
-                            Świadczymy usługi księgowe w całej Wielkiej Brytanii, zapewniając indywidualne podejście
-                            oraz
-                            profesjonalizm. Nasze biuro księgowe realizując zlecenia dla naszych klientów, działa z
-                            pełnym
-                            zaangażowaniem i sumiennie wykonujemy wszelkie zadania — tak, abyś osiągał swoje cele i mógł
-                            skupić
-                            się na rozwoju własnej działalności.
-                            Sprawdź, czym zajmuje się nasze biuro księgowe i skorzystaj z usług, świadczonych na
-                            najwyższym
-                            poziomie!
-                        </p>
+                                Świadczymy usługi księgowe w całej Wielkiej Brytanii, zapewniając indywidualne podejście
+                                oraz
+                                profesjonalizm. Nasze biuro księgowe realizując zlecenia dla naszych klientów, działa z
+                                pełnym
+                                zaangażowaniem i sumiennie wykonujemy wszelkie zadania — tak, abyś osiągał swoje cele i mógł
+                                skupić
+                                się na rozwoju własnej działalności.
+                                Sprawdź, czym zajmuje się nasze biuro księgowe i skorzystaj z usług, świadczonych na
+                                najwyższym
+                                poziomie!
+                            </p>
+
+                            <!-- Mobile-only toggle -->
+                            <button data-clamp-toggle="intro-1" aria-expanded="false"
+                                class="mt-3 md:hidden text-sm font-semibold text-[#0b285f]">
+                                Pokaż więcej
+                            </button>
+                        </div>
                     </div>
 
                 </div>
@@ -140,7 +175,7 @@
         foreach ($items as $it):
       ?>
                 <a href="<?php echo $it['href']; ?>"
-                    class="group relative bg-[#2d7e3b] text-white rounded-sm pb-9 px-9 pt-10 min-h-[286px] flex flex-col justify-between focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#2d7e3b] focus:ring-offset-white hover:brightness-110 transition">
+                    class="group relative bg-[#2d7e3b] text-white rounded-sm pb-9 px-9 pt-10 min-h-fit md:min-h-[286px] flex flex-row md:flex-col justify-between focus:ring-offset-2 focus:ring-[#2d7e3b] focus:ring-offset-white hover:brightness-110 transition">
                     <div class="text-white/95">
                         <div class="text-white mb-7">
                             <?php echo icon_svg($it['icon']); ?>
@@ -150,7 +185,7 @@
                         </div>
                     </div>
 
-                    <div class="flex items-center gap-2">
+                    <div class="flex items-start md:items-center gap-2">
                         <svg class="w-8 h-8 text-white transition-transform group-hover:translate-y-0.5" viewBox="0 0 24 24"
                             fill="currentColor">
                             <path d="M5 8l7 8 7-8z" />
@@ -193,7 +228,7 @@
                         $img = $p['thumbnail'] ?: get_template_directory_uri() . '/assets/img/default.jpg';
                     @endphp
                     <a href="{{ $p['link'] }}"
-                        class="group relative bg-white text-[#0b285f] rounded-md shadow-xl hover:shadow-2xl transition w-full max-w-[330px] md:max-w-full">
+                        class="group relative bg-white text-[#0b285f] rounded-md shadow-xl hover:shadow-2xl transition w-full max-w-[330px] md:max-w-full {{ $loop->index > 0 ? 'hidden md:block' : '' }}">
                         <div class="h-48 px-10 pt-8 pb-3 w-full overflow-hidden">
                             <img src="{{ $img }}" alt="{{ $p['title'] }}" class="w-full h-full object-cover" />
                         </div>
@@ -252,30 +287,51 @@
                 </div>
             </div>
 
-            <div class="mt-12 grid gap-10 md:gap-12 md:grid-cols-2 lg:grid-cols-4">
-                <div class="pt-8 border-t-2 border-white/70">
-                    <p class="font-semibold">Ewa Foryszewska–Jarzyńska</p>
-                    <p class="mt-4 leading-relaxed">Bardzo polecam! Profesjonalnie i miło.</p>
+            <div class="mt-12">
+                <div id="testimonials-carousel" class="overflow-hidden">
+                    <div class="flex flex-nowrap md:grid md:grid-cols-2 lg:grid-cols-4 md:gap-10 transition-transform">
+                        <div class="w-full shrink-0 md:pt-8 md:border-t-2 md:border-white/70 px-4">
+                            <p class="font-semibold">Ewa Foryszewska–Jarzyńska</p>
+                            <p class="mt-4 leading-relaxed">Bardzo polecam! Profesjonalnie i miło.</p>
+                        </div>
+
+                        <div class="w-full shrink-0 md:pt-8 md:border-t-2 md:border-white/70 px-4">
+                            <p class="font-semibold">Tomasz Ostapiuk</p>
+                            <p class="mt-4 leading-relaxed">Highly Recommended, I been using Optimum Tax for many years and
+                                I’m
+                                highly recommend them to everyone that want them accounts in place &amp; order. Thank you
+                                Optimum
+                                Tax team for keeping up good work</p>
+                        </div>
+
+                        <div class="w-full shrink-0 md:pt-8 md:border-t-2 md:border-white/70 px-4">
+                            <p class="font-semibold">Jagoda Katarzyna</p>
+                            <p class="mt-4 leading-relaxed">Kompetentna i miła obsługa, indywidualne podejście do klienta,
+                                wszystko
+                                zrealizowane w terminie 🙂</p>
+                        </div>
+
+                        <div class="w-full shrink-0 md:pt-8 md:border-t-2 md:border-white/70 px-4">
+                            <p class="font-semibold">Aleksandra Prokop</p>
+                            <p class="mt-4 leading-relaxed">Usługi na wysokim poziomie – rzetelnie, terminowo i
+                                profesjonalnie.
+                                Dzięki takiemu wsparciu można mieć pewność, że wszystko będzie dopięte na ostatni guzik.
+                                Polecam!
+                            </p>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="pt-8 border-t-2 border-white/70">
-                    <p class="font-semibold">Tomasz Ostapiuk</p>
-                    <p class="mt-4 leading-relaxed">Highly Recommended, I been using Optimum Tax for many years and I’m
-                        highly recommend them to everyone that want them accounts in place &amp; order. Thank you Optimum
-                        Tax team for keeping up good work</p>
-                </div>
-
-                <div class="pt-8 border-t-2 border-white/70">
-                    <p class="font-semibold">Jagoda Katarzyna</p>
-                    <p class="mt-4 leading-relaxed">Kompetentna i miła obsługa, indywidualne podejście do klienta, wszystko
-                        zrealizowane w terminie 🙂</p>
-                </div>
-
-                <div class="pt-8 border-t-2 border-white/70">
-                    <p class="font-semibold">Aleksandra Prokop</p>
-                    <p class="mt-4 leading-relaxed">Usługi na wysokim poziomie – rzetelnie, terminowo i profesjonalnie.
-                        Dzięki takiemu wsparciu można mieć pewność, że wszystko będzie dopięte na ostatni guzik. Polecam!
-                    </p>
+                <!-- Mobile dots (carousel.js looks for .testimonials-carousel-dot) -->
+                <div class="mt-4 flex items-center justify-center gap-2 md:hidden">
+                    <button aria-label="Go to testimonial 1"
+                        class="testimonials-carousel-dot w-full h-0.5 rounded-full transition-colors hover:bg-[#d1b07a]/70"></button>
+                    <button aria-label="Go to testimonial 2"
+                        class="testimonials-carousel-dot w-full h-0.5 rounded-full transition-colors hover:bg-[#d1b07a]/70"></button>
+                    <button aria-label="Go to testimonial 3"
+                        class="testimonials-carousel-dot w-full h-0.5 rounded-full transition-colors hover:bg-[#d1b07a]/70"></button>
+                    <button aria-label="Go to testimonial 4"
+                        class="testimonials-carousel-dot w-full h-0.5 rounded-full transition-colors hover:bg-[#d1b07a]/70"></button>
                 </div>
             </div>
         </div>
@@ -298,12 +354,12 @@
                     <div>
                         <label class="block mb-1 text-[#0b285f]">Imię</label>
                         <input type="text"
-                            class="w-full border-2 border-[#0b285f] rounded-none px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#0b285f]">
+                            class="w-full border border-[#0b285f] rounded-none px-3 py-2 focus:outline-none focus:border-[#CB9264]">
                     </div>
                     <div>
                         <label class="block mb-1 text-[#0b285f]">Nazwisko</label>
                         <input type="text"
-                            class="w-full border-2 border-[#0b285f] rounded-none px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#0b285f]">
+                            class="w-full border border-[#0b285f] rounded-none px-3 py-2 focus:outline-none focus:border-[#CB9264]">
                     </div>
                 </div>
 
@@ -311,30 +367,30 @@
                     <div>
                         <label class="block mb-1 text-[#0b285f]">Email</label>
                         <input type="email"
-                            class="w-full border-2 border-[#0b285f] rounded-none px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#0b285f]">
+                            class="w-full border border-[#0b285f] rounded-none px-3 py-2 focus:outline-none focus:border-[#CB9264]">
                     </div>
                     <div>
                         <label class="block mb-1 text-[#0b285f]">Numer Kontaktowy</label>
                         <input type="text"
-                            class="w-full border-2 border-[#0b285f] rounded-none px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#0b285f]">
+                            class="w-full border border-[#0b285f] rounded-none px-3 py-2 focus:outline-none focus:border-[#CB9264]">
                     </div>
                 </div>
 
                 <div>
                     <label class="block mb-1 text-[#0b285f]">Temat</label>
                     <input type="text"
-                        class="w-full border-2 border-[#0b285f] rounded-none px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#0b285f]">
+                        class="w-full border border-[#0b285f] rounded-none px-3 py-2 focus:outline-none focus:border-[#CB9264]">
                 </div>
 
                 <div>
                     <label class="block mb-1 text-[#0b285f]">Wiadomość</label>
                     <textarea rows="6"
-                        class="w-full border-2 border-[#0b285f] rounded-none px-3 py-2 resize-y focus:outline-none focus:ring-2 focus:ring-[#0b285f]"></textarea>
+                        class="w-full border border-[#0b285f] rounded-none px-3 py-2 resize-y focus:outline-none focus:border-[#CB9264]"></textarea>
                 </div>
 
                 <div class="flex items-start gap-3">
                     <input type="checkbox"
-                        class="mt-1 w-4 h-4 border-2 border-[#0b285f] rounded-none focus:outline-none focus:ring-2 focus:ring-[#0b285f]">
+                        class="mt-1 w-4 h-4 border-2 border-[#0b285f] rounded-none focus:outline-none focus:border-[#CB9264]">
                     <p class="text-[12px] leading-relaxed text-[#3b445b]">Niniejszym oświadczam, że zapoznałem się z
                         polityką prywatności i wyrażam zgodę na przetwarzanie przez Optimum Tax LTD z siedzibą przy 86
                         Boston Road, London W7 3TR moich danych osobowych w zakresie niezbędnym do realizacji świadczonych
@@ -345,7 +401,7 @@
 
                 <div class="pt-2 text-center">
                     <button type="submit"
-                        class="inline-flex items-center justify-center px-8 py-3 bg-[#0b285f] text-white font-semibold tracking-wide rounded-none hover:bg-[#0a234f] transition">KONTAKT</button>
+                        class="inline-flex items-center justify-center px-8 py-3 bg-[#0b285f] text-white font-semibold tracking-wide rounded-none hover:bg-[#CB9264] transition">KONTAKT</button>
                 </div>
             </form>
         </div>

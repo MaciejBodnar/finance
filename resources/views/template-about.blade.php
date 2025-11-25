@@ -40,7 +40,7 @@
                 </p>
             </div>
 
-            <div class="mt-12 flex gap-8 lg:gap-14">
+            <div class="mt-12 flex flex-col md:flex-row gap-8 lg:gap-14">
                 <div>
                     <h3 class="text-[#0b285f] text-2xl md:text-4xl font-extrabold leading-tight">
                         Rzetelna<br class="hidden md:block">informacja księgowa
@@ -66,7 +66,7 @@
                     </div>
                 </div>
 
-                <div class="min-w-[540px] h-[360px] overflow-hidden">
+                <div class="min-w-full md:min-w-[540px] h-[360px] overflow-hidden">
                     <img src="/mnt/data/Screenshot 2025-11-22 at 20.09.51.png" alt=""
                         class="w-full h-full object-cover">
                 </div>

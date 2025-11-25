@@ -37,7 +37,7 @@
     <section class="bg-white">
         <div
             class="max-w-6xl mx-auto px-4 lg:px-0 py-5 flex flex-col md:flex-row items-center justify-between gap-4 text-xs md:text-sm">
-            <div class="text-center md:text-left">
+            <div class="text-center md:text-left order-last md:order-first">
                 <p class="text-[#0b285f]">©2025 <span class="font-semibold text-[#2d7e3b]">Optimum Tax</span> – D&C with
                     <span class="text-[#2d7e3b]">💚</span> SLT Media
                 </p>

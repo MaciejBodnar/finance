@@ -57,12 +57,18 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  // Close when clicking an internal link
+  // Previously we auto-closed the mobile menu when any link was clicked.
+  // That caused the menu to hide before navigation, producing a flicker.
+  // Now: do NOT auto-close on link clicks. If you want a specific link
+  // to close the menu immediately (for example an internal anchor),
+  // add the attribute `data-close-mobile` to the anchor and it will close.
   menu.addEventListener('click', function (e) {
     var target = e.target;
     while (target && target !== menu) {
       if (target.tagName === 'A') {
-        closeMenu();
+        if (target.hasAttribute('data-close-mobile')) {
+          closeMenu();
+        }
         return;
       }
       target = target.parentNode;
