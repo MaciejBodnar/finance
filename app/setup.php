@@ -166,6 +166,12 @@ add_action('init', function () {
     // Add rewrite rule for pages
     add_rewrite_rule('^contact/?$', 'index.php?custom_page=contact', 'top');
     add_rewrite_rule('^accountancy/?$', 'index.php?custom_page=accountancy', 'top');
+    // Księgowość subpages should render using the accountancy template
+    add_rewrite_rule('^firmy-ltd/?$', 'index.php?custom_page=accountancy&accountancy_sub=firmy-ltd', 'top');
+    add_rewrite_rule('^wlasna-dzialalnosc/?$', 'index.php?custom_page=accountancy&accountancy_sub=wlasna-dzialalnosc', 'top');
+    add_rewrite_rule('^spolki-cywilne/?$', 'index.php?custom_page=accountancy&accountancy_sub=spolki-cywilne', 'top');
+    add_rewrite_rule('^dodatkowe-uslugi/?$', 'index.php?custom_page=accountancy&accountancy_sub=dodatkowe-uslugi', 'top');
+    add_rewrite_rule('^wirtualne-biuro/?$', 'index.php?custom_page=accountancy&accountancy_sub=wirtualne-biuro', 'top');
     add_rewrite_rule('^about/?$', 'index.php?custom_page=about', 'top');
     add_rewrite_rule('^blog/?$', 'index.php?custom_page=blog', 'top');
     // Handle paged blog URLs like /blog/page/2/
@@ -174,9 +180,9 @@ add_action('init', function () {
     // Flush rewrite rules on theme activation (only once).
     // Bump the sentinel value when adding new custom routes so the flush runs one time.
     // Bump sentinel to force a one-time rewrite flush when new rules are added.
-    if (get_option('sage_custom_routes_flushed') !== 'routes_v3') {
+    if (get_option('sage_custom_routes_flushed') !== 'routes_v4') {
         flush_rewrite_rules();
-        update_option('sage_custom_routes_flushed', 'routes_v3');
+        update_option('sage_custom_routes_flushed', 'routes_v4');
     }
 });
 
@@ -186,6 +192,7 @@ add_action('init', function () {
 add_filter('query_vars', function ($vars) {
     $vars[] = 'custom_page';
     $vars[] = 'post_slug';
+    $vars[] = 'accountancy_sub';
     return $vars;
 });
 
@@ -256,6 +263,24 @@ add_action('template_redirect', function () {
                 // Set up proper WordPress context for Accountancy page
                 global $wp_query, $post;
 
+                // If a subpage slug was provided (e.g. /firmy-ltd), try to resolve and render it
+                $accountancy_sub = get_query_var('accountancy_sub');
+
+                if (! empty($accountancy_sub)) {
+                    $sub_page = get_page_by_path($accountancy_sub);
+                    if ($sub_page) {
+                        $wp_query->queried_object = $sub_page;
+                        $wp_query->queried_object_id = $sub_page->ID;
+                        $post = $sub_page;
+                        setup_postdata($post);
+
+                        // Pass the sub slug into the view so the template can adapt
+                        echo view('template-accountancy', ['accountancy_sub' => $accountancy_sub])->render();
+                        exit;
+                    }
+                }
+
+                // Fallback: render the generic accountancy page if present
                 $accountancy_page = get_page_by_path('accountancy');
                 if ($accountancy_page) {
                     $wp_query->queried_object = $accountancy_page;
@@ -264,7 +289,7 @@ add_action('template_redirect', function () {
                     setup_postdata($post);
                 }
 
-                echo view('template-accountancy')->render();
+                echo view('template-accountancy', ['accountancy_sub' => null])->render();
                 exit;
         }
     }
