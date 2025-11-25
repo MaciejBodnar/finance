@@ -9,13 +9,12 @@
         <div class="max-w-6xl mx-auto px-4 lg:px-0">
             <div class="text-center">
                 @php
-                    $hero_title = function_exists('get_field') ? get_field('hero_title') : null;
-                    $hero_subtitle = function_exists('get_field') ? get_field('hero_subtitle') : null;
-                    $perPage = function_exists('get_field') ? (int) get_field('posts_per_page') : 0;
-                    $perPage = $perPage > 0 ? $perPage : 9;
+                    $hero_title = $blog['title'] ?? 'Blog';
+                    $hero_subtitle = $blog['subtitle'] ?? null;
+                    $perPage = !empty($blog['posts_per_page']) ? (int) $blog['posts_per_page'] : 9;
                 @endphp
 
-                <h1 class="text-[#0b285f] text-3xl md:text-5xl font-extrabold">{{ $hero_title ?: 'Blog' }}</h1>
+                <h1 class="text-[#0b285f] text-3xl md:text-5xl font-extrabold">{{ $hero_title }}</h1>
                 @if ($hero_subtitle)
                     <p class="mt-3 text-slate-600">{{ $hero_subtitle }}</p>
                 @endif

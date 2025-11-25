@@ -13,14 +13,18 @@
                     <h1 class="text-[#0b285f] mb-8 md:mb-40 text-3xl md:text-5xl font-extrabold leading-tight">
                         {{ $post['title'] ?? '' }}
                     </h1>
-                    <div class="mt-4 flex items-center gap-1">
-                        <svg class="w-4 h-4 text-[#2d7e3b]" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M5 8l7 8 7-8z" />
-                        </svg>
-                        <svg class="w-4 h-4 text-[#2d7e3b]" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M5 8l7 8 7-8z" />
-                        </svg>
-                    </div>
+                    @if (!empty($post['hero_subtitle']))
+                        <p class="mt-4 text-slate-600">{{ $post['hero_subtitle'] }}</p>
+                    @else
+                        <div class="mt-4 flex items-center gap-1">
+                            <svg class="w-4 h-4 text-[#2d7e3b]" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M5 8l7 8 7-8z" />
+                            </svg>
+                            <svg class="w-4 h-4 text-[#2d7e3b]" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M5 8l7 8 7-8z" />
+                            </svg>
+                        </div>
+                    @endif
                 </header>
 
                 <div class="space-y-6 text-[#142033] leading-7">
