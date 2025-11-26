@@ -87,7 +87,7 @@
                                 {{ $main['services']['description'] }}
                             </p>
 
-                            <div class="border-t border-[#8FB3D4] my-10 justify-center flex">
+                            <div class="md:hidden border-t border-[#8FB3D4] my-10 justify-center flex">
                                 <button data-clamp-toggle="intro-1" aria-expanded="false"
                                     class="mt-3 md:hidden text-sm font-semibold text-[#8FB3D4]">
                                     {{ $main['services']['show_more_text'] }}
@@ -218,24 +218,21 @@
             </div>
 
             <div class="mt-12">
-                <div id="testimonials-carousel" class="overflow-hidden">
+                <div class="flex items-center justify-center gap-2 md:hidden">
+                    @for ($i = 0; $i < count($main['testimonials']['testimonials']); $i++)
+                        <button aria-label="Go to testimonial {{ $i + 1 }}"
+                            class="testimonials-carousel-dot w-full h-0.5 rounded-full bg-[#122457]"></button>
+                    @endfor
+                </div>
+                <div id="testimonials-carousel" class="overflow-hidden mt-10">
                     <div class="flex flex-nowrap md:grid md:grid-cols-2 lg:grid-cols-4 md:gap-10 transition-transform">
-                        @php $testimonials = $main['testimonials']['testimonials'] ?? []; @endphp
-                        @foreach ($testimonials as $t)
+                        @foreach ($main['testimonials']['testimonials'] as $t)
                             <div class="w-full shrink-0 md:pt-8 md:border-t-2 md:border-white/70 px-4">
                                 <p class="font-semibold">{{ $t['name'] ?? '' }}</p>
                                 <p class="mt-4 leading-relaxed">{{ $t['text'] ?? '' }}</p>
                             </div>
                         @endforeach
                     </div>
-                </div>
-
-                <div class="mt-4 flex items-center justify-center gap-2 md:hidden">
-                    @php $count = count($testimonials); @endphp
-                    @for ($i = 0; $i < $count; $i++)
-                        <button aria-label="Go to testimonial {{ $i + 1 }}"
-                            class="testimonials-carousel-dot w-full h-1 rounded-full bg-[#122457]"></button>
-                    @endfor
                 </div>
             </div>
         </div>

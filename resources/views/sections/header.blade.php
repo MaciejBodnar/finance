@@ -52,6 +52,11 @@
                         </button>
                     </li>
                     <li>
+                        <a href="<?php echo esc_url(home_url('/partners/')); ?>" class="hover:text-[#ffba6a] transition">
+                            Partnerzy
+                        </a>
+                    </li>
+                    <li>
                         <a href="<?php echo esc_url(home_url('/blog/')); ?>" class="hover:text-[#ffba6a] transition">
                             Blog
                         </a>

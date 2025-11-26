@@ -173,6 +173,7 @@ add_action('init', function () {
     add_rewrite_rule('^dodatkowe-uslugi/?$', 'index.php?custom_page=accountancy&accountancy_sub=dodatkowe-uslugi', 'top');
     add_rewrite_rule('^wirtualne-biuro/?$', 'index.php?custom_page=accountancy&accountancy_sub=wirtualne-biuro', 'top');
     add_rewrite_rule('^about/?$', 'index.php?custom_page=about', 'top');
+    add_rewrite_rule('^partners/?$', 'index.php?custom_page=partners', 'top');
     add_rewrite_rule('^blog/?$', 'index.php?custom_page=blog', 'top');
     // Handle paged blog URLs like /blog/page/2/
     add_rewrite_rule('^blog/page/([0-9]{1,})/?$', 'index.php?custom_page=blog&paged=$matches[1]', 'top');
@@ -180,9 +181,9 @@ add_action('init', function () {
     // Flush rewrite rules on theme activation (only once).
     // Bump the sentinel value when adding new custom routes so the flush runs one time.
     // Bump sentinel to force a one-time rewrite flush when new rules are added.
-    if (get_option('sage_custom_routes_flushed') !== 'routes_v4') {
+    if (get_option('sage_custom_routes_flushed') !== 'routes_v5') {
         flush_rewrite_rules();
-        update_option('sage_custom_routes_flushed', 'routes_v4');
+        update_option('sage_custom_routes_flushed', 'routes_v5');
     }
 });
 
@@ -244,6 +245,19 @@ add_action('template_redirect', function () {
                 }
 
                 echo view('template-about')->render();
+                exit;
+            case 'partners':
+                global $wp_query, $post;
+
+                $partners_page = get_page_by_path('partners');
+                if ($partners_page) {
+                    $wp_query->queried_object = $partners_page;
+                    $wp_query->queried_object_id = $partners_page->ID;
+                    $post = $partners_page;
+                    setup_postdata($post);
+                }
+
+                echo view('template-partners')->render();
                 exit;
             case 'blog':
                 // Set up proper WordPress context for Blog page

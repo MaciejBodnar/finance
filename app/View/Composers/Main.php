@@ -44,7 +44,7 @@ class Main extends Composer
         return [
             'title' => $this->getAcfFieldSafe('hero_title', false, 'Twój partner w Księgowości i Podatkach'),
             'description' => $this->getAcfFieldSafe('hero_description', false, 'Profesjonalną obsługą naszych klientów, niezależnie od wielkości i złożoności usług księgowej, zajmują się certyfikowani księgowi z kilkuletnim doświadczeniem.'),
-            'hero_image' => $this->getAcfImageSafe('hero_image', false, 'large', get_template_directory_uri() . '/resources/images/test.png'),
+            'hero_image' => $this->getAcfImageSafe('hero_image', false, 'large', get_template_directory_uri() . '/resources/images/fotel-2.png'),
             'button_text' => $this->getAcfFieldSafe('hero_button_text', false, 'Umów się'),
             'button_url' => $this->getAcfUrlSafe('hero_button_url', false, '#'),
         ];

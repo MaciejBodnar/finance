@@ -6,11 +6,14 @@
 
 @section('content')
     <section class="relative">
+        @php
+            $mdPbClass = !empty($accountancy['cta_top_enabled']) ? 'pb-[700px] md:pb-40' : 'pb-10 md:pb-0';
+        @endphp
         <div
-            class="max-w-6xl px-4 lg:px-0 pb-[700px] md:pb-40 flex flex-col md:flex-row min-w-full gap-8 lg:gap-64 md:justify-end">
+            class="max-w-6xl px-4 lg:px-0 {{ $mdPbClass }} flex flex-col md:flex-row min-w-full gap-8 lg:gap-64 md:justify-end">
             <div class="ml-0 md:ml-10 justify-self-end">
                 <h1 class="text-[#0b285f] text-3xl md:text-5xl font-light leading-tight mt-24 max-w-[732px]">
-                    Wirtualne biuro i księgowość w UK
+                    {!! $accountancy['hero']['title_html'] !!}
                 </h1>
                 <div class="flex gap-10 mt-24">
                     <div class="flex items-start gap-1">
@@ -22,86 +25,73 @@
                         </svg>
                     </div>
                     <div class="space-y-5 text-[#233] leading-7 max-w-prose">
-                        <p>Naszą dodatkową usługą jest wirtualne biuro, które pozwoli Ci legalnie założyć firmę w Wielkiej
-                            Brytanii, nawet bez konieczności posiadania własnego adresu. Jak to możliwe?</p>
-                        <p>Nasza księgowa i biuro księgowe w Londynie udostępnia Ci firmowy adres, dzięki któremu możliwe
-                            jest
-                            zarejestrowanie działalności i prowadzenie korespondencji z klientami. Adres ten będziesz mógł
-                            zgłosić zarówno w rejestrze firm, jak i w urzędzie skarbowym – jest to rozwiązanie w pełni
-                            legalne,
-                            z którego korzysta wielu Polaków, pragnących prowadzić działalność w Wielkiej Brytanii. Oprócz
-                            tego,
-                            na korespondencję z adresu naszego polskiego biura rachunkowego, będziesz również otrzymywał
-                            firmową
-                            korespondencję, którą wyślemy na wskazany przez Ciebie adres.</p>
+                        <p>{!! $accountancy['hero']['intro_paragraph'] !!}</p>
                     </div>
                 </div>
             </div>
-            <div class="md:justify-self-end min-w-full md:min-w-[690px] h-full md:h-[914px] rounded-md overflow-hidden">
-                <img src="{{ get_template_directory_uri() }}/resources/images/asian-business-woman.png" alt=""
-                    class="w-full h-full object-cover">
+            <div class="md:justify-self-end min-w-full md:min-w-[690px] h-full md:h-[914px] overflow-hidden">
+                <img src="{{ $accountancy['hero']['image'] }}" alt="" class="w-full h-full object-cover">
             </div>
         </div>
         <!-- Desktop / md+ background -->
-        <div class="absolute bottom-0 w-full min-h-[322px] hidden md:flex items-center"
-            style="background-image: url('{{ get_template_directory_uri() }}/resources/images/Subtraction.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
-            <div class="grid md:grid-cols-3 min-h-full items-center justify-center max-w-6xl mx-auto gap-10">
-                <img src="{{ get_template_directory_uri() }}/resources/images/telefon.png" alt="Księgowa na fotelu"
-                    class="static max-md:order-last md:absolute bottom-0 left-40 object-cover" />
-                <div>
+        @if (!empty($accountancy['cta_top_enabled']))
+            <div class="absolute bottom-0 w-full min-h-[322px] hidden md:flex items-center"
+                style="background-image: url('{{ $accountancy['background']['desktop'] }}'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+                <div class="grid md:grid-cols-3 min-h-full items-center justify-center max-w-6xl mx-auto gap-10">
+                    <img src="{{ $accountancy['background']['phone_icon'] }}" alt="Księgowa na fotelu"
+                        class="static max-md:order-last md:absolute bottom-0 left-40 object-cover" />
+                    <div>
 
-                </div>
-                <div class="flex flex-col gap-12">
-                    <h2 class="text-4xl text-white max-w-[236px]">Umów się na spotkanie</h2>
-                    <a
-                        class="w-fit hover:cursor-pointer border-2 border-black py-2 px-12 bg-[#122457] text-white uppercase">Umów
-                        się</a>
-                </div>
-                <div>
-                    <p class="text-white">Nasi księgowi w Hanwell są cały czas do Twojej dyspozycji – zadzwoń albo
-                        napisz,
-                        by umówić się na spotkanie. Zajmiemy się Twoją sprawą w sposób rzetelny i kompleksowy!
-                    </p>
+                    </div>
+                    <div class="flex flex-col gap-12">
+                        <h2 class="text-4xl text-white max-w-[236px]">{!! $accountancy['cta_top']['heading'] !!}</h2>
+                        <a href="{{ $accountancy['cta_top']['button_url'] }}"
+                            class="w-fit hover:cursor-pointer border-2 border-black py-2 px-12 bg-[#122457] text-white uppercase">{{ $accountancy['cta_top']['button_text'] }}</a>
+                    </div>
+                    <div>
+                        <p class="text-white">{!! $accountancy['cta_top']['paragraph'] !!}
+                        </p>
+                    </div>
                 </div>
             </div>
-        </div>
+        @endif
 
         <!-- Mobile background (visible on small screens) -->
-        <div class="absolute bottom-0 max-w-screen min-h-[322px] flex md:hidden items-center"
-            style="background-image: url('{{ get_template_directory_uri() }}/resources/images/Subtraction-6.png'); background-size: cover; background-repeat: no-repeat;">
-            <div class="grid md:grid-cols-3 min-h-full items-center justify-center max-w-6xl mx-10 md:mx-auto gap-10">
-                <img src="{{ get_template_directory_uri() }}/resources/images/telefon.png" alt="Księgowa na fotelu"
-                    class="static max-md:order-last md:absolute bottom-0 left-40 object-cover" />
-                <div>
+        @if (!empty($accountancy['cta_top_enabled']))
+            <div class="absolute bottom-0 max-w-screen min-h-[322px] flex md:hidden items-center"
+                style="background-image: url('{{ $accountancy['background']['mobile'] }}'); background-size: cover; background-repeat: no-repeat;">
+                <div class="grid md:grid-cols-3 min-h-full items-center justify-center max-w-6xl mx-10 md:mx-auto gap-10">
+                    <img src="{{ $accountancy['background']['phone_icon'] }}" alt="Księgowa na fotelu"
+                        class="static max-md:order-last md:absolute bottom-0 left-40 object-cover" />
+                    <div>
 
-                </div>
-                <div class="flex flex-col gap-12">
-                    <h2 class="text-4xl text-white max-w-[236px]">Umów się na spotkanie</h2>
-                    <a
-                        class="w-fit hover:cursor-pointer border-2 border-black py-2 px-12 bg-[#122457] text-white uppercase">Umów
-                        się</a>
-                </div>
-                <div>
-                    <p class="text-white">Nasi księgowi w Hanwell są cały czas do Twojej dyspozycji – zadzwoń albo
-                        napisz,
-                        by umówić się na spotkanie. Zajmiemy się Twoją sprawą w sposób rzetelny i kompleksowy!
-                    </p>
+                    </div>
+                    <div class="flex flex-col gap-12">
+                        <h2 class="text-4xl text-white max-w-[236px]">{!! $accountancy['cta_top']['heading'] !!}</h2>
+                        <a href="{{ $accountancy['cta_top']['button_url'] }}"
+                            class="w-fit hover:cursor-pointer border-2 border-black py-2 px-12 bg-[#122457] text-white uppercase">{{ $accountancy['cta_top']['button_text'] }}</a>
+                    </div>
+                    <div>
+                        <p class="text-white">{!! $accountancy['cta_top']['paragraph'] !!}
+                        </p>
+                    </div>
                 </div>
             </div>
-        </div>
+        @endif
     </section>
 
     <section class="bg-[#f3f5f7] relative min-h-[718px]">
+        @php
+            $mdPbBottomClass = !empty($accountancy['cta_bottom_enabled']) ? ' pb-[700px] md:pb-40' : 'pb-10 md:pb-0';
+        @endphp
         <div
-            class="max-w-6xl px-4 lg:px-0 flex flex-col md:flex-row min-w-full gap-8 lg:gap-24 items-center pb-[700px] md:pb-40">
-            <div
-                class="min-w-full order-last md:order-first md:min-w-[690px] min-h-full md:min-h-[718px] rounded-md overflow-hidden">
-                <img src="{{ get_template_directory_uri() }}/resources/images/modern.png" alt=""
-                    class="w-full h-full object-cover">
+            class="max-w-6xl px-4 lg:px-0 flex flex-col md:flex-row min-w-full gap-8 lg:gap-24 items-center {{ $mdPbBottomClass }}">
+            <div class="min-w-full order-last md:order-first md:min-w-[690px] min-h-full md:min-h-[718px] overflow-hidden">
+                <img src="{{ $accountancy['section_two']['image'] }}" alt="" class="w-full h-full object-cover">
             </div>
             <div class="mr-10 justify-self-start">
                 <h2 class="text-[#0b285f] text-3xl md:text-5xl font-light leading-tight">
-                    Wirtualne biuro i księgowość w UK
+                    {!! $accountancy['section_two']['title'] !!}
                 </h2>
                 <div class="flex gap-10">
                     <div class="mt-6 flex items-start gap-1">
@@ -113,64 +103,56 @@
                         </svg>
                     </div>
                     <div class="mt-6 space-y-5 text-[#233] leading-7 max-w-prose">
-                        <p>Z oferowanego przez nas wirtualnego biura skorzystało już wielu przedsiębiorców. W pakiecie
-                            otrzymali
-                            oni także fachowe doradztwo księgowe w Londynie oraz całej Wielkiej Brytanii. Dzięki temu mogą
-                            oni w
-                            spokoju zajmować się swoją firmą i jej rozwojem, a my prowadzimy ich księgowość w UK.</p>
-                        <p>Jeśli jesteś zainteresowany tą usługą, zapraszamy do kontaktu. Nasz księgowy w Ealing chętnie
-                            przedstawi Ci w pełni spersonalizowaną ofertę, która z pewnością spełni Twoje oczekiwania.</p>
+                        <p>{!! $accountancy['section_two']['paragraph'] !!}</p>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Desktop / md+ background -->
-        <div class="absolute bottom-0 w-full min-h-[322px] hidden md:flex items-center"
-            style="background-image: url('{{ get_template_directory_uri() }}/resources/images/Subtraction.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
-            <div class="grid md:grid-cols-3 min-h-full items-center justify-center max-w-6xl mx-auto gap-10">
-                <img src="{{ get_template_directory_uri() }}/resources/images/telefon.png" alt="Księgowa na fotelu"
-                    class="static max-md:order-last md:absolute bottom-0 left-40 object-cover" />
-                <div>
+        <!-- Desktop / md+ background (bottom CTA) -->
+        @if (!empty($accountancy['cta_bottom_enabled']))
+            <div class="absolute bottom-0 w-full min-h-[322px] hidden md:flex items-center"
+                style="background-image: url('{{ $accountancy['background']['desktop'] }}'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+                <div class="grid md:grid-cols-3 min-h-full items-center justify-center max-w-6xl mx-auto gap-10">
+                    <img src="{{ $accountancy['background']['phone_icon'] }}" alt="Księgowa na fotelu"
+                        class="static max-md:order-last md:absolute bottom-0 left-40 object-cover" />
+                    <div>
 
-                </div>
-                <div class="flex flex-col gap-12">
-                    <h2 class="text-4xl text-white max-w-[236px]">Umów się na spotkanie</h2>
-                    <a
-                        class="w-fit hover:cursor-pointer border-2 border-black py-2 px-12 bg-[#122457] text-white uppercase">Umów
-                        się</a>
-                </div>
-                <div>
-                    <p class="text-white">Nasi księgowi w Hanwell są cały czas do Twojej dyspozycji – zadzwoń albo
-                        napisz,
-                        by umówić się na spotkanie. Zajmiemy się Twoją sprawą w sposób rzetelny i kompleksowy!
-                    </p>
+                    </div>
+                    <div class="flex flex-col gap-12">
+                        <h2 class="text-4xl text-white max-w-[236px]">{!! $accountancy['cta_bottom']['heading'] !!}</h2>
+                        <a href="{{ $accountancy['cta_bottom']['button_url'] }}"
+                            class="w-fit hover:cursor-pointer border-2 border-black py-2 px-12 bg-[#122457] text-white uppercase">{{ $accountancy['cta_bottom']['button_text'] }}</a>
+                    </div>
+                    <div>
+                        <p class="text-white">{!! $accountancy['cta_bottom']['paragraph'] !!}
+                        </p>
+                    </div>
                 </div>
             </div>
-        </div>
+        @endif
 
-        <!-- Mobile background (visible on small screens) -->
-        <div class="absolute bottom-0 max-w-screen min-h-[322px] flex md:hidden items-center"
-            style="background-image: url('{{ get_template_directory_uri() }}/resources/images/Subtraction-6.png'); background-size: cover; background-repeat: no-repeat;">
-            <div class="grid md:grid-cols-3 min-h-full items-center justify-center max-w-6xl mx-10 md:mx-auto gap-10">
-                <img src="{{ get_template_directory_uri() }}/resources/images/telefon.png" alt="Księgowa na fotelu"
-                    class="static max-md:order-last md:absolute bottom-0 left-40 object-cover" />
-                <div>
+        <!-- Mobile background (visible on small screens) (bottom CTA) -->
+        @if (!empty($accountancy['cta_bottom_enabled']))
+            <div class="absolute bottom-0 max-w-screen min-h-[322px] flex md:hidden items-center"
+                style="background-image: url('{{ $accountancy['background']['mobile'] }}'); background-size: cover; background-repeat: no-repeat;">
+                <div class="grid md:grid-cols-3 min-h-full items-center justify-center max-w-6xl mx-10 md:mx-auto gap-10">
+                    <img src="{{ $accountancy['background']['phone_icon'] }}" alt="Księgowa na fotelu"
+                        class="static max-md:order-last md:absolute bottom-0 left-40 object-cover" />
+                    <div>
 
-                </div>
-                <div class="flex flex-col gap-12">
-                    <h2 class="text-4xl text-white max-w-[236px]">Umów się na spotkanie</h2>
-                    <a
-                        class="w-fit hover:cursor-pointer border-2 border-black py-2 px-12 bg-[#122457] text-white uppercase">Umów
-                        się</a>
-                </div>
-                <div>
-                    <p class="text-white">Nasi księgowi w Hanwell są cały czas do Twojej dyspozycji – zadzwoń albo
-                        napisz,
-                        by umówić się na spotkanie. Zajmiemy się Twoją sprawą w sposób rzetelny i kompleksowy!
-                    </p>
+                    </div>
+                    <div class="flex flex-col gap-12">
+                        <h2 class="text-4xl text-white max-w-[236px]">{!! $accountancy['cta_bottom']['heading'] !!}</h2>
+                        <a href="{{ $accountancy['cta_bottom']['button_url'] }}"
+                            class="w-fit hover:cursor-pointer border-2 border-black py-2 px-12 bg-[#122457] text-white uppercase">{{ $accountancy['cta_bottom']['button_text'] }}</a>
+                    </div>
+                    <div>
+                        <p class="text-white">{!! $accountancy['cta_bottom']['paragraph'] !!}
+                        </p>
+                    </div>
                 </div>
             </div>
-        </div>
+        @endif
     </section>
     <section id="kontakt" class="relative py-16 md:py-24 overflow-hidden">
         <div class="absolute inset-x-0 top-0 h-1/2">

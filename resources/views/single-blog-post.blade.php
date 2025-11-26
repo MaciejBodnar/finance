@@ -1,5 +1,5 @@
 {{--
-  Template Name: Single Post (Skeleton)
+  Template Name: Single Post
 --}}
 
 @extends('layouts.app')
