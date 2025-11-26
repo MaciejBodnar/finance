@@ -113,7 +113,7 @@ class Main extends Composer
                                 Sprawdź, czym zajmuje się nasze biuro księgowe i skorzystaj z usług, świadczonych na
                                 najwyższym
                                 poziomie!'),
-            'show_more_text' => $this->getAcfFieldSafe('services_show_more_text', false, 'Pokaż więcej'),
+            'show_more_text' => $this->getAcfFieldSafe('services_show_more_text', false, 'Rozwiń'),
             'items' => $items,
         ];
     }

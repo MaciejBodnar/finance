@@ -34,12 +34,16 @@ class Blog
         $posts = $query->posts ?: [];
 
         $mapped = array_map(function ($p) {
+            $thumb = get_the_post_thumbnail_url($p, 'medium');
+            if (empty($thumb)) {
+                $thumb = get_template_directory_uri() . '/resources/images/businesswoman-working.png';
+            }
             return [
                 'title' => get_the_title($p),
                 'link' => get_permalink($p),
                 'excerpt' => get_the_excerpt($p),
                 'date' => get_the_date('', $p),
-                'thumbnail' => get_the_post_thumbnail_url($p, 'medium'),
+                'thumbnail' => $thumb,
             ];
         }, $posts);
 

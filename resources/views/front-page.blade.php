@@ -87,11 +87,12 @@
                                 {{ $main['services']['description'] }}
                             </p>
 
-                            <!-- Mobile-only toggle -->
-                            <button data-clamp-toggle="intro-1" aria-expanded="false"
-                                class="mt-3 md:hidden text-sm font-semibold text-[#0b285f]">
-                                {{ $main['services']['show_more_text'] ?? 'Pokaż więcej' }}
-                            </button>
+                            <div class="border-t border-[#8FB3D4] my-10 justify-center flex">
+                                <button data-clamp-toggle="intro-1" aria-expanded="false"
+                                    class="mt-3 md:hidden text-sm font-semibold text-[#8FB3D4]">
+                                    {{ $main['services']['show_more_text'] }}
+                                </button>
+                            </div>
                         </div>
                     </div>
 
@@ -152,12 +153,15 @@
 
                 @foreach ($posts as $p)
                     @php
-                        $img = $p['thumbnail'] ?: get_template_directory_uri() . '/assets/img/default.jpg';
+                        $img =
+                            $p['thumbnail'] ?:
+                            get_template_directory_uri() . '/resources/images/businesswoman-working.png';
                     @endphp
                     <a href="{{ $p['link'] }}"
-                        class="group relative bg-white text-[#0b285f] rounded-md shadow-xl hover:shadow-2xl transition w-full max-w-[330px] md:max-w-full {{ $loop->index > 0 ? 'hidden md:block' : '' }}">
-                        <div class="h-48 px-10 pt-8 pb-3 w-full overflow-hidden">
-                            <img src="{{ $img }}" alt="{{ $p['title'] }}" class="w-full h-full object-cover" />
+                        class="group relative bg-white text-[#0b285f] rounded-md shadow-xl hover:shadow-2xl transition h-full w-full max-w-[330px] md:max-w-full {{ $loop->index > 0 ? 'hidden md:block' : '' }}">
+                        <div class="min-h-48 px-10 pt-8 pb-3 w-full overflow-hidden">
+                            <img src="{{ $img }}" alt="{{ $p['title'] }}"
+                                class="w-full h-full object-contain" />
                         </div>
                         <div class="px-10 pb-8">
                             <div class="flex items-center gap-2 text-xs text-slate-500 mb-3">
@@ -226,12 +230,11 @@
                     </div>
                 </div>
 
-                <!-- Mobile dots (carousel.js looks for .testimonials-carousel-dot) -->
                 <div class="mt-4 flex items-center justify-center gap-2 md:hidden">
                     @php $count = count($testimonials); @endphp
                     @for ($i = 0; $i < $count; $i++)
                         <button aria-label="Go to testimonial {{ $i + 1 }}"
-                            class="testimonials-carousel-dot w-8 h-2 rounded-full bg-white/30"></button>
+                            class="testimonials-carousel-dot w-full h-1 rounded-full bg-[#122457]"></button>
                     @endfor
                 </div>
             </div>

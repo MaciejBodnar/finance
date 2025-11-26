@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
       if (expanded) {
         target.classList.add('line-clamp-8');
         btn.setAttribute('aria-expanded', 'false');
-        btn.textContent = 'Pokaż więcej';
+        btn.textContent = 'Rozwiń';
       } else {
         target.classList.remove('line-clamp-8');
         btn.setAttribute('aria-expanded', 'true');

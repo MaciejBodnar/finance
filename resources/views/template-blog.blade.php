@@ -38,15 +38,16 @@
 
                 @foreach ($posts as $p)
                     @php
-                        $img = $p['thumbnail'] ?: get_template_directory_uri() . '/assets/img/default.jpg';
+                        $img =
+                            $p['thumbnail'] ?:
+                            get_template_directory_uri() . '/resources/images/businesswoman-working.png';
                     @endphp
                     <a href="{{ $p['link'] }}"
-                        class="group bg-white rounded-md shadow-md hover:shadow-lg transition overflow-hidden block">
-                        <div class="h-44 w-full overflow-hidden">
-                            <img src="{{ $img }}" alt="{{ $p['title'] }}"
-                                class="w-full h-full object-cover group-hover:scale-[1.02] transition" />
+                        class="group relative bg-[#F4F4F4] text-[#0b285f] rounded-md hover:shadow-2xl transition w-full max-w-[330px] md:max-w-full {{ $loop->index > 0 ? 'hidden md:block' : '' }}">
+                        <div class="min-h-48 px-10 pt-8 pb-3 w-full overflow-hidden">
+                            <img src="{{ $img }}" alt="{{ $p['title'] }}" class="w-full h-full object-contain" />
                         </div>
-                        <div class="p-5">
+                        <div class="px-10 pb-8">
                             <div class="flex items-center gap-2 text-xs text-slate-500 mb-3">
                                 <svg class="w-4 h-4 text-[#0b285f]" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                     stroke-width="1.6">
@@ -55,10 +56,10 @@
                                 </svg>
                                 <span>{{ $p['date'] }}</span>
                             </div>
-                            <h2
-                                class="text-base md:text-lg font-semibold leading-snug text-[#2d7e3b] group-hover:underline line-clamp-3">
-                                {{ $p['title'] }}</h2>
-                            <p class="mt-3 text-sm text-slate-600 line-clamp-2">{{ $p['excerpt'] }}</p>
+                            <h3
+                                class="text-lg font-semibold leading-snug text-[#2d7e3b] group-hover:underline mb-3 line-clamp-3">
+                                {{ $p['title'] }}</h3>
+                            <p class="text-sm text-slate-600 line-clamp-2">{{ $p['excerpt'] }}</p>
                         </div>
                     </a>
                 @endforeach
