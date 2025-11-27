@@ -13,7 +13,7 @@
             class="max-w-6xl px-4 lg:px-0 {{ $mdPbClass }} flex flex-col md:flex-row min-w-full gap-8 lg:gap-64 md:justify-end">
             <div class="ml-0 md:ml-10 justify-self-end">
                 <h1 class="text-[#0b285f] text-3xl md:text-5xl font-light leading-tight mt-24 max-w-[732px]">
-                    {!! $accountancy['hero']['title_html'] !!}
+                    {!! $accountancy['hero']['title'] !!}
                 </h1>
                 <div class="flex gap-10 mt-24">
                     <div class="flex items-start gap-1">

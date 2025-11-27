@@ -17,11 +17,14 @@
                     +0208 840 0422
                 </div>
 
-                <div class="items-center gap-3 text-xs hidden md:flex">
-                    <button class="flex items-center gap-2">
+                <div class="items-center gap-6 text-xs hidden md:flex">
+                    <button class="flex items-center gap-2 hover:cursor-pointer">
+                        <img src="https://kapowaz.github.io/circle-flags/flags/pl.svg" width="22" />
                         <span class="font-semibold">PL</span>
                     </button>
-                    <button class="flex items-center gap-1 text-white/60 hover:text-white transition">
+
+                    <button class="flex items-center gap-2 hover:cursor-pointer">
+                        <img src="https://kapowaz.github.io/circle-flags/flags/gb.svg" width="22" />
                         <span class="font-semibold">EN</span>
                     </button>
                 </div>

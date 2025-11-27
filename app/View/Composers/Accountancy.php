@@ -52,7 +52,7 @@ class Accountancy extends Composer
     private function getHeroData()
     {
         return [
-            'title_html' => $this->getAcfFieldSafe('hero_title_html', false, 'Wirtualne biuro i księgowość w UK'),
+            'title' => $this->getAcfFieldSafe('hero_title', false, 'Wirtualne biuro i księgowość w UK'),
             'intro_paragraph' => $this->getAcfFieldSafe('intro_paragraph', false, 'Oferujemy zakładanie spółek LTD, usługi księgowe, a także doradztwo dla właścicieli firm w Wielkiej Brytanii. Limited Company, czyli spółka z ograniczoną odpowiedzialnością, to najpopularniejsza forma prowadzenia działalności w Wielkiej Brytanii. Posiada ona własną osobowość prawną, w związku z czym jej udziałowcy odpowiadają za zobowiązania wyłącznie do wysokości wniesionego wkładu, chroniąc swój majątek osobisty. Zapewniamy doradztwo finansowe i księgowe, obsługujemy finanse i administrację, a także wspieramy właścicieli firm na każdym etapie współpracy. Co więcej – pomożemy Ci w założeniu spółki LTD, zapewniając fachowe konsultacje i zadbamy o wszelkie kwestie związane z rejestracją spółki. Dzięki temu zaoszczędzisz czas i będziesz mieć możliwość skupienia się na planowaniu strategii rozwoju firmy. Księgowość w UK to usługa nie tylko dla Polaków, ale dla wszystkich chętnych, którzy poszukują pomocy w załatwieniu konkretnych spraw. Nasi specjaliści zaopiekują się Tobą i Twoją firmą, a Ty będziesz mógł się skupić na jej funkcjonowaniu.'),
             'image' => $this->getAcfImageSafe('hero_image', false, get_template_directory_uri() . '/resources/images/asian-business-woman.png'),
         ];
