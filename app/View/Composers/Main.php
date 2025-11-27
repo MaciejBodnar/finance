@@ -161,6 +161,11 @@ class Main extends Composer
             'subtitle' => $this->getAcfFieldSafe('testimonials_subtitle', false, 'Zobacz pełne recenzje na naszym Facebooku.'),
             'cta_text' => $this->getAcfFieldSafe('testimonials_cta_text', false, $this->getAcfFieldSafe('testimonials_cta_view_more', false, 'ZOBACZ')),
             'cta_url' => $this->getAcfUrlSafe('testimonials_cta_url', false, $this->getAcfUrlSafe('testimonials_cta_view_more_url', false, '/blog')),
+            'facebook_icon' => $this->getAcfFieldSafe(
+                'testimonials_facebook_icon',
+                false,
+                'fa-solid fa-arrow-up-right-from-square'
+            ),
         ];
     }
 

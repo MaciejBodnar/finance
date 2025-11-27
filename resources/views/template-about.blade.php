@@ -133,14 +133,23 @@
                     </a>
                 </div>
             </div>
-
-            <div class="mt-12 grid gap-10 md:gap-12 md:grid-cols-2 lg:grid-cols-4">
-                @foreach ($about['testimonials'] as $t)
-                    <div class="pt-8 border-t border-white/70">
-                        <p class="font-semibold">{{ $t['name'] ?? '' }}</p>
-                        <p class="mt-4 leading-relaxed">{{ $t['text'] ?? '' }}</p>
+            <div class="mt-12">
+                <div class="flex items-center justify-center gap-2 md:hidden">
+                    @for ($i = 0; $i < count($about['testimonials']); $i++)
+                        <button aria-label="Go to testimonial {{ $i + 1 }}"
+                            class="testimonials-carousel-dot w-full h-0.5 rounded-full bg-[#122457]"></button>
+                    @endfor
+                </div>
+                <div id="testimonials-carousel" class="overflow-hidden mt-10">
+                    <div class="flex flex-nowrap md:grid md:grid-cols-2 lg:grid-cols-4 md:gap-10 transition-transform">
+                        @foreach ($about['testimonials'] as $t)
+                            <div class="w-full shrink-0 md:pt-8 md:border-t-2 md:border-white/70 px-4">
+                                <p class="font-semibold">{{ $t['name'] ?? '' }}</p>
+                                <p class="mt-4 leading-relaxed">{{ $t['text'] ?? '' }}</p>
+                            </div>
+                        @endforeach
                     </div>
-                @endforeach
+                </div>
             </div>
         </div>
     </section>

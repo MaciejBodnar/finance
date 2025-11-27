@@ -209,11 +209,9 @@
                         <a href="{{ $main['testimonials']['cta_url'] }}"
                             class="inline-flex items-center gap-2 px-4 py-2 bg-[#0b285f] rounded-sm text-sm font-bold tracking-wide hover:bg-[#0a234f] transition">
                             {{ $main['testimonials']['cta_text'] }}
-                            <svg class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <path d="M7 17L17 7" />
-                                <path d="M8 7h9v9" />
-                            </svg>
+                            @if (!empty($main['testimonials']['facebook_icon']))
+                                {!! $main['testimonials']['facebook_icon'] !!}
+                            @endif
                         </a>
                     </div>
                 </div>

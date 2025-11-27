@@ -47,8 +47,11 @@
                     </div>
                     <div class="flex flex-col gap-12">
                         <h2 class="text-4xl text-white max-w-[236px]">{!! $accountancy['cta_top']['heading'] !!}</h2>
-                        <a href="{{ $accountancy['cta_top']['button_url'] }}"
-                            class="w-fit hover:cursor-pointer border-2 border-black py-2 px-12 bg-[#122457] text-white uppercase">{{ $accountancy['cta_top']['button_text'] }}</a>
+                        <svg class="max-w-8" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 640 640"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                            <path fill="#ffffff"
+                                d="M297.4 598.6C309.9 611.1 330.2 611.1 342.7 598.6L470.7 470.6C483.2 458.1 483.2 437.8 470.7 425.3C458.2 412.8 437.9 412.8 425.4 425.3L352 498.7L352 64C352 46.3 337.7 32 320 32C302.3 32 288 46.3 288 64L288 498.7L214.6 425.3C202.1 412.8 181.8 412.8 169.3 425.3C156.8 437.8 156.8 458.1 169.3 470.6L297.3 598.6z" />
+                        </svg>
                     </div>
                     <div>
                         <p class="text-white">{!! $accountancy['cta_top']['paragraph'] !!}
@@ -62,7 +65,8 @@
         @if (!empty($accountancy['cta_top_enabled']))
             <div class="absolute bottom-0 max-w-screen min-h-[322px] flex md:hidden items-center"
                 style="background-image: url('{{ $accountancy['background']['mobile'] }}'); background-size: cover; background-repeat: no-repeat;">
-                <div class="grid md:grid-cols-3 min-h-full items-center justify-center max-w-6xl mx-10 md:mx-auto gap-10">
+                <div
+                    class="grid md:grid-cols-3 min-h-full items-center justify-center mt-10 max-w-6xl mx-10 md:mx-auto gap-10">
                     <img src="{{ $accountancy['background']['phone_icon'] }}" alt="Księgowa na fotelu"
                         class="static max-md:order-last md:absolute bottom-0 left-40 object-cover" />
                     <div>
@@ -70,8 +74,11 @@
                     </div>
                     <div class="flex flex-col gap-12">
                         <h2 class="text-4xl text-white max-w-[236px]">{!! $accountancy['cta_top']['heading'] !!}</h2>
-                        <a href="{{ $accountancy['cta_top']['button_url'] }}"
-                            class="w-fit hover:cursor-pointer border-2 border-black py-2 px-12 bg-[#122457] text-white uppercase">{{ $accountancy['cta_top']['button_text'] }}</a>
+                        <svg class="max-w-8" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 640 640"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                            <path fill="#ffffff"
+                                d="M297.4 598.6C309.9 611.1 330.2 611.1 342.7 598.6L470.7 470.6C483.2 458.1 483.2 437.8 470.7 425.3C458.2 412.8 437.9 412.8 425.4 425.3L352 498.7L352 64C352 46.3 337.7 32 320 32C302.3 32 288 46.3 288 64L288 498.7L214.6 425.3C202.1 412.8 181.8 412.8 169.3 425.3C156.8 437.8 156.8 458.1 169.3 470.6L297.3 598.6z" />
+                        </svg>
                     </div>
                     <div>
                         <p class="text-white">{!! $accountancy['cta_top']['paragraph'] !!}
@@ -124,8 +131,11 @@
                     </div>
                     <div class="flex flex-col gap-12">
                         <h2 class="text-4xl text-white max-w-[236px]">{!! $accountancy['cta_bottom']['heading'] !!}</h2>
-                        <a href="{{ $accountancy['cta_bottom']['button_url'] }}"
-                            class="w-fit hover:cursor-pointer border-2 border-black py-2 px-12 bg-[#122457] text-white uppercase">{{ $accountancy['cta_bottom']['button_text'] }}</a>
+                        <svg class="max-w-8" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 640 640"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                            <path fill="#ffffff"
+                                d="M297.4 598.6C309.9 611.1 330.2 611.1 342.7 598.6L470.7 470.6C483.2 458.1 483.2 437.8 470.7 425.3C458.2 412.8 437.9 412.8 425.4 425.3L352 498.7L352 64C352 46.3 337.7 32 320 32C302.3 32 288 46.3 288 64L288 498.7L214.6 425.3C202.1 412.8 181.8 412.8 169.3 425.3C156.8 437.8 156.8 458.1 169.3 470.6L297.3 598.6z" />
+                        </svg>
                     </div>
                     <div>
                         <p class="text-white">{!! $accountancy['cta_bottom']['paragraph'] !!}
@@ -139,7 +149,8 @@
         @if (!empty($accountancy['cta_bottom_enabled']))
             <div class="absolute bottom-0 max-w-screen min-h-[322px] flex md:hidden items-center"
                 style="background-image: url('{{ $accountancy['background']['mobile'] }}'); background-size: cover; background-repeat: no-repeat;">
-                <div class="grid md:grid-cols-3 min-h-full items-center justify-center max-w-6xl mx-10 md:mx-auto gap-10">
+                <div
+                    class="grid md:grid-cols-3 min-h-full items-center justify-center mt-10 max-w-6xl mx-10 md:mx-auto gap-10">
                     <img src="{{ $accountancy['background']['phone_icon'] }}" alt="Księgowa na fotelu"
                         class="static max-md:order-last md:absolute bottom-0 left-40 object-cover" />
                     <div>
@@ -147,8 +158,11 @@
                     </div>
                     <div class="flex flex-col gap-12">
                         <h2 class="text-4xl text-white max-w-[236px]">{!! $accountancy['cta_bottom']['heading'] !!}</h2>
-                        <a href="{{ $accountancy['cta_bottom']['button_url'] }}"
-                            class="w-fit hover:cursor-pointer border-2 border-black py-2 px-12 bg-[#122457] text-white uppercase">{{ $accountancy['cta_bottom']['button_text'] }}</a>
+                        <svg class="max-w-8" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 640 640"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                            <path fill="#ffffff"
+                                d="M297.4 598.6C309.9 611.1 330.2 611.1 342.7 598.6L470.7 470.6C483.2 458.1 483.2 437.8 470.7 425.3C458.2 412.8 437.9 412.8 425.4 425.3L352 498.7L352 64C352 46.3 337.7 32 320 32C302.3 32 288 46.3 288 64L288 498.7L214.6 425.3C202.1 412.8 181.8 412.8 169.3 425.3C156.8 437.8 156.8 458.1 169.3 470.6L297.3 598.6z" />
+                        </svg>
                     </div>
                     <div>
                         <p class="text-white">{!! $accountancy['cta_bottom']['paragraph'] !!}
