@@ -45,8 +45,17 @@ class Main extends Composer
             'title' => $this->getAcfFieldSafe('hero_title', false, 'Twój partner w Księgowości i Podatkach'),
             'description' => $this->getAcfFieldSafe('hero_description', false, 'Profesjonalną obsługą naszych klientów, niezależnie od wielkości i złożoności usług księgowej, zajmują się certyfikowani księgowi z kilkuletnim doświadczeniem.'),
             'hero_image' => $this->getAcfImageSafe('hero_image', false, 'large', get_template_directory_uri() . '/resources/images/fotel-2.png'),
-            'button_text' => $this->getAcfFieldSafe('hero_button_text', false, 'Umów się'),
-            'button_url' => $this->getAcfUrlSafe('hero_button_url', false, '#'),
+        ];
+    }
+
+    private function getCtaData()
+    {
+        return [
+            'title' => $this->getAcfFieldSafe('cta_title', false, 'Umów się na spotkanie'),
+            'image' => $this->getAcfImageSafe('image', false, 'large', get_template_directory_uri() . '/resources/images/telefon.png'),
+            'description' => $this->getAcfFieldSafe('cta_description', false, 'Nasi księgowi w Hanwell są cały czas do Twojej dyspozycji – zadzwoń albo napisz, by umówić się na spotkanie. Zajmiemy się Twoją sprawą w sposób rzetelny i kompleksowy!'),
+            'book_now_text' => $this->getAcfFieldSafe('cta_book_now_text', false, 'Umów się'),
+            'book_now_url' => $this->getAcfUrlSafe('cta_book_now_url', false, '#'),
         ];
     }
 
@@ -88,7 +97,6 @@ class Main extends Composer
                     'label' => $it['label'] ?? ($it['title'] ?? ''),
                     'href' => $it['href'] ?? ($it['link'] ?? '#'),
                     'icon' => $it['icon'] ?? 'docs',
-                    'icon_svg' => $this->iconSvg($it['icon'] ?? 'docs'),
                 ];
             }
             $items = $normalized;
@@ -113,8 +121,16 @@ class Main extends Composer
                                 Sprawdź, czym zajmuje się nasze biuro księgowe i skorzystaj z usług, świadczonych na
                                 najwyższym
                                 poziomie!'),
-            'show_more_text' => $this->getAcfFieldSafe('services_show_more_text', false, 'Rozwiń'),
             'items' => $items,
+        ];
+    }
+
+    private function getBlogData()
+    {
+        return [
+            'title' => $this->getAcfFieldSafe('blog_title', false, 'Blog'),
+            'url' => $this->getAcfUrlSafe('blog_url', false, '/blog'),
+            'read_more_text' => $this->getAcfFieldSafe('blog_read_more_text', false, 'CZYTAJ WIĘCEJ'),
         ];
     }
 
@@ -141,46 +157,18 @@ class Main extends Composer
 
         return [
             'title' => $this->getAcfFieldSafe('testimonials_title', false, 'Nie musisz nam wierzyć na słowo – zobacz, co mówią inni.'),
-            'image' => $this->getAcfImageSafe('testimonials_image', false, 'full', get_template_directory_uri() . '/resources/images/image-testimonials.png'),
             'testimonials' => $default_testimonials,
             'subtitle' => $this->getAcfFieldSafe('testimonials_subtitle', false, 'Zobacz pełne recenzje na naszym Facebooku.'),
             'cta_text' => $this->getAcfFieldSafe('testimonials_cta_text', false, $this->getAcfFieldSafe('testimonials_cta_view_more', false, 'ZOBACZ')),
-            'cta_url' => $this->getAcfUrlSafe('testimonials_cta_url', false, $this->getAcfUrlSafe('testimonials_cta_view_more_url', false, '/gallery')),
-        ];
-    }
-
-
-    private function getCtaData()
-    {
-        return [
-            'title' => $this->getAcfFieldSafe('cta_title', false, 'Umów się na spotkanie'),
-            'image' => $this->getAcfImageSafe('image', false, 'large', get_template_directory_uri() . '/resources/images/telefon.png'),
-            'description' => $this->getAcfFieldSafe('cta_description', false, 'Nasi księgowi w Hanwell są cały czas do Twojej dyspozycji – zadzwoń albo napisz, by umówić się na spotkanie. Zajmiemy się Twoją sprawą w sposób rzetelny i kompleksowy!'),
-            'view_more_text' => $this->getAcfFieldSafe('cta_view_more_text', false, 'VIEW more'),
-            'view_more_url' => $this->getAcfUrlSafe('cta_view_more_url', false, '/reviews'),
-            'book_now_text' => $this->getAcfFieldSafe('cta_book_now_text', false, 'Umów się'),
-            'book_now_url' => $this->getAcfUrlSafe('cta_book_now_url', false, '#'),
-            'background' => $this->getAcfImageSafe('cta_background', false, 'full', get_template_directory_uri() . '/resources/images/image-backgroundv3.png'),
+            'cta_url' => $this->getAcfUrlSafe('testimonials_cta_url', false, $this->getAcfUrlSafe('testimonials_cta_view_more_url', false, '/blog')),
         ];
     }
 
     private function getContactSectionData()
     {
         return [
-            'heading' => $this->getAcfFieldSafe('contact_heading', false, 'Postaw na pewność i spokój,'),
-            'subheading' => $this->getAcfFieldSafe('contact_subheading', false, 'powierz księgowość ekspertom'),
-            'privacy_text' => $this->getAcfFieldSafe('contact_privacy_text', false, "Niniejszym oświadczam, że zapoznałem się z polityką prywatności i wyrażam zgodę na przetwarzanie przez Optimum Tax LTD z siedzibą przy 86 Boston Road, London W7 3TR moich danych osobowych w zakresie niezbędnym do realizacji świadczonych usług na moją rzecz. Jednocześnie potwierdzam, że mam ukończone 16 lat i jestem świadomy, że przysługuje mi prawo do wglądu w moje dane osobowe oraz prawo do udzielenia zgody i żądania usunięcia moich danych osobowych."),
-            'submit_text' => $this->getAcfFieldSafe('contact_submit_text', false, 'KONTAKT'),
+            'heading' => $this->getAcfFieldSafe('contact_heading', false, '<strong>Postaw na pewność i spokój,</strong> <br> powierz księgowość ekspertom'),
             'background_image' => $this->getAcfImageSafe('contact_background_image', false, 'full', get_template_directory_uri() . '/resources/images/businessman-working.png'),
-        ];
-    }
-
-    private function getBlogData()
-    {
-        return [
-            'title' => $this->getAcfFieldSafe('blog_title', false, 'Blog'),
-            'url' => $this->getAcfUrlSafe('blog_url', false, '/blog'),
-            'read_more_text' => $this->getAcfFieldSafe('blog_read_more_text', false, 'CZYTAJ WIĘCEJ'),
         ];
     }
 

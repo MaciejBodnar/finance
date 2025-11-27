@@ -17,12 +17,17 @@
                         <p class="mt-4 text-slate-600">{{ $post['hero_subtitle'] }}</p>
                     @else
                         <div class="mt-4 flex items-center gap-1">
-                            <svg class="w-4 h-4 text-[#2d7e3b]" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M5 8l7 8 7-8z" />
+
+                            <svg width="18" height="13" viewBox="0 0 18 13" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8.66016 12.75L-9.91821e-05 0H17.3204L8.66016 12.75Z" fill="#38783A" />
                             </svg>
-                            <svg class="w-4 h-4 text-[#2d7e3b]" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M5 8l7 8 7-8z" />
+
+                            <svg width="18" height="13" viewBox="0 0 18 13" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8.66016 12.75L-9.91821e-05 0H17.3204L8.66016 12.75Z" fill="#38783A" />
                             </svg>
+
                         </div>
                     @endif
                 </header>

@@ -15,12 +15,17 @@
             <div class="text-center">
                 <h2 class="text-3xl md:text-5xl font-bold">{{ $contact['page']['title'] }}</h2>
                 <div class="mt-12 flex items-center justify-center gap-1">
-                    <svg class="w-4 h-4 text-[#2d7e3b]" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M5 8l7 8 7-8z" />
+
+                    <svg width="18" height="13" viewBox="0 0 18 13" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8.66016 12.75L-9.91821e-05 0H17.3204L8.66016 12.75Z" fill="#38783A" />
                     </svg>
-                    <svg class="w-4 h-4 text-[#2d7e3b]" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M5 8l7 8 7-8z" />
+
+                    <svg width="18" height="13" viewBox="0 0 18 13" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8.66016 12.75L-9.91821e-05 0H17.3204L8.66016 12.75Z" fill="#38783A" />
                     </svg>
+
                 </div>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-4 justify-between gap-8 text-[#0b285f]">

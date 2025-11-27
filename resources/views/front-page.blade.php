@@ -21,7 +21,6 @@
 
 
             </div>
-            <!-- Desktop / md+ background -->
             <div class="absolute bottom-0 w-full min-h-[322px] hidden md:flex items-center"
                 style="background-image: url('{{ get_template_directory_uri() }}/resources/images/Subtraction.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
                 <div class="grid md:grid-cols-3 min-h-full items-center justify-center max-w-6xl mx-auto gap-10">
@@ -41,7 +40,6 @@
                 </div>
             </div>
 
-            <!-- Mobile background (visible on small screens) -->
             <div class="absolute bottom-0 max-w-screen min-h-[322px] flex md:hidden items-center"
                 style="background-image: url('{{ get_template_directory_uri() }}/resources/images/Subtraction-6.png'); background-size: cover; background-repeat: no-repeat;">
                 <div
@@ -74,11 +72,13 @@
                 <div class="space-y-5 text-[#233] text-sm md:text-base leading-relaxed">
                     <div class="flex items-start gap-3">
                         <div class="pt-1 flex gap-1">
-                            <svg class="w-8 h-8 text-[#2d7e3b]" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M5 8l7 8 7-8z" />
+                            <svg width="18" height="13" viewBox="0 0 18 13" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8.66016 12.75L-9.91821e-05 0H17.3204L8.66016 12.75Z" fill="#38783A" />
                             </svg>
-                            <svg class="w-8 h-8 text-[#2d7e3b]" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M5 8l7 8 7-8z" />
+                            <svg width="18" height="13" viewBox="0 0 18 13" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8.66016 12.75L-9.91821e-05 0H17.3204L8.66016 12.75Z" fill="#38783A" />
                             </svg>
                         </div>
                         <div class="relative">
@@ -90,7 +90,7 @@
                             <div class="md:hidden border-t border-[#8FB3D4] my-10 justify-center flex">
                                 <button data-clamp-toggle="intro-1" aria-expanded="false"
                                     class="mt-3 md:hidden text-sm font-semibold text-[#8FB3D4]">
-                                    {{ $main['services']['show_more_text'] }}
+                                    Rozwiń
                                 </button>
                             </div>
                         </div>
@@ -136,11 +136,13 @@
             <div class="text-center">
                 <h2 class="text-3xl md:text-5xl font-bold">{{ $main['blog']['title'] ?? 'Blog' }}</h2>
                 <div class="mt-3 flex items-center justify-center">
-                    <svg class="w-8 h-8 text-[#2d7e3b]" viewBox="0 0 10 10" fill="currentColor">
-                        <path d="M5 8l7 8 7-8z" />
+                    <svg width="18" height="13" viewBox="0 0 18 13" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8.66016 12.75L-9.91821e-05 0H17.3204L8.66016 12.75Z" fill="#38783A" />
                     </svg>
-                    <svg class="w-8 h-8 text-[#2d7e3b]" viewBox="0 0 10 10" fill="currentColor">
-                        <path d="M5 8l7 8 7-8z" />
+                    <svg width="18" height="13" viewBox="0 0 18 13" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8.66016 12.75L-9.91821e-05 0H17.3204L8.66016 12.75Z" fill="#38783A" />
                     </svg>
                 </div>
             </div>
@@ -165,8 +167,8 @@
                         </div>
                         <div class="px-10 pb-8">
                             <div class="flex items-center gap-2 text-xs text-slate-500 mb-3">
-                                <svg class="w-4 h-4 text-[#0b285f]" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="1.6">
+                                <svg class="w-4 h-4 text-[#0b285f]" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="1.6">
                                     <rect x="3" y="4" width="18" height="18" rx="2"></rect>
                                     <path d="M16 2v4M8 2v4M3 10h18"></path>
                                 </svg>
@@ -245,11 +247,9 @@
 
         <div class="relative max-w-4xl mx-auto px-4">
             <div class="text-center mb-10 md:mb-12">
-                <h2 class="text-3xl md:text-5xl font-extrabold leading-tight text-[#0b285f]">
-                    {{ $main['contact_section']['heading'] }}
+                <h2 class="text-3xl md:text-6xl leading-tight text-[#0b285f]">
+                    {!! $main['contact_section']['heading'] !!}
                 </h2>
-                <p class="text-2xl md:text-4xl leading-tight text-[#6f7ea6] -mt-1">
-                    {{ $main['contact_section']['subheading'] }}</p>
             </div>
 
             <form action="#" method="post" class="space-y-5 text-sm">
@@ -294,13 +294,18 @@
                 <div class="flex items-start gap-3">
                     <input type="checkbox"
                         class="mt-1 w-4 h-4 border-2 border-[#0b285f] rounded-none focus:outline-none focus:border-[#CB9264]">
-                    <p class="text-[12px] leading-relaxed text-[#3b445b]">{{ $main['contact_section']['privacy_text'] }}
+                    <p class="text-[12px] leading-relaxed text-[#3b445b]">Niniejszym oświadczam, że zapoznałem się z
+                        polityką prywatności i wyrażam zgodę na przetwarzanie przez Optimum Tax LTD z siedzibą przy 86
+                        Boston Road, London W7 3TR moich danych osobowych w zakresie niezbędnym do realizacji świadczonych
+                        usług na moją rzecz. Jednocześnie potwierdzam, że mam ukończone 16 lat i jestem świadomy, że
+                        przysługuje mi prawo do wglądu w moje dane osobowe oraz prawo do udzielenia zgody i żądania
+                        usunięcia moich danych osobowych.
                     </p>
                 </div>
 
                 <div class="pt-2 text-center">
                     <button type="submit"
-                        class="inline-flex items-center justify-center px-8 py-3 bg-[#0b285f] text-white font-semibold tracking-wide rounded-none hover:bg-[#CB9264] transition">{{ $main['contact_section']['submit_text'] ?? 'KONTAKT' }}</button>
+                        class="inline-flex items-center justify-center px-8 py-3 bg-[#0b285f] text-white font-semibold tracking-wide rounded-none hover:bg-[#CB9264] transition">KONTAKT</button>
                 </div>
             </form>
         </div>
