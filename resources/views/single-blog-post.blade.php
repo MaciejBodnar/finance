@@ -10,8 +10,12 @@
 
             <article class="prose ml-0 md:ml-64 mt-10 my-0 md:my-28 max-w-6xl">
                 <header class="mb-8">
-                    <h1 class="text-[#0b285f] mb-8 md:mb-40 text-3xl md:text-5xl font-extrabold leading-tight">
-                        {{ $post['title'] ?? '' }}
+                    <h1
+                        class="tk-tt-travels-next text-[#0b285f] mb-8 md:mb-40 text-3xl md:text-5xl font-extrabold leading-tight">
+                        {{ $post['title'] }}
+                        @if (!empty($post['title_bold']))
+                            <p class="mt-4 text-slate-600">{{ $post['title_bold'] }}</p>
+                        @endif
                     </h1>
                     @if (!empty($post['hero_subtitle']))
                         <p class="mt-4 text-slate-600">{{ $post['hero_subtitle'] }}</p>

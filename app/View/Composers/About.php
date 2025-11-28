@@ -46,18 +46,18 @@ class About extends Composer
 
         return [
             // Hero
-            'hero_title_html' => $this->getAcfFieldSafe('about_hero_title_html', false, 'Poznajmy <span class="font-light">się</span>'),
-            'intro_paragraph' => $this->getAcfFieldSafe('about_intro_paragraph', false, 'OptimumTax to polskie biuro księgowe w Londynie działające na terenie Wielkiej Brytanii. Świadczymy profesjonalne usługi doradcze, zarówno na rzecz osób prywatnych, jak i firm i instytucji. Zapewniamy doradczą i kompleksową obsługę księgową w Londynie oraz pomagamy podejmować najkorzystniejsze decyzje w kwestiach prawnych i finansowych. Nasze biuro księgowe mieści się w zachodnim Londynie, aczkolwiek świadczymy usługi na terenie całej Wielkiej Brytanii. Zapewniamy fachową pomoc także na odległość, a nasi klienci zaoszczędzony w ten sposób czas mogą poświęcić na rozwijanie działalności i pomnażanie zysków.'),
-            'mission_title' => $this->getAcfFieldSafe('mission_title', false, 'Rzetelna informacja księgowa'),
-            'intro_paragraph_2' => $this->getAcfFieldSafe('about_intro_paragraph_2', false, 'Polski księgowy w zachodnim Londynie realizuje powierzone zlecenia, a przy tym dąży do podnoszenia bezpieczeństwa podatkowego klientów, z którymi buduje partnerskie relacje. W oparciu o wiedzę i doświadczenie zawodowe wskazujemy naszym klientom najlepsze rozwiązania, przygotowujemy ich do zmian oraz pomagamy w realizacji kolejnych planów i inwestycji. Zaufanie klientów jest dla nas największą nagrodą, dlatego robimy wszystko, aby nasze biuro księgowe było znane z wysokiej jakości usług.'),
+            'hero_title' => $this->getAcfFieldSafe('hero_title', false, 'Poznajmy się'),
+            'intro_paragraph' => $this->getAcfFieldSafe('intro_paragraph', false, 'OptimumTax to polskie biuro księgowe w Londynie działające na terenie Wielkiej Brytanii. Świadczymy profesjonalne usługi doradcze, zarówno na rzecz osób prywatnych, jak i firm i instytucji. Zapewniamy doradczą i kompleksową obsługę księgową w Londynie oraz pomagamy podejmować najkorzystniejsze decyzje w kwestiach prawnych i finansowych. Nasze biuro księgowe mieści się w zachodnim Londynie, aczkolwiek świadczymy usługi na terenie całej Wielkiej Brytanii. Zapewniamy fachową pomoc także na odległość, a nasi klienci zaoszczędzony w ten sposób czas mogą poświęcić na rozwijanie działalności i pomnażanie zysków.'),
+            'mission_title' => $this->getAcfFieldSafe('mission_title', false, 'Rzetelna <br>informacja księgowa'),
+            'intro_paragraph_2' => $this->getAcfFieldSafe('intro_paragraph_2', false, 'Polski księgowy w zachodnim Londynie realizuje powierzone zlecenia, a przy tym dąży do podnoszenia bezpieczeństwa podatkowego klientów, z którymi buduje partnerskie relacje. W oparciu o wiedzę i doświadczenie zawodowe wskazujemy naszym klientom najlepsze rozwiązania, przygotowujemy ich do zmian oraz pomagamy w realizacji kolejnych planów i inwestycji. Zaufanie klientów jest dla nas największą nagrodą, dlatego robimy wszystko, aby nasze biuro księgowe było znane z wysokiej jakości usług.'),
             'about_image' => $this->getAcfImageSafe('about_image', false, 'full', get_template_directory_uri() . '/resources/images/businesswoman-working.png'),
 
             //Why us
-            'why_heading' => $this->getAcfFieldSafe('about_why_heading', false, 'Dlaczego warto wybrać właśnie nas?'),
+            'why_heading' => $this->getAcfFieldSafe('why_heading', false, 'Dlaczego my?'),
             'our_work' => $our_work,
 
             // Testimonials block
-            'testimonials_title' => $this->getAcfFieldSafe('testimonials_title', false, 'Nie musisz nam wierzyć na słowo – <span class="font-extrabold">zobacz, co mówią inni.</span>'),
+            'testimonials_title' => $this->getAcfFieldSafe('testimonials_title', false, 'Nie musisz nam wierzyć na słowo - zobacz, co mówią inni.'),
             'testimonials_subtitle' => $this->getAcfFieldSafe('about_testimonials_subtitle', false, 'Zobacz pełne recenzje na naszym Facebooku.'),
             'testimonials' => $testimonials,
             'testimonials_facebook_url' => $this->getAcfFieldSafe('about_testimonials_facebook_url', false, 'https://www.facebook.com/OptimumTaxLTD/reviews'),
@@ -70,7 +70,7 @@ class About extends Composer
 
 
             // Contact area (page-specific overrides)
-            'contact_heading' => $this->getAcfFieldSafe('about_contact_heading', false, 'Postaw na pewność i spokój, powierz księgowość ekspertom'),
+            'contact_heading' => $this->getAcfFieldSafe('contact_heading', false, 'Postaw na <br>pewność i spokój, powierz księgowość ekspertom'),
             'contact_background_image' => $this->getAcfImageSafe('about_contact_background_image', false, 'full', get_template_directory_uri() . '/resources/images/businessman-working.png'),
         ];
     }

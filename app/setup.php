@@ -172,6 +172,14 @@ add_action('init', function () {
     add_rewrite_rule('^spolki-cywilne/?$', 'index.php?custom_page=accountancy&accountancy_sub=spolki-cywilne', 'top');
     add_rewrite_rule('^dodatkowe-uslugi/?$', 'index.php?custom_page=accountancy&accountancy_sub=dodatkowe-uslugi', 'top');
     add_rewrite_rule('^wirtualne-biuro/?$', 'index.php?custom_page=accountancy&accountancy_sub=wirtualne-biuro', 'top');
+
+    // English versions of subpages
+    add_rewrite_rule('^ltd-companies/?$', 'index.php?custom_page=accountancy&accountancy_sub=firmy-ltd', 'top');
+    add_rewrite_rule('^self-employment/?$', 'index.php?custom_page=accountancy&accountancy_sub=wlasna-dzialalnosc', 'top');
+    add_rewrite_rule('^civil-partnerships/?$', 'index.php?custom_page=accountancy&accountancy_sub=spolki-cywilne', 'top');
+    add_rewrite_rule('^additional-services/?$', 'index.php?custom_page=accountancy&accountancy_sub=dodatkowe-uslugi', 'top');
+    add_rewrite_rule('^virtual-office/?$', 'index.php?custom_page=accountancy&accountancy_sub=wirtualne-biuro', 'top');
+
     add_rewrite_rule('^about/?$', 'index.php?custom_page=about', 'top');
     add_rewrite_rule('^partners/?$', 'index.php?custom_page=partners', 'top');
     add_rewrite_rule('^blog/?$', 'index.php?custom_page=blog', 'top');
@@ -181,9 +189,9 @@ add_action('init', function () {
     // Flush rewrite rules on theme activation (only once).
     // Bump the sentinel value when adding new custom routes so the flush runs one time.
     // Bump sentinel to force a one-time rewrite flush when new rules are added.
-    if (get_option('sage_custom_routes_flushed') !== 'routes_v5') {
+    if (get_option('sage_custom_routes_flushed') !== 'routes_v6') {
         flush_rewrite_rules();
-        update_option('sage_custom_routes_flushed', 'routes_v5');
+        update_option('sage_custom_routes_flushed', 'routes_v6');
     }
 });
 

@@ -1,60 +1,13 @@
-@php
-    $make_url = function (string $slug, string $fallback = null) {
-        if ($slug === 'home') {
-            return function_exists('pll_home_url') ? pll_home_url() : home_url('/');
-        }
-
-        $page = get_page_by_path($slug);
-        if ($page) {
-            return get_permalink($page->ID);
-        }
-
-        return $fallback ?? site_url("/{$slug}");
-    };
-
-    $get_title = function (string $slug) use ($make_url) {
-        if ($slug === 'home') {
-            return function_exists('pll_current_language') && pll_current_language() === 'en'
-                ? 'HOME'
-                : 'STRONA GŁÓWNA';
-        }
-
-        $url = $make_url($slug);
-        $id = url_to_postid($url);
-        if ($id > 0) {
-            $p = get_post($id);
-            if ($p && !empty($p->post_title)) {
-                return strtoupper($p->post_title);
-            }
-        }
-
-        $page = get_page_by_path($slug);
-        if ($page && !empty($page->post_title)) {
-            return strtoupper($page->post_title);
-        }
-
-        return strtoupper($slug);
-    };
-
-    $items = [
-        ['slug' => 'home', 'label' => $get_title('home'), 'href' => $make_url('home')],
-        ['slug' => 'about', 'label' => $get_title('about'), 'href' => $make_url('about')],
-        ['slug' => 'blog', 'label' => $get_title('blog'), 'href' => $make_url('blog')],
-        ['slug' => 'contact', 'label' => $get_title('contact'), 'href' => $make_url('contact')],
-        ['slug' => 'accountancy', 'label' => $get_title('accountancy'), 'href' => $make_url('accountancy')],
-    ];
-@endphp
-
 <nav class="flex flex-col">
     <div class="w-full max-w-lg px-6">
         <ul class="flex flex-col gap-4">
-            @foreach ($items as $it)
-                @if (isset($it['slug']) && $it['slug'] === 'accountancy')
+            @foreach ($header['menu'] as $item)
+                @if (!empty($item['has_dropdown']))
                     <li>
                         <button type="button"
-                            class="mobile-submenu-toggle w-full items-center flex justify-between px-4 pt-3 rounded-lg text-left text-2xl font-semibold uppercase text-whitetransition"
+                            class="mobile-submenu-toggle w-full items-center flex justify-between px-4 py-3 rounded-lg text-left text-2xl font-semibold uppercase text-white transition"
                             aria-expanded="false" data-target="ksiegowosc-submenu">
-                            <span class="truncate">{{ $it['label'] }}</span>
+                            <span class="truncate">{{ $item['title'] }}</span>
                             <svg class="w-5 h-5 transition-transform" viewBox="0 0 20 20" fill="currentColor"
                                 aria-hidden="true">
                                 <path fill-rule="evenodd"
@@ -65,47 +18,44 @@
 
                         <div id="ksiegowosc-submenu" class="mt-3 px-4 hidden text-white">
                             <ul class="space-y-2 pb-6 text-base">
-                                <li><a href="{{ $make_url('firmy-ltd') }}"
-                                        class="block hover:text-white/80 text-xl py-2">Firmy
-                                        LTD</a></li>
-                                <li><a href="{{ $make_url('wlasna-dzialalnosc') }}"
-                                        class="block hover:text-white/80 text-xl py-2">Własna działalność</a>
-                                </li>
-                                <li><a href="{{ $make_url('spolki-cywilne') }}"
-                                        class="block hover:text-white/80 text-xl py-2">Spółki
-                                        cywilne</a>
-                                </li>
-                                <li><a href="{{ $make_url('dodatkowe-uslugi') }}"
-                                        class="block hover:text-white/80 text-xl py-2">Dodatkowe usługi</a>
-                                </li>
-                                <li><a href="{{ $make_url('wirtualne-biuro') }}"
-                                        class="block hover:text-white/80 text-xl py-2">Wirtualne biuro</a>
-                                </li>
+                                @foreach (['column_1', 'column_2'] as $col)
+                                    @if (!empty($header['services'][$col]['links']))
+                                        @foreach ($header['services'][$col]['links'] as $link)
+                                            <li>
+                                                <a href="{{ $link['url'] }}"
+                                                    class="block hover:text-white/80 text-xl py-2">
+                                                    {{ $link['title'] }}
+                                                </a>
+                                            </li>
+                                        @endforeach
+                                    @endif
+                                @endforeach
                             </ul>
                         </div>
                     </li>
                 @else
                     <li>
-                        <a href="{{ $it['href'] }}"
-                            class="block w-full px-4 py-3 bg-transparent text-2xl font-semibold uppercase text-white hover:text-[#ffba6a] transition rounded-lg">{{ $it['label'] }}</a>
+                        <a href="{{ $item['url'] }}"
+                            class="block w-full px-4 py-3 bg-transparent text-2xl font-semibold uppercase text-white hover:text-[#ffba6a] transition rounded-lg {{ !empty($item['active']) ? 'text-[#ffba6a]' : '' }}">
+                            {{ $item['title'] }}
+                        </a>
                     </li>
                 @endif
             @endforeach
         </ul>
     </div>
 
-    {{-- <div class="pt-10">
-        <?php if (function_exists('pll_the_languages')) : ?>
-        <div class="flex justify-center gap-3 mb-4">
-            <?php pll_the_languages(['show_flags' => 0, 'show_names' => 1, 'hide_if_empty' => 0]); ?>
-        </div>
-        <?php else : ?>
-        <div class="flex justify-center gap-3 mb-4">
-            <a href="<?php echo esc_url(home_url('/')); ?>"
-                class="text-xs font-semibold px-3 py-2 border rounded text-white border-white/20 hover:border-[#ffba6a] hover:text-[#ffba6a]">PL</a>
-            <a href="<?php echo esc_url(home_url('/en/')); ?>"
-                class="text-xs font-semibold px-3 py-2 border rounded text-white border-white/20 hover:border-[#ffba6a] hover:text-[#ffba6a]">EN</a>
-        </div>
-        <?php endif; ?>
-    </div> --}}
+    <div class="pt-10 px-6">
+        @if (!empty($header['languages']))
+            <div class="flex justify-center gap-4 mb-4">
+                @foreach ($header['languages'] as $lang)
+                    <a href="{{ $lang['url'] }}"
+                        class="flex items-center gap-2 px-3 py-2 border rounded border-white/20 hover:border-[#ffba6a] hover:text-[#ffba6a] transition {{ $lang['current_lang'] ? 'bg-white/10 border-[#ffba6a] text-[#ffba6a] opacity-100' : 'text-white opacity-50 hover:opacity-100' }}">
+                        <img src="{{ $lang['flag_url'] }}" width="20" alt="{{ $lang['name'] }}" />
+                        <span class="text-sm font-semibold">{{ strtoupper($lang['slug']) }}</span>
+                    </a>
+                @endforeach
+            </div>
+        @endif
+    </div>
 </nav>

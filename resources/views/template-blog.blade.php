@@ -14,7 +14,7 @@
                     $perPage = !empty($blog['posts_per_page']) ? (int) $blog['posts_per_page'] : 9;
                 @endphp
 
-                <h1 class="text-[#0b285f] text-3xl md:text-5xl font-extrabold">{{ $hero_title }}</h1>
+                <h1 class="text-[#0b285f] text-3xl md:text-5xl font-bold tk-tt-travels-next">{{ $hero_title }}</h1>
                 @if ($hero_subtitle)
                     <p class="mt-3 text-slate-600">{{ $hero_subtitle }}</p>
                 @endif
@@ -33,7 +33,7 @@
                 </div>
             </div>
 
-            <div class="mt-10 md:mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <div class="mt-10 md:mt-12 grid gap-8 md:grid-cols-2 justify-center lg:justify-start lg:grid-cols-3">
                 @php
                     $data = \App\View\Blog::recentPosts($perPage);
                     $posts = $data['posts'] ?? [];

@@ -52,7 +52,7 @@ class Accountancy extends Composer
     private function getHeroData()
     {
         return [
-            'title' => $this->getAcfFieldSafe('hero_title', false, 'Wirtualne biuro i księgowość w UK'),
+            'title' => $this->getAcfFieldSafe('hero_title', false, '<span class="font-bold">Wirtualne</span> biuro'),
             'intro_paragraph' => $this->getAcfFieldSafe('intro_paragraph', false, 'Oferujemy zakładanie spółek LTD, usługi księgowe, a także doradztwo dla właścicieli firm w Wielkiej Brytanii. Limited Company, czyli spółka z ograniczoną odpowiedzialnością, to najpopularniejsza forma prowadzenia działalności w Wielkiej Brytanii. Posiada ona własną osobowość prawną, w związku z czym jej udziałowcy odpowiadają za zobowiązania wyłącznie do wysokości wniesionego wkładu, chroniąc swój majątek osobisty. Zapewniamy doradztwo finansowe i księgowe, obsługujemy finanse i administrację, a także wspieramy właścicieli firm na każdym etapie współpracy. Co więcej – pomożemy Ci w założeniu spółki LTD, zapewniając fachowe konsultacje i zadbamy o wszelkie kwestie związane z rejestracją spółki. Dzięki temu zaoszczędzisz czas i będziesz mieć możliwość skupienia się na planowaniu strategii rozwoju firmy. Księgowość w UK to usługa nie tylko dla Polaków, ale dla wszystkich chętnych, którzy poszukują pomocy w załatwieniu konkretnych spraw. Nasi specjaliści zaopiekują się Tobą i Twoją firmą, a Ty będziesz mógł się skupić na jej funkcjonowaniu.'),
             'image' => $this->getAcfImageSafe('hero_image', false, get_template_directory_uri() . '/resources/images/asian-business-woman.png'),
         ];
@@ -100,7 +100,7 @@ class Accountancy extends Composer
     private function getSectionTwoData()
     {
         return [
-            'title' => $this->getAcfFieldSafe('section_two_title', false, 'Wirtualne biuro i księgowość w UK'),
+            'title' => $this->getAcfFieldSafe('section_two_title', false, 'Wirtualne biuro i <br><span class="font-bold">księgowość w UK</span>'),
             // Changed to single paragraph per your update
             'paragraph' => $this->getAcfFieldSafe('section_two_paragraph', false, 'Każda spółka z ograniczoną odpowiedzialnością (Firma Limited) musi posiadać oficjalną siedzibę (Registered Office Address), której adres podaje się zarówno do rejestru firm (Companies House), jak i urzędu skarbowego (HM Revenue & Customs). Oficjalna siedziba spółki służy przede wszystkim administracji publicznej, w tym fiskalnej, do korespondencji i kontaktów z przedsiębiorstwem. Tam również z reguły są przechowywane dokumenty spółki. AlphaTax Finance użycza spółkom LTD (Limited) swojego adresu na potrzeby oficjalnej siedziby firmy. W ramach tej usługi:'),
             'image' => $this->getAcfImageSafe('section_two_image', false, get_template_directory_uri() . '/resources/images/modern.png'),

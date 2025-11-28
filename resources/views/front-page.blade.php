@@ -9,11 +9,11 @@
         <div class="relative">
             <div class="relative min-h-[830px] max-w-6xl mx-auto px-4 lg:px-0 grid lg:grid-cols-2 pb-[640px] md:pb-0">
                 <div class="space-y-8 pt-20">
-                    <h1 class="text-3xl md:text-4xl lg:text-6xl text-[#ffc23a] max-w-[370px]">
-                        {{ $main['hero']['title'] }}
+                    <h1 class="tk-tt-travels-next font-bold text-3xl md:text-5xl text-[#CB9264] max-w-[450px]">
+                        {!! $main['hero']['title'] !!}
                     </h1>
-                    <p class="text-sm md:text-base leading-relaxed text-[#f5f7ff]">
-                        {{ $main['hero']['description'] }}
+                    <p class="tk-dm-sans-18pt text-sm md:text-base leading-relaxed text-[#f5f7ff]">
+                        {!! $main['hero']['description'] !!}
                     </p>
                 </div>
 
@@ -25,14 +25,16 @@
                 style="background-image: url('{{ get_template_directory_uri() }}/resources/images/Subtraction.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
                 <div class="grid md:grid-cols-3 min-h-full items-center justify-center max-w-6xl mx-auto gap-10">
                     <img src="{{ $main['cta_section']['image'] }}" alt="Kobieta z telefonem"
-                        class="static max-md:order-last md:absolute bottom-0 left-40 object-cover" />
+                        class="static max-md:order-last md:absolute bottom-0 md:left-40 lg:left-60 object-cover" />
                     <div>
 
                     </div>
                     <div class="flex flex-col gap-12">
-                        <h2 class="text-4xl text-white max-w-[236px]">{{ $main['cta_section']['title'] }}</h2>
+                        <h2 class="tk-tt-travels-next font-bold text-4xl text-white max-w-[300px]">
+                            {!! $main['cta_section']['title'] !!}
+                        </h2>
                         <a href="{{ $main['cta_section']['book_now_url'] }}"
-                            class="w-fit hover:cursor-pointer border-2 border-black py-2 px-12 bg-[#122457] text-white uppercase">{{ $main['cta_section']['book_now_text'] }}</a>
+                            class="w-fit hover:cursor-pointer border-2 border-black py-2 px-12 bg-[#122457] text-white tk-dm-sans-18pt uppercase">{{ $main['cta_section']['book_now_text'] }}</a>
                     </div>
                     <div>
                         <p class="text-white">{!! $main['cta_section']['description'] !!}</p>
@@ -44,28 +46,30 @@
                 style="background-image: url('{{ get_template_directory_uri() }}/resources/images/Subtraction-6.png'); background-size: cover; background-repeat: no-repeat;">
                 <div
                     class="grid md:grid-cols-3 min-h-full items-center justify-center max-w-6xl mt-10 mx-10 md:mx-auto gap-10">
-                    <img src="{{ get_template_directory_uri() }}/resources/images/telefon.png" alt="Księgowa na fotelu"
+                    <img src="{{ get_template_directory_uri() }}/resources/images/telefon.png" alt="Księgowa z telefonem"
                         class="static max-md:order-last md:absolute bottom-0 left-40 object-cover" />
                     <div>
 
                     </div>
                     <div class="flex flex-col gap-12">
-                        <h2 class="text-4xl text-white max-w-[236px]">{{ $main['cta_section']['title'] }}</h2>
+                        <h2 class="tk-tt-travels-next font-bold text-4xl text-white max-w-[300px]">
+                            {!! $main['cta_section']['title'] !!}
+                        </h2>
                         <a href="{{ $main['cta_section']['book_now_url'] }}"
                             class="w-fit hover:cursor-pointer border-2 border-black py-2 px-12 bg-[#122457] text-white uppercase">{{ $main['cta_section']['book_now_text'] }}</a>
                     </div>
                     <div>
-                        <p class="text-white">{{ $main['cta_section']['description'] }}</p>
+                        <p class="text-white">{!! $main['cta_section']['description'] !!}</p>
                     </div>
                 </div>
             </div>
 
     </section>
     <section id="uslugi" class="bg-white py-16 md:py-24">
-        <div class="max-w-6xl mx-auto px-4 lg:px-0">
+        <div class="max-w-5xl mx-auto px-4 lg:px-0">
 
             <div class="grid gap-10 lg:gap-16 items-start">
-                <h2 class="text-[#0b285f] max-w-[424px] text-3xl md:text-5xl">
+                <h2 class="tk-tt-travels-next text-[#0b285f] max-w-[480px] text-3xl md:text-5xl">
                     {{ $main['services']['title'] }}
                 </h2>
 
@@ -83,8 +87,8 @@
                         </div>
                         <div class="relative">
                             <p data-clamp-id="intro-1"
-                                class="text-[#233] text-sm md:text-base leading-relaxed line-clamp-8 md:line-clamp-none">
-                                {{ $main['services']['description'] }}
+                                class="tk-dm-sans-18pt text-[#233] text-sm md:text-base leading-relaxed line-clamp-8 md:line-clamp-none">
+                                {!! $main['services']['description'] !!}
                             </p>
 
                             <div class="md:hidden border-t border-[#8FB3D4] my-10 justify-center flex">
@@ -98,18 +102,19 @@
 
                 </div>
             </div>
-
-            <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
+        </div>
+        <div class="max-w-7xl mx-auto ">
+            <div class="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-5">
                 @php $serviceItems = $main['services']['items'] ?? []; @endphp
                 @foreach ($serviceItems as $it)
                     <a href="{{ $it['href'] ?? '#' }}"
-                        class="group relative bg-[#2d7e3b] text-white rounded-sm pb-9 px-9 pt-10 min-h-fit md:min-h-[286px] flex flex-row md:flex-col justify-between focus:ring-offset-2 focus:ring-[#2d7e3b] focus:ring-offset-white hover:brightness-110 transition">
+                        class="group relative bg-[#2d7e3b] text-white pb-9 px-9 pt-10 min-h-fit gap-4 flex flex-row md:flex-col focus:ring-offset-2 focus:ring-[#2d7e3b] focus:ring-offset-white hover:brightness-110 transition">
                         <div class="text-white/95">
-                            <div class="text-white mb-7">
+                            <div class="text-white mb-4">
                                 {!! $it['icon_svg'] ?? ($it['icon'] ?? '') !!}
                             </div>
-                            <div class="text-xl" aria-hidden="true">
-                                {!! $it['label'] !!}
+                            <div class="text-xl tk-tt-travels-next" aria-hidden="true">
+                                {!! $it['label_1'] !!} <br><span class="font-bold">{!! $it['label_2'] !!}</span>
                             </div>
                         </div>
 
@@ -134,7 +139,7 @@
 
         <div class="relative max-w-6xl mx-auto px-4 lg:px-0">
             <div class="text-center">
-                <h2 class="text-3xl md:text-5xl font-bold">{{ $main['blog']['title'] ?? 'Blog' }}</h2>
+                <h2 class="tk-tt-travels-next text-3xl md:text-5xl font-bold">{{ $main['blog']['title'] }}</h2>
                 <div class="mt-3 flex items-center justify-center">
                     <svg width="18" height="13" viewBox="0 0 18 13" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
@@ -174,8 +179,7 @@
                                 </svg>
                                 <span>{{ $p['date'] }}</span>
                             </div>
-                            <h3
-                                class="text-lg font-semibold leading-snug text-[#2d7e3b] group-hover:underline mb-3 line-clamp-3">
+                            <h3 class="text-lg font-semibold leading-snug group-hover:underline mb-3 line-clamp-3">
                                 {{ $p['title'] }}</h3>
                             <p class="text-sm text-slate-600 line-clamp-2">{{ $p['excerpt'] }}</p>
                         </div>
@@ -192,7 +196,7 @@
     <section class="bg-[#2d7e3b] text-white py-16 md:py-24">
         <div class="max-w-6xl mx-auto px-4 lg:px-0">
             <div class="max-w-232">
-                <h2 class="text-3xl md:text-6xl leading-tight font-light">
+                <h2 class="tk-tt-travels-next text-3xl md:text-4xl">
                     {{ $main['testimonials']['title'] }}
                 </h2>
                 <div class="mt-6 flex flex-wrap items-center gap-4">
@@ -229,7 +233,7 @@
                         @foreach ($main['testimonials']['testimonials'] as $t)
                             <div class="w-full shrink-0 md:pt-8 md:border-t-2 md:border-white/70 px-4">
                                 <p class="font-semibold">{{ $t['name'] ?? '' }}</p>
-                                <p class="mt-4 leading-relaxed">{{ $t['text'] ?? '' }}</p>
+                                <p class="mt-4 leading-relaxed tk-dm-sans-36pt ">{{ $t['text'] ?? '' }}</p>
                             </div>
                         @endforeach
                     </div>
@@ -245,7 +249,7 @@
 
         <div class="relative max-w-4xl mx-auto px-4">
             <div class="text-center mb-10 md:mb-12">
-                <h2 class="text-3xl md:text-6xl leading-tight text-[#0b285f]">
+                <h2 class="tk-tt-travels-next font-bold text-3xl md:text-6xl leading-tight text-[#0b285f]">
                     {!! $main['contact_section']['heading'] !!}
                 </h2>
             </div>

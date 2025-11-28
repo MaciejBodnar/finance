@@ -12,7 +12,8 @@
         <div
             class="max-w-6xl px-4 lg:px-0 {{ $mdPbClass }} flex flex-col md:flex-row min-w-full gap-8 lg:gap-64 md:justify-end">
             <div class="ml-0 md:ml-10 justify-self-end">
-                <h1 class="text-[#0b285f] text-3xl md:text-5xl font-light leading-tight mt-24 max-w-[732px]">
+                <h1
+                    class="tk-tt-travels-next text-[#0b285f] text-3xl md:text-5xl font-light leading-tight mt-24 max-w-[732px]">
                     {!! $accountancy['hero']['title'] !!}
                 </h1>
                 <div class="flex gap-10 mt-24">
@@ -26,7 +27,7 @@
                             <path d="M8.66016 12.75L-9.91821e-05 0H17.3204L8.66016 12.75Z" fill="#38783A" />
                         </svg>
                     </div>
-                    <div class="space-y-5 text-[#233] leading-7 max-w-prose">
+                    <div class="space-y-5 tk-dm-sans text-[#233] leading-7 max-w-prose">
                         <p>{!! $accountancy['hero']['intro_paragraph'] !!}</p>
                     </div>
                 </div>
@@ -35,7 +36,6 @@
                 <img src="{{ $accountancy['hero']['image'] }}" alt="" class="w-full h-full object-cover">
             </div>
         </div>
-        <!-- Desktop / md+ background -->
         @if (!empty($accountancy['cta_top_enabled']))
             <div class="absolute bottom-0 w-full min-h-[322px] hidden md:flex items-center"
                 style="background-image: url('{{ $accountancy['background']['desktop'] }}'); background-size: cover; background-position: center; background-repeat: no-repeat;">
@@ -47,11 +47,13 @@
                     </div>
                     <div class="flex flex-col gap-12">
                         <h2 class="text-4xl text-white max-w-[236px]">{!! $accountancy['cta_top']['heading'] !!}</h2>
-                        <svg class="max-w-8" xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 640 640"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
-                            <path fill="#ffffff"
-                                d="M297.4 598.6C309.9 611.1 330.2 611.1 342.7 598.6L470.7 470.6C483.2 458.1 483.2 437.8 470.7 425.3C458.2 412.8 437.9 412.8 425.4 425.3L352 498.7L352 64C352 46.3 337.7 32 320 32C302.3 32 288 46.3 288 64L288 498.7L214.6 425.3C202.1 412.8 181.8 412.8 169.3 425.3C156.8 437.8 156.8 458.1 169.3 470.6L297.3 598.6z" />
-                        </svg>
+                        <a href="#kontakt">
+                            <svg class="max-w-8" xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 640 640"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                                <path fill="#ffffff"
+                                    d="M297.4 598.6C309.9 611.1 330.2 611.1 342.7 598.6L470.7 470.6C483.2 458.1 483.2 437.8 470.7 425.3C458.2 412.8 437.9 412.8 425.4 425.3L352 498.7L352 64C352 46.3 337.7 32 320 32C302.3 32 288 46.3 288 64L288 498.7L214.6 425.3C202.1 412.8 181.8 412.8 169.3 425.3C156.8 437.8 156.8 458.1 169.3 470.6L297.3 598.6z" />
+                            </svg>
+                        </a>
                     </div>
                     <div>
                         <p class="text-white">{!! $accountancy['cta_top']['paragraph'] !!}
@@ -61,7 +63,6 @@
             </div>
         @endif
 
-        <!-- Mobile background (visible on small screens) -->
         @if (!empty($accountancy['cta_top_enabled']))
             <div class="absolute bottom-0 max-w-screen min-h-[322px] flex md:hidden items-center"
                 style="background-image: url('{{ $accountancy['background']['mobile'] }}'); background-size: cover; background-repeat: no-repeat;">
@@ -73,12 +74,14 @@
 
                     </div>
                     <div class="flex flex-col gap-12">
-                        <h2 class="text-4xl text-white max-w-[236px]">{!! $accountancy['cta_top']['heading'] !!}</h2>
-                        <svg class="max-w-8" xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 640 640"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
-                            <path fill="#ffffff"
-                                d="M297.4 598.6C309.9 611.1 330.2 611.1 342.7 598.6L470.7 470.6C483.2 458.1 483.2 437.8 470.7 425.3C458.2 412.8 437.9 412.8 425.4 425.3L352 498.7L352 64C352 46.3 337.7 32 320 32C302.3 32 288 46.3 288 64L288 498.7L214.6 425.3C202.1 412.8 181.8 412.8 169.3 425.3C156.8 437.8 156.8 458.1 169.3 470.6L297.3 598.6z" />
-                        </svg>
+                        <h2 class="text-4xl text-white max-w-[300px] tk-tt-travels-next">{!! $accountancy['cta_top']['heading'] !!}</h2>
+                        <a>
+                            <svg class="max-w-8" xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 640 640"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                                <path fill="#ffffff"
+                                    d="M297.4 598.6C309.9 611.1 330.2 611.1 342.7 598.6L470.7 470.6C483.2 458.1 483.2 437.8 470.7 425.3C458.2 412.8 437.9 412.8 425.4 425.3L352 498.7L352 64C352 46.3 337.7 32 320 32C302.3 32 288 46.3 288 64L288 498.7L214.6 425.3C202.1 412.8 181.8 412.8 169.3 425.3C156.8 437.8 156.8 458.1 169.3 470.6L297.3 598.6z" />
+                            </svg>
+                        </a>
                     </div>
                     <div>
                         <p class="text-white">{!! $accountancy['cta_top']['paragraph'] !!}
@@ -99,7 +102,7 @@
                 <img src="{{ $accountancy['section_two']['image'] }}" alt="" class="w-full h-full object-cover">
             </div>
             <div class="mr-10 justify-self-start">
-                <h2 class="text-[#0b285f] text-3xl md:text-5xl font-light leading-tight">
+                <h2 class="tk-tt-travels-next text-[#0b285f] text-3xl md:text-5xl font-light leading-tight">
                     {!! $accountancy['section_two']['title'] !!}
                 </h2>
                 <div class="flex gap-10">
@@ -113,13 +116,12 @@
                             <path d="M8.66016 12.75L-9.91821e-05 0H17.3204L8.66016 12.75Z" fill="#38783A" />
                         </svg>
                     </div>
-                    <div class="mt-6 space-y-5 text-[#233] leading-7 max-w-prose">
+                    <div class="tk-dm-sans mt-6 space-y-5 text-[#233] leading-7 max-w-prose">
                         <p>{!! $accountancy['section_two']['paragraph'] !!}</p>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Desktop / md+ background (bottom CTA) -->
         @if (!empty($accountancy['cta_bottom_enabled']))
             <div class="absolute bottom-0 w-full min-h-[322px] hidden md:flex items-center"
                 style="background-image: url('{{ $accountancy['background']['desktop'] }}'); background-size: cover; background-position: center; background-repeat: no-repeat;">
@@ -130,12 +132,14 @@
 
                     </div>
                     <div class="flex flex-col gap-12">
-                        <h2 class="text-4xl text-white max-w-[236px]">{!! $accountancy['cta_bottom']['heading'] !!}</h2>
-                        <svg class="max-w-8" xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 640 640"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
-                            <path fill="#ffffff"
-                                d="M297.4 598.6C309.9 611.1 330.2 611.1 342.7 598.6L470.7 470.6C483.2 458.1 483.2 437.8 470.7 425.3C458.2 412.8 437.9 412.8 425.4 425.3L352 498.7L352 64C352 46.3 337.7 32 320 32C302.3 32 288 46.3 288 64L288 498.7L214.6 425.3C202.1 412.8 181.8 412.8 169.3 425.3C156.8 437.8 156.8 458.1 169.3 470.6L297.3 598.6z" />
-                        </svg>
+                        <h2 class="text-4xl text-white max-w-[300px] tk-tt-travels-next">{!! $accountancy['cta_bottom']['heading'] !!}</h2>
+                        <a href="#kontakt">
+                            <svg class="max-w-12" xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 640 640"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                                <path fill="#ffffff"
+                                    d="M297.4 598.6C309.9 611.1 330.2 611.1 342.7 598.6L470.7 470.6C483.2 458.1 483.2 437.8 470.7 425.3C458.2 412.8 437.9 412.8 425.4 425.3L352 498.7L352 64C352 46.3 337.7 32 320 32C302.3 32 288 46.3 288 64L288 498.7L214.6 425.3C202.1 412.8 181.8 412.8 169.3 425.3C156.8 437.8 156.8 458.1 169.3 470.6L297.3 598.6z" />
+                            </svg>
+                        </a>
                     </div>
                     <div>
                         <p class="text-white">{!! $accountancy['cta_bottom']['paragraph'] !!}
@@ -158,11 +162,13 @@
                     </div>
                     <div class="flex flex-col gap-12">
                         <h2 class="text-4xl text-white max-w-[236px]">{!! $accountancy['cta_bottom']['heading'] !!}</h2>
-                        <svg class="max-w-8" xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 640 640"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
-                            <path fill="#ffffff"
-                                d="M297.4 598.6C309.9 611.1 330.2 611.1 342.7 598.6L470.7 470.6C483.2 458.1 483.2 437.8 470.7 425.3C458.2 412.8 437.9 412.8 425.4 425.3L352 498.7L352 64C352 46.3 337.7 32 320 32C302.3 32 288 46.3 288 64L288 498.7L214.6 425.3C202.1 412.8 181.8 412.8 169.3 425.3C156.8 437.8 156.8 458.1 169.3 470.6L297.3 598.6z" />
-                        </svg>
+                        <a>
+                            <svg class="max-w-8" xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 640 640"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                                <path fill="#ffffff"
+                                    d="M297.4 598.6C309.9 611.1 330.2 611.1 342.7 598.6L470.7 470.6C483.2 458.1 483.2 437.8 470.7 425.3C458.2 412.8 437.9 412.8 425.4 425.3L352 498.7L352 64C352 46.3 337.7 32 320 32C302.3 32 288 46.3 288 64L288 498.7L214.6 425.3C202.1 412.8 181.8 412.8 169.3 425.3C156.8 437.8 156.8 458.1 169.3 470.6L297.3 598.6z" />
+                            </svg>
+                        </a>
                     </div>
                     <div>
                         <p class="text-white">{!! $accountancy['cta_bottom']['paragraph'] !!}

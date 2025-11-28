@@ -42,7 +42,7 @@ class Main extends Composer
     private function getHeroData()
     {
         return [
-            'title' => $this->getAcfFieldSafe('hero_title', false, 'Twój partner w Księgowości i Podatkach'),
+            'title' => $this->getAcfFieldSafe('hero_title', false, 'Twój partner, w Księgowości i Podatkach'),
             'description' => $this->getAcfFieldSafe('hero_description', false, 'Profesjonalną obsługą naszych klientów, niezależnie od wielkości i złożoności usług księgowej, zajmują się certyfikowani księgowi z kilkuletnim doświadczeniem.'),
             'hero_image' => $this->getAcfImageSafe('hero_image', false, 'large', get_template_directory_uri() . '/resources/images/fotel-2.png'),
         ];
@@ -65,26 +65,26 @@ class Main extends Composer
 
         if (empty($items) || !is_array($items)) {
             $items = [
-                ['label' => 'Firmy<br/>LTD', 'href' => '#ltd', 'icon' => '<svg class="w-18 h-18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                ['label_1' => 'Firmy', 'label_2' => 'LTD', 'href' => '#ltd', 'icon' => '<svg class="w-18 h-18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                         <rect x="4" y="3" width="12" height="16" rx="1.5" />
                         <path d="M8 7h4M8 10h4M8 13h4" />
                         <path d="M18 9v12M15 21h6" />
                       </svg>'],
-                ['label' => 'Własna<br/>działalność', 'href' => '#self', 'icon' => '<svg class="w-18 h-18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                ['label_1' => 'Własna', 'label_2' => 'działalność', 'href' => '#self', 'icon' => '<svg class="w-18 h-18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                         <rect x="3" y="12" width="18" height="5" rx="1"/>
                         <path d="M7 7h10v5H7zM7 17v4M17 17v4" />
                       </svg>'],
-                ['label' => 'Spółki<br/>cywilne', 'href' => '#civil', 'icon' => '<svg class="w-18 h-18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                ['label_1' => 'Spółki', 'label_2' => 'cywilne', 'href' => '#civil', 'icon' => '<svg class="w-18 h-18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                         <circle cx="12" cy="7" r="3"/>
                         <circle cx="6" cy="17" r="3"/>
                         <circle cx="18" cy="17" r="3"/>
                         <path d="M10 9l-3 6M14 9l3 6" />
                       </svg>'],
-                ['label' => 'Dodatkowe<br/>usługi', 'href' => '#extra', 'icon' => '<svg class="w-18 h-18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                ['label_1' => 'Dodatkowe', 'label_2' => 'usługi', 'href' => '#extra', 'icon' => '<svg class="w-18 h-18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                         <path d="M7 3h7l4 4v12a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/>
                         <path d="M14 3v4h4M8 11h8M8 15h8" />
                       </svg>'],
-                ['label' => 'Wirtualne<br/>biuro', 'href' => '#virtual', 'icon' => '<svg class="w-18 h-18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                ['label_1' => 'Wirtualne', 'label_2' => 'biuro', 'href' => '#virtual', 'icon' => '<svg class="w-18 h-18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                         <path d="M4 20V6a2 2 0 0 1 2-2h6v16H4z"/>
                         <path d="M12 6h6a2 2 0 0 1 2 2v12h-8"/>
                         <path d="M7 9h3M7 12h3M7 15h3M15 10h3M15 13h3M15 16h3" />
@@ -94,7 +94,8 @@ class Main extends Composer
             $normalized = [];
             foreach ($items as $it) {
                 $normalized[] = [
-                    'label' => $it['label'] ?? ($it['title'] ?? ''),
+                    'label_1' => $it['label_1'] ?? ($it['title_1'] ?? ''),
+                    'label_2' => $it['label_2'] ?? ($it['title_2'] ?? ''),
                     'href' => $it['href'] ?? ($it['link'] ?? '#'),
                     'icon' => $it['icon'] ?? 'docs',
                 ];
@@ -172,7 +173,7 @@ class Main extends Composer
     private function getContactSectionData()
     {
         return [
-            'heading' => $this->getAcfFieldSafe('contact_heading', false, '<strong>Postaw na pewność i spokój,</strong> <br> powierz księgowość ekspertom'),
+            'heading' => $this->getAcfFieldSafe('contact_heading', false, 'Postaw na <br> pewność i spokój, powierz księgowość ekspertom'),
             'background_image' => $this->getAcfImageSafe('contact_background_image', false, 'full', get_template_directory_uri() . '/resources/images/businessman-working.png'),
         ];
     }
