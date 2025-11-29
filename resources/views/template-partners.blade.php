@@ -5,7 +5,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <section class="bg-white py-12 md:pt-16 md:pb-32">
+    <section class="bg-white py-12 md:pt-24 md:pb-32">
         <div class="max-w-6xl mx-auto px-4 lg:px-0">
 
             <div class="max-w-4xl">
@@ -25,7 +25,7 @@
                 </div>
             </div>
 
-            <div class="mt-10 grid lg:grid-cols-2 gap-8 lg:gap-14 items-start">
+            <div class="mt-24 grid lg:grid-cols-2 gap-8 lg:gap-14 items-start">
                 <div>
                     <h2 class="text-[#0b285f] tk-tt-travels-next text-2xl md:text-3xl font-extrabold leading-tight">
                         {!! $partner['section']['title_html'] !!}

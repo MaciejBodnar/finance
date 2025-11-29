@@ -6,7 +6,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <section class="bg-white py-12 md:py-16">
+    <section class="bg-white py-12 md:pt-16 md:pb-32">
         <div class="max-w-6xl mx-auto px-4 lg:px-0">
 
             <div class="w-full">
@@ -31,7 +31,7 @@
                 </div>
             </div>
 
-            <div class="mt-12 flex flex-col md:flex-row gap-8 lg:gap-14">
+            <div class="mt-24 flex flex-col md:flex-row gap-8 lg:gap-14">
                 <div>
                     <h3 class="tk-tt-travels-next text-[#0b285f] text-2xl md:text-3xl font-extrabold leading-tight">
                         {!! $about['mission_title'] !!}

@@ -16,7 +16,7 @@
                     class="tk-tt-travels-next text-[#0b285f] text-3xl md:text-5xl font-light leading-tight mt-24 max-w-[732px]">
                     {!! $accountancy['hero']['title'] !!}
                 </h1>
-                <div class="flex gap-10 mt-24">
+                <div class="flex flex-col md:flex-row items-center md:items-start gap-2 md:gap-10 mt-8 md:mt-24">
                     <div class="flex items-start gap-1">
                         <svg width="18" height="13" viewBox="0 0 18 13" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
@@ -32,7 +32,7 @@
                     </div>
                 </div>
             </div>
-            <div class="md:justify-self-end min-w-full md:min-w-[690px] h-full md:h-[914px] overflow-hidden">
+            <div class="md:justify-self-end w-full lg:max-w-[690px] h-full md:min-h-[914px] overflow-hidden">
                 <img src="{{ $accountancy['hero']['image'] }}" alt="" class="w-full h-full object-cover">
             </div>
         </div>
@@ -41,7 +41,7 @@
                 style="background-image: url('{{ $accountancy['background']['desktop'] }}'); background-size: cover; background-position: center; background-repeat: no-repeat;">
                 <div class="grid md:grid-cols-3 min-h-full items-center justify-center max-w-6xl mx-auto gap-10">
                     <img src="{{ $accountancy['background']['phone_icon'] }}" alt="Księgowa na fotelu"
-                        class="static max-md:order-last md:absolute bottom-0 left-40 object-cover" />
+                        class="static max-md:order-last md:absolute bottom-0 left-10 lg:left-40 object-cover" />
                     <div>
 
                     </div>
@@ -75,7 +75,7 @@
                     </div>
                     <div class="flex flex-col gap-12">
                         <h2 class="text-4xl text-white max-w-[300px] tk-tt-travels-next">{!! $accountancy['cta_top']['heading'] !!}</h2>
-                        <a>
+                        <a href="#kontakt">
                             <svg class="max-w-8" xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 640 640"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
                                 <path fill="#ffffff"
@@ -97,15 +97,15 @@
             $mdPbBottomClass = !empty($accountancy['cta_bottom_enabled']) ? ' pb-[700px] md:pb-40' : 'pb-10 md:pb-0';
         @endphp
         <div
-            class="max-w-6xl px-4 lg:px-0 flex flex-col md:flex-row min-w-full gap-8 lg:gap-24 items-center {{ $mdPbBottomClass }}">
-            <div class="min-w-full order-last md:order-first md:min-w-[690px] min-h-full md:min-h-[718px] overflow-hidden">
+            class="max-w-6xl px-4 lg:px-0 flex flex-col md:flex-row min-w-full gap-8 lg:gap-24 items-center pt-12 {{ $mdPbBottomClass }}">
+            <div class="w-full order-last md:order-first lg:max-w-[690px] h-full lg:min-h-[718px] overflow-hidden">
                 <img src="{{ $accountancy['section_two']['image'] }}" alt="" class="w-full h-full object-cover">
             </div>
             <div class="mr-10 justify-self-start">
                 <h2 class="tk-tt-travels-next text-[#0b285f] text-3xl md:text-5xl font-light leading-tight">
                     {!! $accountancy['section_two']['title'] !!}
                 </h2>
-                <div class="flex gap-10">
+                <div class="flex flex-col md:flex-row items-center md:items-start gap-2 md:gap-10">
                     <div class="mt-6 flex items-start gap-1">
                         <svg width="18" height="13" viewBox="0 0 18 13" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
@@ -118,6 +118,23 @@
                     </div>
                     <div class="tk-dm-sans mt-6 space-y-5 text-[#233] leading-7 max-w-prose">
                         <p>{!! $accountancy['section_two']['paragraph'] !!}</p>
+                        @php $bullets = $accountancy['section_two']['bullets']; @endphp
+                        @if (!empty($bullets) && is_array($bullets))
+                            <ul class="space-y-3">
+                                @foreach ($bullets as $b)
+                                    <li class="flex items-center gap-3">
+
+                                        <svg width="6" height="8" viewBox="0 0 6 8" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M5.25 3.89746L0 7.79457V0.000346661L5.25 3.89746Z" fill="#38783A" />
+                                        </svg>
+
+                                        <span>{!! $b !!}</span>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        @endif
+                        <p class="pb-40">{!! $accountancy['section_two']['paragraph_2'] !!}</p>
                     </div>
                 </div>
             </div>
@@ -127,7 +144,7 @@
                 style="background-image: url('{{ $accountancy['background']['desktop'] }}'); background-size: cover; background-position: center; background-repeat: no-repeat;">
                 <div class="grid md:grid-cols-3 min-h-full items-center justify-center max-w-6xl mx-auto gap-10">
                     <img src="{{ $accountancy['background']['phone_icon'] }}" alt="Księgowa na fotelu"
-                        class="static max-md:order-last md:absolute bottom-0 left-40 object-cover" />
+                        class="static max-md:order-last md:absolute bottom-0 left-10 lg:left-40  object-cover" />
                     <div>
 
                     </div>
@@ -162,7 +179,7 @@
                     </div>
                     <div class="flex flex-col gap-12">
                         <h2 class="text-4xl text-white max-w-[236px]">{!! $accountancy['cta_bottom']['heading'] !!}</h2>
-                        <a>
+                        <a href="#kontakt">
                             <svg class="max-w-8" xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 640 640"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
                                 <path fill="#ffffff"
@@ -186,9 +203,7 @@
 
         <div class="relative max-w-4xl mx-auto px-4">
             <div class="text-center mb-10 md:mb-12">
-                <h2 class="text-3xl md:text-5xl font-extrabold leading-tight text-[#0b285f]">Postaw na pewność i spokój,
-                </h2>
-                <p class="text-2xl md:text-4xl leading-tight text-[#6f7ea6] -mt-1">powierz księgowość ekspertom</p>
+
             </div>
 
             <form action="#" method="post" class="space-y-5 text-sm">

@@ -101,8 +101,14 @@ class Accountancy extends Composer
     {
         return [
             'title' => $this->getAcfFieldSafe('section_two_title', false, 'Wirtualne biuro i <br><span class="font-bold">księgowość w UK</span>'),
-            // Changed to single paragraph per your update
             'paragraph' => $this->getAcfFieldSafe('section_two_paragraph', false, 'Każda spółka z ograniczoną odpowiedzialnością (Firma Limited) musi posiadać oficjalną siedzibę (Registered Office Address), której adres podaje się zarówno do rejestru firm (Companies House), jak i urzędu skarbowego (HM Revenue & Customs). Oficjalna siedziba spółki służy przede wszystkim administracji publicznej, w tym fiskalnej, do korespondencji i kontaktów z przedsiębiorstwem. Tam również z reguły są przechowywane dokumenty spółki. AlphaTax Finance użycza spółkom LTD (Limited) swojego adresu na potrzeby oficjalnej siedziby firmy. W ramach tej usługi:'),
+            'paragraph_2' => $this->getAcfFieldSafe('section_two_paragraph_2', false, 'Każda spółka z ograniczoną odpowiedzialnością (Firma Limited) musi posiadać oficjalną siedzibę (Registered Office Address), której adres podaje się zarówno do rejestru firm (Companies House), jak i urzędu skarbowego (HM Revenue & Customs). Oficjalna siedziba spółki służy przede wszystkim administracji publicznej, w tym fiskalnej, do korespondencji i kontaktów z przedsiębiorstwem. Tam również z reguły są przechowywane dokumenty spółki. AlphaTax Finance użycza spółkom LTD (Limited) swojego adresu na potrzeby oficjalnej siedziby firmy. W ramach tej usługi:'),
+            'bullets' => $this->getAcfFieldSafe('section_bullets', false, [
+                'APJ Claims – pomoc prawna i odzyskiwanie odszkodowań.',
+                'MJN Business Finance – specjalizacje w finansowaniu przedsiębiorstw.',
+                'Peace Of Mind Group – wsparcie w oddłużaniu i negocjacjach.',
+                'Prestige Financial Advisers – doradztwo i kredyty hipoteczne.',
+            ]),
             'image' => $this->getAcfImageSafe('section_two_image', false, get_template_directory_uri() . '/resources/images/modern.png'),
         ];
     }

@@ -34,12 +34,46 @@ class Header extends Composer
      */
     private function getHeaderData()
     {
+        $services = $this->getServicesData();
+        $menu = $this->getMenuData();
+
+        // Check if any service link is active to highlight the parent dropdown
+        if ($this->isAnyServiceActive($services)) {
+            foreach ($menu as &$item) {
+                if (!empty($item['has_dropdown'])) {
+                    $item['active'] = true;
+                }
+            }
+        }
+
         return [
             'logo' => $this->getLogoData(),
             'languages' => $this->getLanguages(),
-            'menu' => $this->getMenuData(),
-            'services' => $this->getServicesData(),
+            'menu' => $menu,
+            'services' => $services,
         ];
+    }
+
+    /**
+     * Check if any service link is active
+     *
+     * @param array $services
+     * @return bool
+     */
+    private function isAnyServiceActive($services)
+    {
+        if (!$services) return false;
+
+        foreach ($services as $column) {
+            if (!empty($column['links'])) {
+                foreach ($column['links'] as $link) {
+                    if (isset($link['url']) && $this->isUrlActive($link['url'])) {
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
     }
 
     /**

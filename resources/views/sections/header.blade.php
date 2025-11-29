@@ -40,7 +40,7 @@
                         <li class="{{ !empty($item['has_dropdown']) ? 'relative' : '' }}">
                             @if (!empty($item['has_dropdown']))
                                 <button id="{{ $item['id'] ?? 'dropdown-link' }}" type="button" aria-expanded="false"
-                                    class="hover:text-[#ffba6a] transition inline-flex items-center gap-1 text-sm">
+                                    class="hover:text-[#ffba6a] transition inline-flex items-center gap-1 text-sm {{ !empty($item['active']) ? 'text-[#ffba6a] font-semibold' : '' }}">
                                     {{ $item['title'] }}
                                     <span class="ml-1 text-[10px]">▾</span>
                                 </button>

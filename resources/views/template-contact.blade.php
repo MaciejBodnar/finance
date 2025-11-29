@@ -13,7 +13,7 @@
 
         <div class="relative max-w-4xl mx-auto px-4">
             <div class="text-center">
-                <h2 class="text-3xl md:text-5xl font-bold">{{ $contact['page']['title'] }}</h2>
+                <h2 class="tk-tt-travels-next font-bold text-3xl md:text-5xl">{!! $contact['page']['title'] !!}</h2>
                 <div class="mt-12 flex items-center justify-center gap-1">
 
                     <svg width="18" height="13" viewBox="0 0 18 13" fill="none"
@@ -31,7 +31,7 @@
             <div class="grid grid-cols-1 md:grid-cols-4 justify-between gap-8 text-[#0b285f]">
                 <div class="col-span-3">
                     <h3 class="font-semibold mb-3">{{ $contact['sections']['contact_heading'] }}</h3>
-                    <div class="flex gap-20">
+                    <div class="flex flex-col md:flex-row gap-6 md:gap-20">
                         <div class="text-[#233]">{!! $contact['company']['addr'] !!}</div>
                         <div class="text-[#233]"><span
                                 class="hover:underline">{{ $contact['company']['phone'] }}</span><br><span
