@@ -7,7 +7,7 @@
 @section('content')
     <section class="bg-[#122457]">
         <div class="relative">
-            <div class="relative min-h-[830px] max-w-6xl mx-auto px-4 lg:px-0 grid lg:grid-cols-2 pb-[640px] md:pb-0">
+            <div class="relative min-h-[830px] max-w-6xl mx-auto px-8 lg:px-0 grid lg:grid-cols-2 pb-[640px] md:pb-0">
                 <div class="space-y-8 pt-20">
                     <h1 class="tk-tt-travels-next font-bold text-3xl md:text-5xl text-[#CB9264] max-w-[450px]">
                         {!! $main['hero']['title'] !!}
@@ -25,7 +25,7 @@
                 style="background-image: url('{{ get_template_directory_uri() }}/resources/images/Subtraction.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
                 <div class="grid md:grid-cols-3 min-h-full items-center justify-center max-w-6xl mx-auto gap-10">
                     <img src="{{ $main['cta_section']['image'] }}" alt="Kobieta z telefonem"
-                        class="static max-md:order-last md:absolute bottom-0 md:left-40 lg:left-60 object-cover" />
+                        class="static max-md:order-last md:absolute bottom-0 md:left-auto object-cover" />
                     <div>
 
                     </div>
@@ -43,7 +43,7 @@
             </div>
 
             <div class="absolute bottom-0 max-w-screen min-h-[322px] flex md:hidden items-center"
-                style="background-image: url('{{ get_template_directory_uri() }}/resources/images/Subtraction-6.png'); background-size: cover; background-repeat: no-repeat;">
+                style="background-image: url('{{ get_template_directory_uri() }}/resources/images/Subtraction-6.png'); background-repeat: no-repeat;">
                 <div
                     class="grid md:grid-cols-3 min-h-full items-center justify-center max-w-6xl mt-10 mx-10 md:mx-auto gap-10">
                     <img src="{{ get_template_directory_uri() }}/resources/images/telefon.png" alt="Księgowa z telefonem"
@@ -66,7 +66,7 @@
 
     </section>
     <section id="uslugi" class="bg-white py-16 md:py-24">
-        <div class="max-w-5xl mx-auto px-4 lg:px-0">
+        <div class="max-w-5xl mx-auto px-8 lg:px-0">
 
             <div class="grid gap-10 lg:gap-16 items-start">
                 <h2 class="tk-tt-travels-next text-[#0b285f] max-w-[480px] text-3xl md:text-5xl">
@@ -103,7 +103,7 @@
                 </div>
             </div>
         </div>
-        <div class="max-w-7xl mx-auto ">
+        <div class="max-w-7xl mx-auto px-8 lg:px-0">
             <div class="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-5">
                 @php $serviceItems = $main['services']['items'] ?? []; @endphp
                 @foreach ($serviceItems as $it)
@@ -194,7 +194,7 @@
         </div>
     </section>
     <section class="bg-[#2d7e3b] text-white py-16 md:py-24">
-        <div class="max-w-6xl mx-auto px-4 lg:px-0">
+        <div class="max-w-6xl mx-auto px-8 lg:px-0">
             <div class="max-w-232">
                 <h2 class="tk-tt-travels-next text-3xl md:text-4xl">
                     {{ $main['testimonials']['title'] }}
@@ -208,7 +208,7 @@
                             <path d="M5 8l7 8 7-8z" />
                         </svg>
                     </div>
-                    <div class="flex gap-20 items-center">
+                    <div class="flex flex-col md:flex-row gap-4 md:gap-20 items-center">
                         <p class="text-white/90 text-sm md:text-base">{{ $main['testimonials']['subtitle'] }}</p>
                         <a href="{{ $main['testimonials']['cta_url'] }}"
                             class="inline-flex items-center gap-2 px-4 py-2 bg-[#0b285f] rounded-sm text-sm font-bold tracking-wide hover:bg-[#0a234f] transition">
@@ -247,7 +247,7 @@
                 class="w-full h-full object-cover opacity-70">
         </div>
 
-        <div class="relative max-w-4xl mx-auto px-4">
+        <div class="relative max-w-4xl mx-auto px-8 lg:px-0">
             <div class="text-center mb-10 md:mb-12">
                 <h2 class="tk-tt-travels-next font-bold text-3xl md:text-6xl leading-tight text-[#0b285f]">
                     {!! $main['contact_section']['heading'] !!}

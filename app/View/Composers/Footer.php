@@ -67,6 +67,8 @@ class Footer extends Composer
         return [
             'url' => $image_url,
             'alt' => 'Optimum Tax',
+            'facebook' => $this->getAcfFieldSafe('footer_facebook_url', 'option', '#'),
+            'instagram' => $this->getAcfFieldSafe('footer_instagram_url', 'option', '#'),
         ];
     }
 

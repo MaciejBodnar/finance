@@ -41,13 +41,15 @@
                 style="background-image: url('{{ $accountancy['background']['desktop'] }}'); background-size: cover; background-position: center; background-repeat: no-repeat;">
                 <div class="grid md:grid-cols-3 min-h-full items-center justify-center max-w-6xl mx-auto gap-10">
                     <img src="{{ $accountancy['background']['phone_icon'] }}" alt="Księgowa na fotelu"
-                        class="static max-md:order-last md:absolute bottom-0 left-10 lg:left-40 object-cover" />
+                        class="static max-md:order-last md:absolute bottom-0 md:left-auto object-cover" />
                     <div>
 
                     </div>
                     <div class="flex flex-col gap-12">
-                        <h2 class="text-4xl text-white max-w-[236px]">{!! $accountancy['cta_top']['heading'] !!}</h2>
-                        <a href="#kontakt">
+                        <h2
+                            class="flex justify-center md:justify-start text-4xl text-center md:text-left text-white max-w-[236px]">
+                            {!! $accountancy['cta_top']['heading'] !!}</h2>
+                        <a class="flex justify-center md:justify-start" href="#kontakt">
                             <svg class="max-w-8" xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 640 640"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
                                 <path fill="#ffffff"
@@ -65,17 +67,19 @@
 
         @if (!empty($accountancy['cta_top_enabled']))
             <div class="absolute bottom-0 max-w-screen min-h-[322px] flex md:hidden items-center"
-                style="background-image: url('{{ $accountancy['background']['mobile'] }}'); background-size: cover; background-repeat: no-repeat;">
+                style="background-image: url('{{ $accountancy['background']['mobile'] }}'); background-repeat: no-repeat;">
                 <div
                     class="grid md:grid-cols-3 min-h-full items-center justify-center mt-10 max-w-6xl mx-10 md:mx-auto gap-10">
                     <img src="{{ $accountancy['background']['phone_icon'] }}" alt="Księgowa na fotelu"
-                        class="static max-md:order-last md:absolute bottom-0 left-40 object-cover" />
+                        class="static max-md:order-last md:absolute bottom-0 object-cover" />
                     <div>
 
                     </div>
                     <div class="flex flex-col gap-12">
-                        <h2 class="text-4xl text-white max-w-[300px] tk-tt-travels-next">{!! $accountancy['cta_top']['heading'] !!}</h2>
-                        <a href="#kontakt">
+                        <h2
+                            class="flex justify-center md:justify-start text-4xl text-center md:text-left text-white max-w-[300px] tk-tt-travels-next">
+                            {!! $accountancy['cta_top']['heading'] !!}</h2>
+                        <a class="flex justify-center md:justify-start" href="#kontakt">
                             <svg class="max-w-8" xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 640 640"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
                                 <path fill="#ffffff"
@@ -144,13 +148,15 @@
                 style="background-image: url('{{ $accountancy['background']['desktop'] }}'); background-size: cover; background-position: center; background-repeat: no-repeat;">
                 <div class="grid md:grid-cols-3 min-h-full items-center justify-center max-w-6xl mx-auto gap-10">
                     <img src="{{ $accountancy['background']['phone_icon'] }}" alt="Księgowa na fotelu"
-                        class="static max-md:order-last md:absolute bottom-0 left-10 lg:left-40  object-cover" />
+                        class="static max-md:order-last md:absolute bottom-0 md:left-auto object-cover" />
                     <div>
 
                     </div>
                     <div class="flex flex-col gap-12">
-                        <h2 class="text-4xl text-white max-w-[300px] tk-tt-travels-next">{!! $accountancy['cta_bottom']['heading'] !!}</h2>
-                        <a href="#kontakt">
+                        <h2
+                            class="flex justify-center md:justify-start text-4xl text-center md:text-left text-white max-w-[300px] tk-tt-travels-next">
+                            {!! $accountancy['cta_bottom']['heading'] !!}</h2>
+                        <a class="flex justify-center md:justify-start" href="#kontakt">
                             <svg class="max-w-12" xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 640 640"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
                                 <path fill="#ffffff"
@@ -169,17 +175,19 @@
         <!-- Mobile background (visible on small screens) (bottom CTA) -->
         @if (!empty($accountancy['cta_bottom_enabled']))
             <div class="absolute bottom-0 max-w-screen min-h-[322px] flex md:hidden items-center"
-                style="background-image: url('{{ $accountancy['background']['mobile'] }}'); background-size: cover; background-repeat: no-repeat;">
+                style="background-image: url('{{ $accountancy['background']['mobile'] }}'); background-repeat: no-repeat;">
                 <div
                     class="grid md:grid-cols-3 min-h-full items-center justify-center mt-10 max-w-6xl mx-10 md:mx-auto gap-10">
                     <img src="{{ $accountancy['background']['phone_icon'] }}" alt="Księgowa na fotelu"
-                        class="static max-md:order-last md:absolute bottom-0 left-40 object-cover" />
+                        class="static max-md:order-last md:absolute bottom-0 object-cover" />
                     <div>
 
                     </div>
                     <div class="flex flex-col gap-12">
-                        <h2 class="text-4xl text-white max-w-[236px]">{!! $accountancy['cta_bottom']['heading'] !!}</h2>
-                        <a href="#kontakt">
+                        <h2 class="flex justify-center md:justify-start text-4xl text-center md:text-left text-white">
+                            {!! $accountancy['cta_bottom']['heading'] !!}
+                        </h2>
+                        <a class="flex justify-center md:justify-start" href="#kontakt">
                             <svg class="max-w-8" xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 640 640"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
                                 <path fill="#ffffff"
