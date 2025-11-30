@@ -101,7 +101,7 @@
 
         <div class="relative max-w-4xl mx-auto px-4">
             <div class="text-center mb-10 md:mb-12">
-                <h2 class="tk-tt-travels-next font-bold text-3xl md:text-5xl leading-tight text-[#0b285f]">
+                <h2 class="tk-tt-travels-next text-3xl md:text-5xl leading-tight text-[#0b285f]">
                     {!! $partner['contact']['heading'] !!}
                 </h2>
             </div>

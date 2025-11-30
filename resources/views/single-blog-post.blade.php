@@ -10,8 +10,7 @@
 
             <article class="prose ml-0 md:ml-64 mt-10 my-0 md:my-28 max-w-6xl">
                 <header class="mb-8">
-                    <h1
-                        class="tk-tt-travels-next text-[#0b285f] mb-8 md:mb-40 text-3xl md:text-5xl font-extrabold leading-tight">
+                    <h1 class="tk-tt-travels-next text-[#0b285f] mb-8 md:mb-40 text-3xl md:text-5xl leading-tight">
                         {!! $post['title'] !!} {!! $post['title_2'] !!}
                     </h1>
                     <div class="mt-4 flex items-center gap-1">

@@ -9,7 +9,7 @@
         <div class="relative">
             <div class="relative min-h-[830px] max-w-6xl mx-auto px-8 lg:px-0 grid lg:grid-cols-2 pb-[640px] md:pb-0">
                 <div class="space-y-8 pt-20">
-                    <h1 class="tk-tt-travels-next font-bold text-3xl md:text-5xl text-[#CB9264] max-w-[450px]">
+                    <h1 class="tk-tt-travels-next text-3xl md:text-5xl text-[#CB9264] max-w-[450px]">
                         {!! $main['hero']['title'] !!}
                     </h1>
                     <p class="tk-dm-sans-18pt text-sm md:text-base leading-relaxed text-[#f5f7ff]">
@@ -30,7 +30,7 @@
 
                     </div>
                     <div class="flex flex-col gap-12">
-                        <h2 class="tk-tt-travels-next font-bold text-4xl text-white max-w-[300px]">
+                        <h2 class="tk-tt-travels-next text-4xl text-white max-w-[300px]">
                             {!! $main['cta_section']['title'] !!}
                         </h2>
                         <a href="{{ $main['cta_section']['book_now_url'] }}"
@@ -51,14 +51,14 @@
                     <div>
                     </div>
                     <div class="flex flex-col gap-12 order-2">
-                        <h2 class="tk-tt-travels-next hidden md:block font-bold text-4xl text-white max-w-[300px]">
+                        <h2 class="tk-tt-travels-next hidden md:block text-4xl text-white max-w-[300px]">
                             {!! $main['cta_section']['title'] !!}
                         </h2>
                         <a href="{{ $main['cta_section']['book_now_url'] }}"
                             class="w-fit hover:cursor-pointer border-2 border-black py-2 px-12 bg-[#122457] text-white uppercase">{{ $main['cta_section']['book_now_text'] }}</a>
                     </div>
                     <div class="order-1">
-                        <h2 class="tk-tt-travels-next md:hidden font-bold text-4xl mb-5 text-white max-w-[300px]">
+                        <h2 class="tk-tt-travels-next md:hidden text-4xl mb-5 text-white max-w-[300px]">
                             {!! $main['cta_section']['title'] !!}
                         </h2>
                         <p class="text-white">{!! $main['cta_section']['description'] !!}</p>
@@ -254,7 +254,7 @@
 
         <div class="relative max-w-4xl mx-auto px-8 lg:px-0">
             <div class="text-center mb-10 md:mb-12">
-                <h2 class="tk-tt-travels-next font-bold text-3xl md:text-5xl leading-tight text-[#0b285f]">
+                <h2 class="tk-tt-travels-next text-3xl md:text-5xl leading-tight text-[#0b285f]">
                     {!! $main['contact_section']['heading'] !!}
                 </h2>
             </div>

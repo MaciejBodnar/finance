@@ -12,8 +12,7 @@
         <div
             class="max-w-6xl px-4 lg:px-0 {{ $mdPbClass }} flex flex-col md:flex-row min-w-full gap-8 lg:gap-64 md:justify-end">
             <div class="ml-0 md:ml-10 justify-self-end">
-                <h1
-                    class="tk-tt-travels-next text-[#0b285f] text-3xl md:text-5xl font-light leading-tight mt-24 max-w-[732px]">
+                <h1 class="tk-tt-travels-next text-[#0b285f] text-3xl md:text-5xl leading-tight mt-24 max-w-[732px]">
                     {!! $accountancy['hero']['title'] !!}
                 </h1>
                 <div class="flex gap-2 md:gap-10 mt-8 md:mt-24">
@@ -113,7 +112,7 @@
                 <img src="{{ $accountancy['section_two']['image'] }}" alt="" class="w-full h-full object-cover">
             </div>
             <div class="mr-10 justify-self-start">
-                <h2 class="tk-tt-travels-next text-[#0b285f] text-3xl md:text-5xl font-light leading-tight">
+                <h2 class="tk-tt-travels-next text-[#0b285f] text-3xl md:text-5xl leading-tight">
                     {!! $accountancy['section_two']['title'] !!}
                 </h2>
                 <div class="flex gap-2 md:gap-10">
@@ -225,7 +224,7 @@
 
         <div class="relative max-w-4xl mx-auto px-4">
             <div class="text-center mb-10 md:mb-12">
-                <h2 class="tk-tt-travels-next font-bold text-3xl md:text-5xl leading-tight text-[#0b285f]">
+                <h2 class="tk-tt-travels-next text-3xl md:text-5xl leading-tight text-[#0b285f]">
                     {!! $accountancy['contact']['heading'] !!}
                 </h2>
             </div>

@@ -10,7 +10,7 @@
         <div class="max-w-6xl mx-auto px-4 lg:px-0">
 
             <div class="w-full">
-                <h2 class="text-[#0b285f] font-bold tk-tt-travels-next text-3xl md:text-5xl leading-tight">
+                <h2 class="text-[#0b285f] tk-tt-travels-next text-3xl md:text-5xl leading-tight">
                     {!! $about['hero_title'] !!}
                 </h2>
 
@@ -70,7 +70,7 @@
 
         <div class="relative max-w-6xl mx-auto px-4 lg:px-0">
             <div class="text-center">
-                <h2 class="tk-tt-travels-next text-white text-3xl md:text-5xl font-bold">{!! $about['why_heading'] !!}</h2>
+                <h2 class="tk-tt-travels-next text-white text-3xl md:text-5xl">{!! $about['why_heading'] !!}</h2>
                 <div class="mt-10 flex items-center justify-center gap-1">
                     <svg width="18" height="13" viewBox="0 0 18 13" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
@@ -155,7 +155,7 @@
         </div>
         <div class="relative max-w-4xl mx-auto px-4">
             <div class="text-center mb-10 md:mb-12">
-                <h2 class="tk-tt-travels-next font-bold text-3xl md:text-5xl leading-tight text-[#0b285f]">
+                <h2 class="tk-tt-travels-next text-3xl md:text-5xl leading-tight text-[#0b285f]">
                     {!! $about['contact_heading'] !!}
                 </h2>
             </div>

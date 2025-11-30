@@ -322,3 +322,22 @@ add_action('after_setup_theme', function () {
         'primary_navigation' => __('Primary Navigation', 'sage'),
     ]);
 });
+
+/**
+ * Force ACF Options Page to be language specific (Polylang)
+ * This fixes the issue where Options Page fields are synchronized across languages.
+ */
+add_filter('acf/validate_post_id', function ($post_id) {
+    // Only apply to the default 'options' page
+    if ($post_id === 'options') {
+        // Check if Polylang is active
+        if (function_exists('pll_current_language')) {
+            $lang = pll_current_language();
+            // If we have a language, append it to the ID
+            if ($lang) {
+                return 'options_' . $lang;
+            }
+        }
+    }
+    return $post_id;
+}, 10, 1);
