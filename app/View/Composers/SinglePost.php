@@ -47,7 +47,7 @@ class SinglePost extends Composer
         $hero_image = $this->getAcfFieldSafe('hero_image', $post->ID, null);
         $thumbnail_image = $this->getAcfFieldSafe('thumbnail_image', $post->ID, null);
         $custom_title = $this->getAcfFieldSafe('custom_title_html', $post->ID, null);
-        $custom_title_2 = $this->getAcfFieldSafe('custom_title_2', $post->ID, "<span>Hello</span>");
+        $custom_title_2 = $this->getAcfFieldSafe('custom_title_html_2', $post->ID, null);
         $custom_content = $this->getAcfFieldSafe('custom_content_html', $post->ID, null);
 
         return [

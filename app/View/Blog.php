@@ -41,7 +41,7 @@ class Blog
 
             // Check for custom HTML title
             $custom_title = function_exists('get_field') ? \get_field('custom_title_html', $p->ID) : null;
-            $custom_title_2 = function_exists('get_field') ? \get_field('custom_title_2', $p->ID) : null;
+            $custom_title_2 = function_exists('get_field') ? \get_field('custom_title_html_2', $p->ID) : null;
             $title = !empty($custom_title) ? $custom_title : get_the_title($p);
             $title_2 = $custom_title_2;
 
