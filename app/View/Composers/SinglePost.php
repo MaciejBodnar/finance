@@ -47,15 +47,19 @@ class SinglePost extends Composer
         $hero_image = $this->getAcfFieldSafe('hero_image', $post->ID, null);
         $thumbnail_image = $this->getAcfFieldSafe('thumbnail_image', $post->ID, null);
         $custom_title = $this->getAcfFieldSafe('custom_title_html', $post->ID, null);
+        $custom_title_2 = $this->getAcfFieldSafe('custom_title_2', $post->ID, "<span>Hello</span>");
         $custom_content = $this->getAcfFieldSafe('custom_content_html', $post->ID, null);
 
         return [
             'title' => $custom_title ?: get_the_title($post),
+            'title_2' => $custom_title_2,
             'content' => $custom_content ?: apply_filters('the_content', $post->post_content),
             'date' => get_the_date('', $post),
             'thumbnail' => $thumbnail_image ?: get_the_post_thumbnail_url($post, 'large'),
             'permalink' => get_permalink($post),
             'image' => $this->getImageFromField($hero_image, get_the_post_thumbnail_url($post, 'large')),
+            'previous_post' => $this->getAcfFieldSafe('previous_post', false, 'Previous Post'),
+
         ];
     }
 

@@ -34,6 +34,31 @@ class Partner extends Composer
      */
     private function getPartnerData()
     {
+        $bullets_raw = $this->getAcfFieldSafe('section_bullets', false, []);
+        $bullets = [];
+
+        if (!empty($bullets_raw) && is_array($bullets_raw)) {
+            foreach ($bullets_raw as $item) {
+                if (is_string($item)) {
+                    $bullets[] = $item;
+                } elseif (is_array($item)) {
+                    $val = reset($item);
+                    if (is_string($val)) {
+                        $bullets[] = $val;
+                    }
+                }
+            }
+        }
+
+        if (empty($bullets)) {
+            $bullets = [
+                'APJ Claims – pomoc prawna i odzyskiwanie odszkodowań.',
+                'MJN Business Finance – specjalizacje w finansowaniu przedsiębiorstw.',
+                'Peace Of Mind Group – wsparcie w oddłużaniu i negocjacjach.',
+                'Prestige Financial Advisers – doradztwo i kredyty hipoteczne.',
+            ];
+        }
+
         return [
             'hero' => [
                 'title_html' => $this->getAcfFieldSafe('hero_title_html', false, 'Partnerzy'),
@@ -42,12 +67,7 @@ class Partner extends Composer
             'section' => [
                 'title_html' => $this->getAcfFieldSafe('section_title_html', false, 'Partnerzy naszego<br class="hidden md:block">biura księgowego w UK'),
                 'intro_paragraph' => $this->getAcfFieldSafe('section_intro_paragraph', false, 'fantherzy naszego biura kslegowego to nimy z ogromnym doswiadezeniem. Wsród nich znaiduie sie'),
-                'bullets' => $this->getAcfFieldSafe('section_bullets', false, [
-                    'APJ Claims – pomoc prawna i odzyskiwanie odszkodowań.',
-                    'MJN Business Finance – specjalizacje w finansowaniu przedsiębiorstw.',
-                    'Peace Of Mind Group – wsparcie w oddłużaniu i negocjacjach.',
-                    'Prestige Financial Advisers – doradztwo i kredyty hipoteczne.',
-                ]),
+                'bullets' => $bullets,
             ],
             'right_image' => $this->getAcfImageSafe('right_image', false, get_template_directory_uri() . '/resources/images/look-up.png'),
             'closing_paragraph' => $this->getAcfFieldSafe('closing_paragraph', false, 'Dzięki szerokim kontaktom z najlepszymi specjalistami w różnych branżach możemy skutecznie pomagać Polakom w Wielkiej Brytanii. Jeśli prowadzisz własną działalność lub chcesz ją założyć, a nie wiesz jak to zrobić – skontaktuj się z nami.'),

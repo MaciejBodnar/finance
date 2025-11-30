@@ -61,9 +61,9 @@
                                 </svg>
                                 <span>{{ $p['date'] }}</span>
                             </div>
-                            <h3
-                                class="text-lg font-semibold leading-snug text-[#2d7e3b] group-hover:underline mb-3 line-clamp-3">
-                                {{ $p['title'] }}</h3>
+                            <h3 class="text-lg font-semibold leading-snug group-hover:underline mb-3 line-clamp-3">
+                                <span class="text-[#2d7e3b]">{!! $p['title'] !!}</span> {!! $p['title_2'] !!}
+                            </h3>
                             <p class="text-sm text-slate-600 line-clamp-2">{{ $p['excerpt'] }}</p>
                         </div>
                     </a>

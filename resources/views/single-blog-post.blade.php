@@ -12,7 +12,7 @@
                 <header class="mb-8">
                     <h1
                         class="tk-tt-travels-next text-[#0b285f] mb-8 md:mb-40 text-3xl md:text-5xl font-extrabold leading-tight">
-                        {!! $post['title'] !!}
+                        {!! $post['title'] !!} {!! $post['title_2'] !!}
                     </h1>
                     <div class="mt-4 flex items-center gap-1">
 
@@ -27,7 +27,6 @@
                         </svg>
 
                     </div>
-                    @endif
                 </header>
 
                 <div class="space-y-6 text-[#142033] leading-7">
@@ -43,7 +42,8 @@
 
                 @if (!empty($previous))
                     <div class="w-full md:w-[350px]">
-                        <h3 class="text-[#0b285f] text-xl font-extrabold mb-4">Previous Post</h3>
+                        <h3 class="tk-tt-travels-next text-[#0b285f] text-xl font-extrabold mb-4">{!! $post['previous_post'] !!}
+                        </h3>
                         <div class="bg-[#F4F4F4]! mb-24">
                             <a href="{{ $previous['link'] }}"
                                 class="group relative bg-[#F4F4F4] text-[#0b285f] rounded-md hover:shadow-2xl transition w-full max-w-[330px] md:max-w-full">

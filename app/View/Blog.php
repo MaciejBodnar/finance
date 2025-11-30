@@ -38,8 +38,16 @@ class Blog
             if (empty($thumb)) {
                 $thumb = get_template_directory_uri() . '/resources/images/businesswoman-working.png';
             }
+
+            // Check for custom HTML title
+            $custom_title = function_exists('get_field') ? \get_field('custom_title_html', $p->ID) : null;
+            $custom_title_2 = function_exists('get_field') ? \get_field('custom_title_2', $p->ID) : null;
+            $title = !empty($custom_title) ? $custom_title : get_the_title($p);
+            $title_2 = $custom_title_2;
+
             return [
-                'title' => get_the_title($p),
+                'title' => $title,
+                'title_2' => $title_2,
                 'link' => get_permalink($p),
                 'excerpt' => get_the_excerpt($p),
                 'date' => get_the_date('', $p),

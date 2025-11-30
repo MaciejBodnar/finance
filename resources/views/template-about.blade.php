@@ -86,13 +86,8 @@
             <div class="mt-10 grid gap-6 md:grid-cols-3">
                 @foreach ($about['our_work'] as $f)
                     <div class="bg-white rounded-sm shadow-md border border-slate-100 px-8 py-12">
-                        <div class="text-[#c9936d] mb-4">
-                            <svg class="w-[72px] h-[72px]" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="1.6">
-                                <rect x="3" y="3" width="8" height="12" rx="1.5"></rect>
-                                <rect x="13" y="3" width="8" height="6" rx="1.5"></rect>
-                                <path d="M13 12h8M13 16h8M3 17h8M6 7h2M6 10h2"></path>
-                            </svg>
+                        <div class="text-[#c9936d] mb-4 w-[72px] h-[72px]">
+                            {!! $f['icon'] !!}
                         </div>
                         <h3 class="tk-tt-travels-next text-[#0b285f] text-2xl">{{ $f['title'] }}</h3>
                         <svg class="w-8 h-8 text-[#CB9264] mt-4" viewBox="0 0 24 24" fill="currentColor">

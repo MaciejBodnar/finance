@@ -38,9 +38,21 @@ class About extends Composer
 
         if (empty($our_work) || !is_array($our_work)) {
             $our_work = [
-                ['title' => 'Zapewniamy kompleksową księgowość', 'text' => 'Zajmiemy się wszystkim za Ciebie, dzięki czemu skupisz się na podstawowej działalności i będziesz mógł rozwijać swoją firmę.'],
-                ['title' => 'Współpracujemy z najlepszymi specjalistami', 'text' => 'Oferujemy wsparcie w wielu dziedzinach – pomożemy Ci odzyskać odszkodowanie, zaciągnąć kredyt i rozwiążemy wiele problemów.'],
-                ['title' => 'Wypracowaliśmy wysokie standardy', 'text' => 'Zajmiemy się wszystkim za Ciebie, dzięki czemu skupisz się na podstawowej działalności i będziesz mógł rozwijać swoją firmę.',],
+                ['title' => 'Zapewniamy kompleksową księgowość', 'text' => 'Zajmiemy się wszystkim za Ciebie, dzięki czemu skupisz się na podstawowej działalności i będziesz mógł rozwijać swoją firmę.', 'icon' => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                                <rect x="3" y="3" width="8" height="12" rx="1.5"></rect>
+                                <rect x="13" y="3" width="8" height="6" rx="1.5"></rect>
+                                <path d="M13 12h8M13 16h8M3 17h8M6 7h2M6 10h2"></path>
+                            </svg>'],
+                ['title' => 'Współpracujemy z najlepszymi specjalistami', 'text' => 'Oferujemy wsparcie w wielu dziedzinach – pomożemy Ci odzyskać odszkodowanie, zaciągnąć kredyt i rozwiążemy wiele problemów.', 'icon' => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                                <rect x="3" y="3" width="8" height="12" rx="1.5"></rect>
+                                <rect x="13" y="3" width="8" height="6" rx="1.5"></rect>
+                                <path d="M13 12h8M13 16h8M3 17h8M6 7h2M6 10h2"></path>
+                            </svg>'],
+                ['title' => 'Wypracowaliśmy wysokie standardy', 'text' => 'Zajmiemy się wszystkim za Ciebie, dzięki czemu skupisz się na podstawowej działalności i będziesz mógł rozwijać swoją firmę.', 'icon' => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                                <rect x="3" y="3" width="8" height="12" rx="1.5"></rect>
+                                <rect x="13" y="3" width="8" height="6" rx="1.5"></rect>
+                                <path d="M13 12h8M13 16h8M3 17h8M6 7h2M6 10h2"></path>
+                            </svg>'],
             ];
         }
 

@@ -99,16 +99,36 @@ class Accountancy extends Composer
 
     private function getSectionTwoData()
     {
-        return [
-            'title' => $this->getAcfFieldSafe('section_two_title', false, 'Wirtualne biuro i <br><span class="font-bold">księgowość w UK</span>'),
-            'paragraph' => $this->getAcfFieldSafe('section_two_paragraph', false, 'Każda spółka z ograniczoną odpowiedzialnością (Firma Limited) musi posiadać oficjalną siedzibę (Registered Office Address), której adres podaje się zarówno do rejestru firm (Companies House), jak i urzędu skarbowego (HM Revenue & Customs). Oficjalna siedziba spółki służy przede wszystkim administracji publicznej, w tym fiskalnej, do korespondencji i kontaktów z przedsiębiorstwem. Tam również z reguły są przechowywane dokumenty spółki. AlphaTax Finance użycza spółkom LTD (Limited) swojego adresu na potrzeby oficjalnej siedziby firmy. W ramach tej usługi:'),
-            'paragraph_2' => $this->getAcfFieldSafe('section_two_paragraph_2', false, 'Każda spółka z ograniczoną odpowiedzialnością (Firma Limited) musi posiadać oficjalną siedzibę (Registered Office Address), której adres podaje się zarówno do rejestru firm (Companies House), jak i urzędu skarbowego (HM Revenue & Customs). Oficjalna siedziba spółki służy przede wszystkim administracji publicznej, w tym fiskalnej, do korespondencji i kontaktów z przedsiębiorstwem. Tam również z reguły są przechowywane dokumenty spółki. AlphaTax Finance użycza spółkom LTD (Limited) swojego adresu na potrzeby oficjalnej siedziby firmy. W ramach tej usługi:'),
-            'bullets' => $this->getAcfFieldSafe('section_bullets', false, [
+        $bullets_raw = $this->getAcfFieldSafe('section_bullets', false, []);
+        $bullets = [];
+
+        if (!empty($bullets_raw) && is_array($bullets_raw)) {
+            foreach ($bullets_raw as $item) {
+                if (is_string($item)) {
+                    $bullets[] = $item;
+                } elseif (is_array($item)) {
+                    $val = reset($item);
+                    if (is_string($val)) {
+                        $bullets[] = $val;
+                    }
+                }
+            }
+        }
+
+        if (empty($bullets)) {
+            $bullets = [
                 'APJ Claims – pomoc prawna i odzyskiwanie odszkodowań.',
                 'MJN Business Finance – specjalizacje w finansowaniu przedsiębiorstw.',
                 'Peace Of Mind Group – wsparcie w oddłużaniu i negocjacjach.',
                 'Prestige Financial Advisers – doradztwo i kredyty hipoteczne.',
-            ]),
+            ];
+        }
+
+        return [
+            'title' => $this->getAcfFieldSafe('section_two_title', false, 'Wirtualne biuro i <br><span class="font-bold">księgowość w UK</span>'),
+            'paragraph' => $this->getAcfFieldSafe('section_two_paragraph', false, 'Każda spółka z ograniczoną odpowiedzialnością (Firma Limited) musi posiadać oficjalną siedzibę (Registered Office Address), której adres podaje się zarówno do rejestru firm (Companies House), jak i urzędu skarbowego (HM Revenue & Customs). Oficjalna siedziba spółki służy przede wszystkim administracji publicznej, w tym fiskalnej, do korespondencji i kontaktów z przedsiębiorstwem. Tam również z reguły są przechowywane dokumenty spółki. AlphaTax Finance użycza spółkom LTD (Limited) swojego adresu na potrzeby oficjalnej siedziby firmy. W ramach tej usługi:'),
+            'paragraph_2' => $this->getAcfFieldSafe('section_two_paragraph_2', false, 'Każda spółka z ograniczoną odpowiedzialnością (Firma Limited) musi posiadać oficjalną siedzibę (Registered Office Address), której adres podaje się zarówno do rejestru firm (Companies House), jak i urzędu skarbowego (HM Revenue & Customs). Oficjalna siedziba spółki służy przede wszystkim administracji publicznej, w tym fiskalnej, do korespondencji i kontaktów z przedsiębiorstwem. Tam również z reguły są przechowywane dokumenty spółki. AlphaTax Finance użycza spółkom LTD (Limited) swojego adresu na potrzeby oficjalnej siedziby firmy. W ramach tej usługi:'),
+            'bullets' => $bullets,
             'image' => $this->getAcfImageSafe('section_two_image', false, get_template_directory_uri() . '/resources/images/modern.png'),
         ];
     }
