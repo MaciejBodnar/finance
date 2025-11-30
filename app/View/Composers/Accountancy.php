@@ -117,8 +117,7 @@ class Accountancy extends Composer
     {
         return [
             'background_image' => $this->getAcfImageSafe('contact_background_image', false, get_template_directory_uri() . '/resources/images/businessman-working.png'),
-            'heading_html' => $this->getAcfFieldSafe('contact_heading_html', false, 'Postaw na pewność i spokój,'),
-            'subheading_html' => $this->getAcfFieldSafe('contact_subheading_html', false, 'powierz księgowość ekspertom'),
+            'heading' => $this->getAcfFieldSafe('contact_heading', false, 'Postaw na pewność i spokój, powierz księgowość ekspertom'),
         ];
     }
 

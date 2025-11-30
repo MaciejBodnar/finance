@@ -49,16 +49,18 @@
                     <img src="{{ get_template_directory_uri() }}/resources/images/telefon.png" alt="Księgowa z telefonem"
                         class="static max-md:order-last md:absolute bottom-0 left-40 object-cover" />
                     <div>
-
                     </div>
-                    <div class="flex flex-col gap-12">
-                        <h2 class="tk-tt-travels-next font-bold text-4xl text-white max-w-[300px]">
+                    <div class="flex flex-col gap-12 order-2">
+                        <h2 class="tk-tt-travels-next hidden md:block font-bold text-4xl text-white max-w-[300px]">
                             {!! $main['cta_section']['title'] !!}
                         </h2>
                         <a href="{{ $main['cta_section']['book_now_url'] }}"
                             class="w-fit hover:cursor-pointer border-2 border-black py-2 px-12 bg-[#122457] text-white uppercase">{{ $main['cta_section']['book_now_text'] }}</a>
                     </div>
-                    <div>
+                    <div class="order-1">
+                        <h2 class="tk-tt-travels-next md:hidden font-bold text-4xl mb-5 text-white max-w-[300px]">
+                            {!! $main['cta_section']['title'] !!}
+                        </h2>
                         <p class="text-white">{!! $main['cta_section']['description'] !!}</p>
                     </div>
                 </div>
@@ -199,13 +201,15 @@
                 <h2 class="tk-tt-travels-next text-3xl md:text-4xl">
                     {{ $main['testimonials']['title'] }}
                 </h2>
-                <div class="mt-6 flex flex-wrap items-center gap-4">
-                    <div class="flex items-center gap-1">
-                        <svg class="w-8 h-8 text-[#0b285f]" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M5 8l7 8 7-8z" />
+                <div class="mt-6 flex gap-4">
+                    <div class="flex gap-1">
+                        <svg width="18" height="13" viewBox="0 0 18 13" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8.66016 12.75L-9.91821e-05 0H17.3204L8.66016 12.75Z" fill="#122457" />
                         </svg>
-                        <svg class="w-8 h-8 text-[#0b285f]" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M5 8l7 8 7-8z" />
+                        <svg width="18" height="13" viewBox="0 0 18 13" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8.66016 12.75L-9.91821e-05 0H17.3204L8.66016 12.75Z" fill="#122457" />
                         </svg>
                     </div>
                     <div class="flex flex-col md:flex-row gap-4 md:gap-20 items-center">
@@ -242,19 +246,26 @@
         </div>
     </section>
     <section id="kontakt" class="relative py-16 md:py-24 overflow-hidden">
-        <div class="absolute inset-x-0 top-0 h-1/2">
+        <div class="absolute inset-x-0 top-0 h-1/2 z-0">
             <img src="{{ $main['contact_section']['background_image'] }}" alt=""
                 class="w-full h-full object-cover opacity-70">
         </div>
 
-        @if (function_exists('pll_current_language'))
-            @if (pll_current_language() === 'pl')
-                {!! do_shortcode('[contact-form-7 id="f2cab71" title="Optimum Tax LTD - PL"]') !!}
+        <div class="relative max-w-4xl mx-auto px-8 lg:px-0">
+            <div class="text-center mb-10 md:mb-12">
+                <h2 class="tk-tt-travels-next font-bold text-3xl md:text-5xl leading-tight text-[#0b285f]">
+                    {!! $main['contact_section']['heading'] !!}
+                </h2>
+            </div>
+            @if (function_exists('pll_current_language'))
+                @if (pll_current_language() === 'pl')
+                    {!! do_shortcode('[contact-form-7 id="f2cab71" title="Optimum Tax LTD - PL"]') !!}
+                @else
+                    {!! do_shortcode('[contact-form-7 id="10554d1" title="Optimum Tax LTD - EN"]') !!}
+                @endif
             @else
-                {!! do_shortcode('[contact-form-7 id="10554d1" title="Optimum Tax LTD - EN"]') !!}
+                {!! do_shortcode('[contact-form-7 id="f2cab71" title="Optimum Tax LTD - PL"]') !!}
             @endif
-        @else
-            {!! do_shortcode('[contact-form-7 id="f2cab71" title="Optimum Tax LTD - PL"]') !!}
-        @endif
+        </div>
     </section>
 @endsection

@@ -101,70 +101,20 @@
 
         <div class="relative max-w-4xl mx-auto px-4">
             <div class="text-center mb-10 md:mb-12">
-                <h2 class="text-3xl md:text-5xl font-extrabold leading-tight text-[#0b285f] tk-tt-travels-next">Postaw na
-                    <br>
-                    pewność i spokój,
+                <h2 class="tk-tt-travels-next font-bold text-3xl md:text-5xl leading-tight text-[#0b285f]">
+                    {!! $partner['contact']['heading'] !!}
                 </h2>
-                <p class="text-2xl md:text-4xl leading-tight text-[#6f7ea6] -mt-1 tk-tt-travels-next">powierz księgowość
-                    <br>ekspertom
-                </p>
             </div>
 
-            <form action="#" method="post" class="space-y-5 text-sm">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-                    <div>
-                        <label class="block mb-1 text-[#0b285f]">Imię</label>
-                        <input type="text"
-                            class="w-full border-2 border-[#0b285f] rounded-none px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#0b285f]">
-                    </div>
-                    <div>
-                        <label class="block mb-1 text-[#0b285f]">Nazwisko</label>
-                        <input type="text"
-                            class="w-full border-2 border-[#0b285f] rounded-none px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#0b285f]">
-                    </div>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-                    <div>
-                        <label class="block mb-1 text-[#0b285f]">Email</label>
-                        <input type="email"
-                            class="w-full border-2 border-[#0b285f] rounded-none px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#0b285f]">
-                    </div>
-                    <div>
-                        <label class="block mb-1 text-[#0b285f]">Numer Kontaktowy</label>
-                        <input type="text"
-                            class="w-full border-2 border-[#0b285f] rounded-none px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#0b285f]">
-                    </div>
-                </div>
-
-                <div>
-                    <label class="block mb-1 text-[#0b285f]">Temat</label>
-                    <input type="text"
-                        class="w-full border-2 border-[#0b285f] rounded-none px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#0b285f]">
-                </div>
-
-                <div>
-                    <label class="block mb-1 text-[#0b285f]">Wiadomość</label>
-                    <textarea rows="6"
-                        class="w-full border-2 border-[#0b285f] rounded-none px-3 py-2 resize-y focus:outline-none focus:ring-2 focus:ring-[#0b285f]"></textarea>
-                </div>
-
-                <div class="flex items-start gap-3">
-                    <input type="checkbox"
-                        class="mt-1 w-4 h-4 border-2 border-[#0b285f] rounded-none focus:outline-none focus:ring-2 focus:ring-[#0b285f]">
-                    <p class="text-[12px] leading-relaxed text-[#3b445b]">Niniejszym oświadczam, że zapoznałem się z
-                        polityką prywatności i wyrażam zgodę na przetwarzanie przez Optimum Tax LTD z siedzibą przy 86
-                        Boston Road, London W7 3TR moich danych osobowych w zakresie niezbędnym do realizacji świadczonych
-                        usług na moją rzecz. Jednocześnie potwierdzam, że mam ukończone 16 lat i jestem świadomy, że
-                        przysługuje mi prawo do wglądu w moje dane osobowe oraz prawo do udzielenia zgody i żądania
-                        usunięcia moich danych osobowych.</p>
-                </div>
-
-                <div class="pt-2 text-center">
-                    <button type="submit"
-                        class="inline-flex items-center justify-center px-8 py-3 bg-[#0b285f] text-white font-semibold tracking-wide rounded-none hover:bg-[#0a234f] transition">KONTAKT</button>
-                </div>
-            </form>
+            @if (function_exists('pll_current_language'))
+                @if (pll_current_language() === 'pl')
+                    {!! do_shortcode('[contact-form-7 id="f2cab71" title="Optimum Tax LTD - PL"]') !!}
+                @else
+                    {!! do_shortcode('[contact-form-7 id="10554d1" title="Optimum Tax LTD - EN"]') !!}
+                @endif
+            @else
+                {!! do_shortcode('[contact-form-7 id="f2cab71" title="Optimum Tax LTD - PL"]') !!}
+            @endif
         </div>
     </section>
 @endsection

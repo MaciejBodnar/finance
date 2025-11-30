@@ -16,7 +16,7 @@
                     class="tk-tt-travels-next text-[#0b285f] text-3xl md:text-5xl font-light leading-tight mt-24 max-w-[732px]">
                     {!! $accountancy['hero']['title'] !!}
                 </h1>
-                <div class="flex flex-col md:flex-row items-center md:items-start gap-2 md:gap-10 mt-8 md:mt-24">
+                <div class="flex gap-2 md:gap-10 mt-8 md:mt-24">
                     <div class="flex items-start gap-1">
                         <svg width="18" height="13" viewBox="0 0 18 13" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
@@ -79,7 +79,7 @@
                         <h2
                             class="flex justify-center md:justify-start text-4xl text-center md:text-left text-white max-w-[300px] tk-tt-travels-next">
                             {!! $accountancy['cta_top']['heading'] !!}</h2>
-                        <a class="flex justify-center md:justify-start" href="#kontakt">
+                        <a class="justify-center md:justify-start hidden md:flex" href="#kontakt">
                             <svg class="max-w-8" xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 640 640"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
                                 <path fill="#ffffff"
@@ -88,8 +88,15 @@
                         </a>
                     </div>
                     <div>
-                        <p class="text-white">{!! $accountancy['cta_top']['paragraph'] !!}
+                        <p class="text-white  text-center">{!! $accountancy['cta_top']['paragraph'] !!}
                         </p>
+                        <a class="justify-center md:justify-start flex md:hidden mt-10" href="#kontakt">
+                            <svg class="max-w-10" xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 640 640"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                                <path fill="#ffffff"
+                                    d="M297.4 598.6C309.9 611.1 330.2 611.1 342.7 598.6L470.7 470.6C483.2 458.1 483.2 437.8 470.7 425.3C458.2 412.8 437.9 412.8 425.4 425.3L352 498.7L352 64C352 46.3 337.7 32 320 32C302.3 32 288 46.3 288 64L288 498.7L214.6 425.3C202.1 412.8 181.8 412.8 169.3 425.3C156.8 437.8 156.8 458.1 169.3 470.6L297.3 598.6z" />
+                            </svg>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -109,7 +116,7 @@
                 <h2 class="tk-tt-travels-next text-[#0b285f] text-3xl md:text-5xl font-light leading-tight">
                     {!! $accountancy['section_two']['title'] !!}
                 </h2>
-                <div class="flex flex-col md:flex-row items-center md:items-start gap-2 md:gap-10">
+                <div class="flex gap-2 md:gap-10">
                     <div class="mt-6 flex items-start gap-1">
                         <svg width="18" height="13" viewBox="0 0 18 13" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
@@ -165,7 +172,7 @@
                         </a>
                     </div>
                     <div>
-                        <p class="text-white">{!! $accountancy['cta_bottom']['paragraph'] !!}
+                        <p class="text-white text-center">{!! $accountancy['cta_bottom']['paragraph'] !!}
                         </p>
                     </div>
                 </div>
@@ -187,7 +194,7 @@
                         <h2 class="flex justify-center md:justify-start text-4xl text-center md:text-left text-white">
                             {!! $accountancy['cta_bottom']['heading'] !!}
                         </h2>
-                        <a class="flex justify-center md:justify-start" href="#kontakt">
+                        <a class="hidden md:flex justify-center md:justify-start" href="#kontakt">
                             <svg class="max-w-8" xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 640 640"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
                                 <path fill="#ffffff"
@@ -198,6 +205,13 @@
                     <div>
                         <p class="text-white">{!! $accountancy['cta_bottom']['paragraph'] !!}
                         </p>
+                        <a class="flex md:hidden mt-10 justify-center md:justify-start" href="#kontakt">
+                            <svg class="max-w-10" xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 640 640"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                                <path fill="#ffffff"
+                                    d="M297.4 598.6C309.9 611.1 330.2 611.1 342.7 598.6L470.7 470.6C483.2 458.1 483.2 437.8 470.7 425.3C458.2 412.8 437.9 412.8 425.4 425.3L352 498.7L352 64C352 46.3 337.7 32 320 32C302.3 32 288 46.3 288 64L288 498.7L214.6 425.3C202.1 412.8 181.8 412.8 169.3 425.3C156.8 437.8 156.8 458.1 169.3 470.6L297.3 598.6z" />
+                            </svg>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -211,7 +225,9 @@
 
         <div class="relative max-w-4xl mx-auto px-4">
             <div class="text-center mb-10 md:mb-12">
-
+                <h2 class="tk-tt-travels-next font-bold text-3xl md:text-5xl leading-tight text-[#0b285f]">
+                    {!! $accountancy['contact']['heading'] !!}
+                </h2>
             </div>
 
             @if (function_exists('pll_current_language'))

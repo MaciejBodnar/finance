@@ -53,6 +53,7 @@ class Partner extends Composer
             'closing_paragraph' => $this->getAcfFieldSafe('closing_paragraph', false, 'Dzięki szerokim kontaktom z najlepszymi specjalistami w różnych branżach możemy skutecznie pomagać Polakom w Wielkiej Brytanii. Jeśli prowadzisz własną działalność lub chcesz ją założyć, a nie wiesz jak to zrobić – skontaktuj się z nami.'),
             // Repeater of partner blocks (logo + description + alt)
             'partners' => $this->getPartnersRepeater(),
+            'contact' => $this->getContactData(),
         ];
     }
 
@@ -81,6 +82,14 @@ class Partner extends Composer
         $fallbackDesc = 'Prestige Financial Advisers specjalizuje się w doradztwie z zakresu kredytów hipotecznych. Weryfikuje cały rynek i dobiera najkorzystniejsze rozwiązania – także oferty niedostępne w standardowej ofercie banków. Obsługujemy klientów z całego UK – Anglia, Szkocja, Walia i Irlandia Północna.';
         $img = get_template_directory_uri() . '/resources/images/Partner.png';
         return array_fill(0, 4, ['logo' => $img, 'alt' => 'Partner', 'description' => $fallbackDesc]);
+    }
+
+    private function getContactData()
+    {
+        return [
+            'background_image' => $this->getAcfImageSafe('contact_background_image', false, get_template_directory_uri() . '/resources/images/businessman-working.png'),
+            'heading' => $this->getAcfFieldSafe('contact_heading', false, 'Postaw na pewność i spokój, powierz księgowość ekspertom'),
+        ];
     }
 
     /**

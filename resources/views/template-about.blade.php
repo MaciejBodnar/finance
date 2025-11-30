@@ -154,19 +154,25 @@
         </div>
     </section>
     <section id="kontakt" class="relative py-16 md:py-24 overflow-hidden">
-        <div class="absolute inset-x-0 top-0 h-1/2">
+        <div class="absolute inset-x-0 top-0 h-1/2 z-0">
             <img src="{{ $about['about_contact_background_image'] ?? get_template_directory_uri() . '/resources/images/businessman-working.png' }}"
                 alt="" class="w-full h-full object-cover opacity-70">
         </div>
-
-        @if (function_exists('pll_current_language'))
-            @if (pll_current_language() === 'pl')
-                {!! do_shortcode('[contact-form-7 id="f2cab71" title="Optimum Tax LTD - PL"]') !!}
+        <div class="relative max-w-4xl mx-auto px-4">
+            <div class="text-center mb-10 md:mb-12">
+                <h2 class="tk-tt-travels-next font-bold text-3xl md:text-5xl leading-tight text-[#0b285f]">
+                    {!! $about['contact_heading'] !!}
+                </h2>
+            </div>
+            @if (function_exists('pll_current_language'))
+                @if (pll_current_language() === 'pl')
+                    {!! do_shortcode('[contact-form-7 id="f2cab71" title="Optimum Tax LTD - PL"]') !!}
+                @else
+                    {!! do_shortcode('[contact-form-7 id="10554d1" title="Optimum Tax LTD - EN"]') !!}
+                @endif
             @else
-                {!! do_shortcode('[contact-form-7 id="10554d1" title="Optimum Tax LTD - EN"]') !!}
+                {!! do_shortcode('[contact-form-7 id="f2cab71" title="Optimum Tax LTD - PL"]') !!}
             @endif
-        @else
-            {!! do_shortcode('[contact-form-7 id="f2cab71" title="Optimum Tax LTD - PL"]') !!}
-        @endif
+        </div>
     </section>
 @endsection
