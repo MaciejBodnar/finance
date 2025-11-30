@@ -45,16 +45,17 @@ class SinglePost extends Composer
 
         // Use safe ACF helpers similar to other composers.
         $hero_image = $this->getAcfFieldSafe('hero_image', $post->ID, null);
-        $hero_subtitle = $this->getAcfFieldSafe('hero_subtitle', $post->ID, null);
+        $thumbnail_image = $this->getAcfFieldSafe('thumbnail_image', $post->ID, null);
         $custom_title = $this->getAcfFieldSafe('custom_title_html', $post->ID, null);
+        $custom_content = $this->getAcfFieldSafe('custom_content_html', $post->ID, null);
 
         return [
             'title' => $custom_title ?: get_the_title($post),
-            'content' => apply_filters('the_content', $post->post_content),
+            'content' => $custom_content ?: apply_filters('the_content', $post->post_content),
             'date' => get_the_date('', $post),
-            'thumbnail' => $this->getImageFromField($hero_image, get_the_post_thumbnail_url($post, 'large')),
+            'thumbnail' => $thumbnail_image ?: get_the_post_thumbnail_url($post, 'large'),
             'permalink' => get_permalink($post),
-            'hero_subtitle' => $hero_subtitle,
+            'image' => $this->getImageFromField($hero_image, get_the_post_thumbnail_url($post, 'large')),
         ];
     }
 

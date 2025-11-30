@@ -162,7 +162,7 @@ class Footer extends Composer
             'copyright' => $this->getAcfFieldSafe('footer_copyright', 'option', '©2025 <span class="font-semibold text-[#2d7e3b]">Optimum Tax</span> – D&C with <span class="text-[#2d7e3b]">💚</span> SLT Media'),
             'privacy_label' => $this->getAcfFieldSafe('footer_privacy_label', 'option', 'Privacy Policy'),
             'privacy_url' => $this->getAcfFieldSafe('footer_privacy_url', 'option', '#'),
-            'licensed_logo' => get_theme_file_uri('/resources/images/logo-footer.png'),
+            'licensed_logo' => $this->getAcfImageSafe('licensed_logo', false, 'large', get_template_directory_uri() . '/resources/images/Logo-footer.png'),
             'licensed_text' => $this->getAcfFieldSafe('footer_licensed_text', 'option', 'Licensed <br> Accountant'),
         ];
     }
@@ -238,5 +238,24 @@ class Footer extends Composer
         }
 
         return home_url($path);
+    }
+
+    private function getAcfImageSafe($field_name, $post_id = false, $size = 'full', $fallback_url = '')
+    {
+        if (function_exists('get_field')) {
+            $image = \get_field($field_name, $post_id);
+            if ($image) {
+                if (is_array($image) && isset($image['url'])) {
+                    return $image['url'];
+                } elseif (is_string($image) && ctype_digit($image)) {
+                    return wp_get_attachment_image_url((int) $image, $size) ?: $fallback_url;
+                } elseif (is_numeric($image)) {
+                    return wp_get_attachment_image_url((int) $image, $size) ?: $fallback_url;
+                } elseif (is_string($image)) {
+                    return $image;
+                }
+            }
+        }
+        return $fallback_url;
     }
 }

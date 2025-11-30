@@ -1,8 +1,29 @@
 @import "tailwindcss";
 @source "../views/";
 @source "../../app/";
+@import "./cf7.css";
 
 a {
 	text-decoration: none;
 }
 
+.screen-reader-response {
+    display: none !important;
+}
+
+.wpcf7-form .hidden-fields-container,
+.wpcf7-form .wpcf7-response-output {
+  display: none !important;
+}
+
+input {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  border-radius: 0;
+  border-width: 1px;
+  width: 100%;
+  border-color: #0b285f;
+
+}

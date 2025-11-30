@@ -1,0 +1,124 @@
+/* main form wrapper */
+.cf7-custom-form {
+    max-width: 980px;
+    margin: 0 auto 80px;
+    font-family: "Open Sans", Arial, sans-serif;
+    color: #122457;              /* navy */
+    font-size: 16px;
+}
+
+/* grid layout (if Tailwind is not loaded this will handle it) */
+.cf7-custom-form .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+@media (min-width: 768px) {
+    .cf7-custom-form .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .cf7-custom-form .col-span-full,
+    .cf7-custom-form .col-span-2 {
+        grid-column: 1 / -1;
+    }
+}
+
+/* spacing */
+.cf7-custom-form p {
+    margin: 0 0 18px;
+}
+
+.cf7-custom-form label {
+    display: block;
+    font-weight: 400;
+    color: #122457;
+}
+
+/* text inputs + email + number + textarea */
+.cf7-custom-form input[type="text"],
+.cf7-custom-form input[type="email"],
+.cf7-custom-form input[type="tel"],
+.cf7-custom-form textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 6px;
+    border: 2px solid #122457;   /* navy border */
+    background-color: #ffffff;
+    font-size: 15px;
+    outline: none;
+    margin-top: 10px;
+}
+
+/* focus state – orange border like first field on screenshot */
+.cf7-custom-form input[type="text"]:focus,
+.cf7-custom-form input[type="email"]:focus,
+.cf7-custom-form input[type="tel"]:focus,
+.cf7-custom-form textarea:focus {
+    border-color: #e3a469;       /* warm orange */
+}
+
+/* textarea size similar to screenshot */
+.cf7-custom-form textarea {
+    min-height: 220px;
+    resize: vertical;
+}
+
+/* checkbox + privacy text */
+.cf7-custom-form .wpcf7-list-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.cf7-custom-form .wpcf7-list-item input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 26px;
+    height: 26px;
+    border: 2px solid #122457;
+    margin-top: 4px;
+    cursor: pointer;
+}
+
+.cf7-custom-form .wpcf7-list-item input[type="checkbox"]:checked {
+    background-color: #122457;
+}
+
+.cf7-custom-form .wpcf7-list-item-label {
+    line-height: 1.7;
+    color: #122457;
+    padding-left: 16px;
+}
+
+/* submit button */
+.cf7-custom-form .wpcf7-submit {
+    display: block;
+    margin: 30px auto 0;
+    padding: 14px 70px;
+    border: none;
+    background-color: #122457;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    width: fit-content;
+}
+
+.cf7-custom-form .wpcf7-submit:hover {
+    background-color: #152347;
+}
+
+/* hide default CF7 response box until needed */
+.cf7-custom-form .wpcf7-response-output {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.cf7-custom-form .wpcf7-acceptance .wpcf7-list-item label {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}

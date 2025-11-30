@@ -13,26 +13,20 @@
                     <h1
                         class="tk-tt-travels-next text-[#0b285f] mb-8 md:mb-40 text-3xl md:text-5xl font-extrabold leading-tight">
                         {!! $post['title'] !!}
-                        @if (!empty($post['title_bold']))
-                            <p class="mt-4 text-slate-600">{{ $post['title_bold'] }}</p>
-                        @endif
                     </h1>
-                    @if (!empty($post['hero_subtitle']))
-                        <p class="mt-4 text-slate-600">{{ $post['hero_subtitle'] }}</p>
-                    @else
-                        <div class="mt-4 flex items-center gap-1">
+                    <div class="mt-4 flex items-center gap-1">
 
-                            <svg width="18" height="13" viewBox="0 0 18 13" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path d="M8.66016 12.75L-9.91821e-05 0H17.3204L8.66016 12.75Z" fill="#38783A" />
-                            </svg>
+                        <svg width="18" height="13" viewBox="0 0 18 13" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8.66016 12.75L-9.91821e-05 0H17.3204L8.66016 12.75Z" fill="#38783A" />
+                        </svg>
 
-                            <svg width="18" height="13" viewBox="0 0 18 13" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path d="M8.66016 12.75L-9.91821e-05 0H17.3204L8.66016 12.75Z" fill="#38783A" />
-                            </svg>
+                        <svg width="18" height="13" viewBox="0 0 18 13" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8.66016 12.75L-9.91821e-05 0H17.3204L8.66016 12.75Z" fill="#38783A" />
+                        </svg>
 
-                        </div>
+                    </div>
                     @endif
                 </header>
 
@@ -43,8 +37,8 @@
 
             <aside class="space-y-8">
                 <div class="w-full items-start md:max-h-[624px] md:min-w-[756px] rounded-md overflow-hidden">
-                    <img src="{{ $post['thumbnail'] ?: get_template_directory_uri() . '/resources/images/businesswoman-working-large.png' }}"
-                        alt="" class="w-full h-full object-contain">
+                    <img src="{{ $post['image'] ?: $post['thumbnail'] }}" alt=""
+                        class="w-full h-full object-contain">
                 </div>
 
                 @if (!empty($previous))
