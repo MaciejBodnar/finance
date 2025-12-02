@@ -42,8 +42,8 @@ class Accountancy extends Composer
             // New: separate CTA sections with enable flags
             'cta_top' => $this->getCtaTopData(),
             'cta_bottom' => $this->getCtaBottomData(),
-            'cta_top_enabled' => (bool) $this->getAcfFieldSafe('cta_top_enabled', false, false),
-            'cta_bottom_enabled' => (bool) $this->getAcfFieldSafe('cta_bottom_enabled', false, true),
+            'cta_top_enabled' => $this->getAcfBool('cta_top_enabled', false, false),
+            'cta_bottom_enabled' => $this->getAcfBool('cta_bottom_enabled', false, true),
             'section_two' => $this->getSectionTwoData(),
             'contact' => $this->getContactData(),
         ];
@@ -76,8 +76,6 @@ class Accountancy extends Composer
     {
         return [
             'heading' => $this->getAcfFieldSafe('cta_top_heading', false, 'Umów się na spotkanie'),
-            'button_text' => $this->getAcfFieldSafe('cta_top_button_text', false, 'Umów się'),
-            'button_url' => $this->getAcfFieldSafe('cta_top_button_url', false, '#'),
             'paragraph' => $this->getAcfFieldSafe('cta_top_paragraph', false, 'Nasi księgowi w Hanwell są cały czas do Twojej dyspozycji – zadzwoń albo napisz, by umówić się na spotkanie. Zajmiemy się Twoją sprawą w sposób rzetelny i kompleksowy!'),
         ];
     }
@@ -91,8 +89,6 @@ class Accountancy extends Composer
     {
         return [
             'heading' => $this->getAcfFieldSafe('cta_bottom_heading', false, 'Umów się na spotkanie'),
-            'button_text' => $this->getAcfFieldSafe('cta_bottom_button_text', false, 'Umów się'),
-            'button_url' => $this->getAcfFieldSafe('cta_bottom_button_url', false, '#'),
             'paragraph' => $this->getAcfFieldSafe('cta_bottom_paragraph', false, 'Nasi księgowi w Hanwell są cały czas do Twojej dyspozycji – zadzwoń albo napisz, by umówić się na spotkanie. Zajmiemy się Twoją sprawą w sposób rzetelny i kompleksowy!'),
         ];
     }
@@ -115,19 +111,10 @@ class Accountancy extends Composer
             }
         }
 
-        if (empty($bullets)) {
-            $bullets = [
-                'APJ Claims – pomoc prawna i odzyskiwanie odszkodowań.',
-                'MJN Business Finance – specjalizacje w finansowaniu przedsiębiorstw.',
-                'Peace Of Mind Group – wsparcie w oddłużaniu i negocjacjach.',
-                'Prestige Financial Advisers – doradztwo i kredyty hipoteczne.',
-            ];
-        }
-
         return [
-            'title' => $this->getAcfFieldSafe('section_two_title', false, 'Wirtualne biuro i <br><span class="font-bold">księgowość w UK</span>'),
-            'paragraph' => $this->getAcfFieldSafe('section_two_paragraph', false, 'Każda spółka z ograniczoną odpowiedzialnością (Firma Limited) musi posiadać oficjalną siedzibę (Registered Office Address), której adres podaje się zarówno do rejestru firm (Companies House), jak i urzędu skarbowego (HM Revenue & Customs). Oficjalna siedziba spółki służy przede wszystkim administracji publicznej, w tym fiskalnej, do korespondencji i kontaktów z przedsiębiorstwem. Tam również z reguły są przechowywane dokumenty spółki. AlphaTax Finance użycza spółkom LTD (Limited) swojego adresu na potrzeby oficjalnej siedziby firmy. W ramach tej usługi:'),
-            'paragraph_2' => $this->getAcfFieldSafe('section_two_paragraph_2', false, 'Każda spółka z ograniczoną odpowiedzialnością (Firma Limited) musi posiadać oficjalną siedzibę (Registered Office Address), której adres podaje się zarówno do rejestru firm (Companies House), jak i urzędu skarbowego (HM Revenue & Customs). Oficjalna siedziba spółki służy przede wszystkim administracji publicznej, w tym fiskalnej, do korespondencji i kontaktów z przedsiębiorstwem. Tam również z reguły są przechowywane dokumenty spółki. AlphaTax Finance użycza spółkom LTD (Limited) swojego adresu na potrzeby oficjalnej siedziby firmy. W ramach tej usługi:'),
+            'title' => $this->getAcfFieldSafe('section_two_title', false, ''),
+            'paragraph' => $this->getAcfFieldSafe('section_two_paragraph', false, ''),
+            'paragraph_2' => $this->getAcfFieldSafe('section_two_paragraph_2', false, ''),
             'bullets' => $bullets,
             'image' => $this->getAcfImageSafe('section_two_image', false, get_template_directory_uri() . '/resources/images/modern.png'),
         ];
@@ -137,8 +124,25 @@ class Accountancy extends Composer
     {
         return [
             'background_image' => $this->getAcfImageSafe('contact_background_image', false, get_template_directory_uri() . '/resources/images/businessman-working.png'),
-            'heading' => $this->getAcfFieldSafe('contact_heading', false, 'Postaw na pewność i spokój, powierz księgowość ekspertom'),
+            'heading' => $this->getAcfFieldSafe('contact_heading', false, '<strong>Postaw na <br>pewność i spokój,</strong> <br>powierz księgowość ekspertom'),
         ];
+    }
+
+    /**
+     * Safe ACF boolean field retrieval
+     *
+     * @param string $field_name
+     * @param mixed $post_id
+     * @param bool $fallback
+     * @return bool
+     */
+    private function getAcfBool($field_name, $post_id = false, $fallback = false)
+    {
+        if (function_exists('get_field')) {
+            $value = \get_field($field_name, $post_id);
+            return $value !== null ? (bool) $value : $fallback;
+        }
+        return $fallback;
     }
 
     /**
