@@ -37,7 +37,7 @@
         </div>
         @if (!empty($accountancy['cta_top_enabled']))
             <div class="absolute bottom-0 w-full min-h-[322px] hidden md:flex items-center"
-                style="background-image: url('{{ $accountancy['background']['desktop'] }}'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+                style="background-image: url('{{ $accountancy['background']['desktop'] }}'); background-size: cover; background-position: top; background-repeat: no-repeat;">
                 <div class="grid md:grid-cols-3 min-h-full items-center justify-center max-w-6xl mx-auto gap-10">
                     <img src="{{ $accountancy['background']['phone_icon'] }}" alt="Księgowa na fotelu"
                         class="static max-md:order-last md:absolute bottom-0 md:left-auto object-cover" />
@@ -107,7 +107,7 @@
             $mdPbBottomClass = !empty($accountancy['cta_bottom_enabled']) ? ' pb-[700px] md:pb-40' : 'pb-10 md:pb-0';
         @endphp
         <div
-            class="max-w-6xl px-4 lg:px-0 flex flex-col md:flex-row min-w-full gap-8 lg:gap-24 items-center pt-12 {{ $mdPbBottomClass }}">
+            class="max-w-6xl px-4 lg:px-0 flex flex-col md:flex-row min-w-full gap-8 lg:gap-24 items-center {{ $mdPbBottomClass }}">
             <div class="w-full order-last md:order-first lg:max-w-[690px] h-full lg:min-h-[718px] overflow-hidden">
                 <img src="{{ $accountancy['section_two']['image'] }}" alt="" class="w-full h-full object-cover">
             </div>
@@ -151,7 +151,7 @@
         </div>
         @if (!empty($accountancy['cta_bottom_enabled']))
             <div class="absolute bottom-0 w-full min-h-[322px] hidden md:flex items-center"
-                style="background-image: url('{{ $accountancy['background']['desktop'] }}'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+                style="background-image: url('{{ $accountancy['background']['desktop'] }}'); background-size: cover; background-position: top; background-repeat: no-repeat;">
                 <div class="grid md:grid-cols-3 min-h-full items-center justify-center max-w-6xl mx-auto gap-10">
                     <img src="{{ $accountancy['background']['phone_icon'] }}" alt="Księgowa na fotelu"
                         class="static max-md:order-last md:absolute bottom-0 md:left-auto object-cover" />
@@ -220,6 +220,8 @@
         <div class="absolute inset-x-0 top-0 h-1/2">
             <img src="<?php echo get_template_directory_uri(); ?>/resources/images/businessman-working.png" alt=""
                 class="w-full h-full object-cover opacity-70">
+            <div class="absolute inset-0 bg-linear-to-b from-transparent to-white"></div>
+
         </div>
 
         <div class="relative max-w-4xl mx-auto px-4">

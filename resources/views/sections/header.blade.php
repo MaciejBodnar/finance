@@ -4,15 +4,15 @@
         <div class="max-w-6xl mx-auto flex items-center justify-center md:justify-between py-3 px-4 lg:px-0 text-sm">
             <a href="{{ $header['logo']['url'] }}" class="flex items-center gap-3">
                 <img src="{{ $header['logo']['image'] }}" alt="Optimum Tax" class="w-10 h-12 object-contain" />
-                <span class="text-lg font-semibold tracking-wide">
-                    {{ $header['logo']['title'] }}
+                <span class="tk-tt-travels-next text-2xl font-semibold tracking-wide">
+                    {!! $header['logo']['title'] !!}
                 </span>
             </a>
 
             <div class="flex items-center gap-8">
 
                 <div class="hidden md:flex items-center gap-2">
-                    <span class="opacity-80">{{ $header['logo']['phone_us'] }}</span>
+                    <i class="fa-solid fa-phone" style="color: #cb9264;"></i>
                     {{ $header['logo']['phone_no'] }}
                 </div>
 

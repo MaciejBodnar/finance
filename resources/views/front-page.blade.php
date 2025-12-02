@@ -22,7 +22,7 @@
 
             </div>
             <div class="absolute bottom-0 w-full min-h-[322px] hidden md:flex items-center"
-                style="background-image: url('{{ get_template_directory_uri() }}/resources/images/Subtraction.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+                style="background-image: url('{{ get_template_directory_uri() }}/resources/images/Subtraction.png'); background-size: cover; background-position: top center; background-repeat: no-repeat;">
                 <div class="grid md:grid-cols-3 min-h-full items-center justify-center max-w-6xl mx-auto gap-10">
                     <img src="{{ $main['cta_section']['image'] }}" alt="Kobieta z telefonem"
                         class="static max-md:order-last md:absolute bottom-0 md:left-auto object-cover" />
@@ -34,7 +34,7 @@
                             {!! $main['cta_section']['title'] !!}
                         </h2>
                         <a href="{{ $main['cta_section']['book_now_url'] }}"
-                            class="w-fit hover:cursor-pointer border-2 border-black py-2 px-12 bg-[#122457] text-white tk-dm-sans-18pt uppercase">{{ $main['cta_section']['book_now_text'] }}</a>
+                            class="w-fit hover:cursor-pointer font-bold py-2 px-12 bg-[#122457] text-white tk-dm-sans-18pt uppercase">{{ $main['cta_section']['book_now_text'] }}</a>
                     </div>
                     <div>
                         <p class="text-white">{!! $main['cta_section']['description'] !!}</p>
@@ -72,7 +72,7 @@
 
             <div class="grid gap-10 lg:gap-16 items-start">
                 <h2 class="tk-tt-travels-next text-[#0b285f] max-w-[480px] text-3xl md:text-5xl">
-                    {{ $main['services']['title'] }}
+                    {!! $main['services']['title'] !!}
                 </h2>
 
                 <div class="space-y-5 text-[#233] text-sm md:text-base leading-relaxed">
@@ -110,7 +110,7 @@
                 @php $serviceItems = $main['services']['items'] ?? []; @endphp
                 @foreach ($serviceItems as $it)
                     <a href="{{ $it['href'] ?? '#' }}"
-                        class="group relative bg-[#2d7e3b] text-white pb-9 px-9 pt-10 min-h-fit gap-4 flex flex-row md:flex-col focus:ring-offset-2 focus:ring-[#2d7e3b] focus:ring-offset-white hover:brightness-110 transition">
+                        class="group relative bg-[#2d7e3b] text-white pb-9 px-9 pt-10 min-h-fit gap-4 flex flex-row md:flex-col focus:ring-offset-2 focus:ring-[#2d7e3b] focus:ring-offset-white hover:brightness-110 transition justify-between md:justify-start">
                         <div class="text-white/95">
                             <div class="text-white mb-4">
                                 {!! $it['icon_svg'] ?? ($it['icon'] ?? '') !!}
@@ -192,7 +192,7 @@
 
             <div class="mt-10 text-center">
                 <a href="{{ $main['blog']['url'] ?? '/blog' }}"
-                    class="inline-flex items-center justify-center px-8 py-3 bg-[#0b285f] text-white font-semibold rounded-md hover:bg-[#0a214f] transition">{{ $main['blog']['read_more_text'] ?? 'CZYTAJ WIĘCEJ' }}</a>
+                    class="inline-flex items-center justify-center px-8 py-3 bg-[#0b285f] text-white font-bold tk-dm-sans-18pt hover:bg-[#0a214f] transition">{{ $main['blog']['read_more_text'] ?? 'CZYTAJ WIĘCEJ' }}</a>
             </div>
         </div>
     </section>
@@ -200,9 +200,9 @@
         <div class="max-w-6xl mx-auto px-8 lg:px-0">
             <div class="max-w-232">
                 <h2 class="tk-tt-travels-next text-3xl md:text-4xl">
-                    {{ $main['testimonials']['title'] }}
+                    {!! $main['testimonials']['title'] !!}
                 </h2>
-                <div class="mt-6 flex gap-4">
+                <div class="mt-6 flex gap-4 items-center">
                     <div class="flex gap-1">
                         <svg width="18" height="13" viewBox="0 0 18 13" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
@@ -216,7 +216,7 @@
                     <div class="flex flex-col md:flex-row gap-4 md:gap-20 items-center">
                         <p class="text-white/90 text-sm md:text-base">{{ $main['testimonials']['subtitle'] }}</p>
                         <a href="{{ $main['testimonials']['cta_url'] }}"
-                            class="inline-flex items-center gap-2 px-4 py-2 bg-[#0b285f] rounded-sm text-sm font-bold tracking-wide hover:bg-[#0a234f] transition">
+                            class="inline-flex items-center gap-2 px-4 py-2 bg-[#0b285f] tk-dm-sans-18pt text-sm font-bold tracking-wide hover:bg-[#0a234f] transition">
                             {{ $main['testimonials']['cta_text'] }}
                             @if (!empty($main['testimonials']['facebook_icon']))
                                 {!! $main['testimonials']['facebook_icon'] !!}
@@ -237,7 +237,7 @@
                     <div class="flex flex-nowrap md:grid md:grid-cols-2 lg:grid-cols-4 md:gap-10 transition-transform">
                         @foreach ($main['testimonials']['testimonials'] as $t)
                             <div class="w-full shrink-0 md:pt-8 md:border-t-2 md:border-white/70 px-4">
-                                <p class="font-semibold">{{ $t['name'] ?? '' }}</p>
+                                <p class="tk-dm-sans-18pt font-bold">{{ $t['name'] ?? '' }}</p>
                                 <p class="mt-4 leading-relaxed tk-dm-sans-36pt ">{{ $t['text'] ?? '' }}</p>
                             </div>
                         @endforeach
@@ -250,6 +250,7 @@
         <div class="absolute inset-x-0 top-0 h-1/2 z-0">
             <img src="{{ $main['contact_section']['background_image'] }}" alt=""
                 class="w-full h-full object-cover opacity-70">
+            <div class="absolute inset-0 bg-linear-to-b from-transparent to-white"></div>
         </div>
 
         <div class="relative max-w-4xl mx-auto px-8 lg:px-0">

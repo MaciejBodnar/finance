@@ -125,7 +125,7 @@ class Header extends Composer
         return [
             'image' => $this->getLogoImage(),
             'url' => $this->getAcfFieldSafe('header_logo_url', 'option', home_url('/')),
-            'title' => $this->getAcfFieldSafe('header_logo_title', 'option', 'Optimum Tax'),
+            'title' => $this->getAcfFieldSafe('header_logo_title', 'option', '<strong>Optimum</strong> Tax'),
             'phone_us' => $this->getAcfFieldSafe('header_logo_phone_us', 'option', $phone_us_default),
             'phone_no' => $this->getAcfFieldSafe('header_logo_phone_no', 'option', '+0208 840 0422'),
         ];
@@ -304,7 +304,6 @@ class Header extends Composer
                 ['title' => 'Home', 'url' => $this->getLocalizedUrl('/')],
                 ['title' => 'About Us', 'url' => $this->getLocalizedUrl('/about/')],
                 ['title' => 'Accountancy', 'url' => '#', 'has_dropdown' => true, 'id' => 'ksiegowosc-link'],
-                ['title' => 'Partners', 'url' => $this->getLocalizedUrl('/partners/')],
                 ['title' => 'Blog', 'url' => $this->getLocalizedUrl('/blog/')],
                 ['title' => 'Contact', 'url' => $this->getLocalizedUrl('/contact/')],
             ];
@@ -313,7 +312,6 @@ class Header extends Composer
                 ['title' => 'Strona Główna', 'url' => home_url('/')],
                 ['title' => 'O nas', 'url' => home_url('/o-nas/')],
                 ['title' => 'Księgowość', 'url' => '#', 'has_dropdown' => true, 'id' => 'ksiegowosc-link'],
-                ['title' => 'Partnerzy', 'url' => home_url('/partnerzy/')],
                 ['title' => 'Blog', 'url' => home_url('/blog/')],
                 ['title' => 'Kontakt', 'url' => home_url('/kontakt/')],
             ];

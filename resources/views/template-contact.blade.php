@@ -9,6 +9,8 @@
         <div class="absolute inset-x-0 top-0 h-1/2">
             <img src="<?php echo get_template_directory_uri(); ?>/resources/images/businessman-working.png" alt=""
                 class="w-full h-full object-cover opacity-70">
+            <div class="absolute inset-0 bg-linear-to-b from-transparent to-white"></div>
+
         </div>
 
         <div class="relative max-w-4xl mx-auto px-4">

@@ -89,7 +89,7 @@
                         <div class="text-[#c9936d] mb-4 w-[72px] h-[72px]">
                             {!! $f['icon'] !!}
                         </div>
-                        <h3 class="tk-tt-travels-next text-[#0b285f] text-2xl">{{ $f['title'] }}</h3>
+                        <h3 class="tk-tt-travels-next text-[#0b285f] text-2xl">{!! $f['title'] !!}</h3>
                         <svg class="w-8 h-8 text-[#CB9264] mt-4" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M5 8l7 8 7-8z" />
                         </svg>
@@ -111,16 +111,20 @@
                 </h2>
                 <div class="mt-6 flex flex-wrap items-center gap-4">
                     <div class="flex items-center gap-1">
-                        <svg class="w-4 h-4 text-[#0b285f]" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M5 8l7 8 7-8z" />
-                        </svg>
-                        <svg class="w-4 h-4 text-[#0b285f]" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M5 8l7 8 7-8z" />
-                        </svg>
+                        <div class="flex gap-1">
+                            <svg width="18" height="13" viewBox="0 0 18 13" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8.66016 12.75L-9.91821e-05 0H17.3204L8.66016 12.75Z" fill="#122457" />
+                            </svg>
+                            <svg width="18" height="13" viewBox="0 0 18 13" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8.66016 12.75L-9.91821e-05 0H17.3204L8.66016 12.75Z" fill="#122457" />
+                            </svg>
+                        </div>
                     </div>
-                    <p class="text-white/90 text-sm md:text-base">{!! $about['testimonials_subtitle'] !!}</p>
+                    <p class="text-white/90 md:text-base tk-dm-sans-18pt">{!! $about['testimonials_subtitle'] !!}</p>
                     <a href="{{ $about['testimonials_facebook_url'] }}"
-                        class="inline-flex items-center gap-2 px-4 py-2 bg-[#0b285f] rounded-sm text-sm font-bold tracking-wide hover:bg-[#0a234f] transition">
+                        class="inline-flex items-center gap-2 px-4 py-2 bg-[#0b285f] tk-dm-sans-18pt font-bold tracking-wide hover:bg-[#0a234f] transition">
                         <span class="pr-1">{{ $about['testimonials_facebook_text'] }}</span>
                         @if (!empty($about['testimonials_facebook_icon']))
                             {!! $about['testimonials_facebook_icon'] !!}
@@ -139,7 +143,7 @@
                     <div class="flex flex-nowrap md:grid md:grid-cols-2 lg:grid-cols-4 md:gap-10 transition-transform">
                         @foreach ($about['testimonials'] as $t)
                             <div class="w-full shrink-0 md:pt-8 md:border-t-2 md:border-white/70 px-4">
-                                <p class="font-semibold">{{ $t['name'] ?? '' }}</p>
+                                <p class="tk-dm-sans-18pt font-bold">{{ $t['name'] ?? '' }}</p>
                                 <p class="mt-4 leading-relaxed">{{ $t['text'] ?? '' }}</p>
                             </div>
                         @endforeach
@@ -152,6 +156,8 @@
         <div class="absolute inset-x-0 top-0 h-1/2 z-0">
             <img src="{{ $about['about_contact_background_image'] ?? get_template_directory_uri() . '/resources/images/businessman-working.png' }}"
                 alt="" class="w-full h-full object-cover opacity-70">
+            <div class="absolute inset-0 bg-linear-to-b from-transparent to-white"></div>
+
         </div>
         <div class="relative max-w-4xl mx-auto px-4">
             <div class="text-center mb-10 md:mb-12">
