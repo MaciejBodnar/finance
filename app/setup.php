@@ -333,8 +333,19 @@ add_filter('acf/validate_post_id', function ($post_id) {
         // Check if Polylang is active
         if (function_exists('pll_current_language')) {
             $lang = pll_current_language();
+
+            // Fallback for Admin if pll_current_language returns false
+            if (!$lang && is_admin() && isset($_GET['lang'])) {
+                $lang = sanitize_text_field($_GET['lang']);
+            }
+
+            // If language is 'all' or empty, try default language
+            if ((!$lang || $lang === 'all') && function_exists('pll_default_language')) {
+                $lang = \pll_default_language();
+            }
+
             // If we have a language, append it to the ID
-            if ($lang) {
+            if ($lang && $lang !== 'all') {
                 return 'options_' . $lang;
             }
         }

@@ -34,7 +34,7 @@
             </article>
 
             <aside class="space-y-8">
-                <div class="w-full items-start md:max-h-[624px] md:min-w-[756px] rounded-md overflow-hidden">
+                <div class="w-full items-start md:max-h-[624px] md:min-w-[756px] overflow-hidden">
                     <img src="{{ $post['image'] ?: $post['thumbnail'] }}" alt=""
                         class="w-full h-full object-contain">
                 </div>

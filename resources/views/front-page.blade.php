@@ -8,7 +8,7 @@
     <section class="bg-[#122457]">
         <div class="relative">
             <div class="relative min-h-[830px] max-w-6xl mx-auto px-8 lg:px-0 grid lg:grid-cols-2 pb-[640px] md:pb-0">
-                <div class="space-y-8 pt-20">
+                <div class="space-y-8 pt-6 md:pt-20">
                     <h1 class="tk-tt-travels-next text-3xl md:text-5xl text-[#CB9264] max-w-[450px]">
                         {!! $main['hero']['title'] !!}
                     </h1>

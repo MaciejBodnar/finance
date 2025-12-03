@@ -12,7 +12,8 @@
         <div
             class="max-w-6xl px-4 lg:px-0 {{ $mdPbClass }} flex flex-col md:flex-row min-w-full gap-8 lg:gap-24 md:justify-end">
             <div class="ml-0 md:ml-10 justify-self-end">
-                <h1 class="tk-tt-travels-next text-[#0b285f] text-3xl md:text-5xl leading-tight mt-24 max-w-[732px]">
+                <h1
+                    class="tk-tt-travels-next wrap-break-word text-[#0b285f] text-3xl md:text-5xl leading-tight mt-6 md:mt-24 max-w-[732px]">
                     {!! $accountancy['hero']['title'] !!}
                 </h1>
                 <div class="flex gap-2 md:gap-10 mt-8 md:mt-24">
@@ -74,8 +75,7 @@
 
                     </div>
                     <div class="flex flex-col gap-12">
-                        <h2
-                            class="flex justify-center md:justify-start text-4xl text-center md:text-left text-white max-w-[300px] tk-tt-travels-next">
+                        <h2 class="tk-tt-travels-next text-4xl text-white max-w-[300px]">
                             {!! $accountancy['cta_top']['heading'] !!}</h2>
                         <a class="justify-center md:justify-start hidden md:flex" href="#kontakt">
                             <svg class="max-w-8" xmlns="http://www.w3.org/2000/svg"
@@ -114,7 +114,7 @@
                     <img src="{{ $accountancy['section_two']['image'] }}" alt="" class="w-full h-full object-cover">
                 </div>
                 <div class="mr-10 justify-self-start">
-                    <h2 class="tk-tt-travels-next text-[#0b285f] text-3xl md:text-5xl leading-tight mt-0 md:mt-24">
+                    <h2 class="tk-tt-travels-next text-[#0b285f] text-3xl md:text-5xl leading-tight mt-4 md:mt-24">
                         {!! $accountancy['section_two']['title'] !!}
                     </h2>
                     <div class="flex gap-2 md:gap-10">
@@ -147,7 +147,7 @@
                                     @endforeach
                                 </ul>
                             @endif
-                            <p class="pb-40">{!! $accountancy['section_two']['paragraph_2'] !!}</p>
+                            <p class="pb-4 md:pb-40">{!! $accountancy['section_two']['paragraph_2'] !!}</p>
                         </div>
                     </div>
                 </div>
@@ -192,7 +192,7 @@
 
                         </div>
                         <div class="flex flex-col gap-12">
-                            <h2 class="flex justify-center md:justify-start text-4xl text-center md:text-left text-white">
+                            <h2 class="tk-tt-travels-next text-4xl text-white max-w-[300px]">
                                 {!! $accountancy['cta_bottom']['heading'] !!}
                             </h2>
                             <a class="hidden md:flex justify-center md:justify-start" href="#kontakt">

@@ -336,6 +336,14 @@ class Header extends Composer
         $services = $this->getAcfFieldSafe('header_services', 'option');
 
         if ($services) {
+            // Filter out empty links to prevent empty <ul> blocking content
+            foreach ($services as &$column) {
+                if (!empty($column['links']) && is_array($column['links'])) {
+                    $column['links'] = array_filter($column['links'], function ($link) {
+                        return !empty($link['title']) || !empty($link['url']);
+                    });
+                }
+            }
             return $services;
         }
 
